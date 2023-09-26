@@ -7,9 +7,9 @@ using UnityEngine;
 public class gamemanager : MonoBehaviour
 {
     public GameObject NPC;
-    private GameObject ActiveNPC;
+    public GameObject ActiveNPC;
     public int NPCsThisDay=7;
-    private int CurrentNPC=0;
+    public int CurrentNPC=0;
     // Start is called before the first frame update
     void Start()
     {
