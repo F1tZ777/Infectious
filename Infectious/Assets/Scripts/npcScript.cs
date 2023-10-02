@@ -18,7 +18,9 @@ public class npcScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+        float rand;
+        rand = Random.Range(0.0f, 0.7f);
+        GetComponent<Renderer>().material.color = new Color(rand, rand, rand);
         diseaseType = Random.Range(0,NoOfDieseaseTypes + 1);
         InitializeDisease(diseaseType);
         Debug.Log("DiseaseType"+diseaseType);
