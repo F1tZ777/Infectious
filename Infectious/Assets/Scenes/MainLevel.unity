@@ -507,9 +507,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NPC: {fileID: 6058645981336815923, guid: ce3d41e37b5d6a54f899c16d3ffd91ef, type: 3}
-  ActiveNPC: {fileID: 0}
+  ActiveNPC: {fileID: 1183056497}
   NPCsThisDay: 7
   CurrentNPC: 1
+  toolkit: {fileID: 1204143093}
+  performaceRange: 0
+  wrongfullyDetainedPercentage: 0
+  totalDetains: 0
 --- !u!4 &306574975
 Transform:
   m_ObjectHideFlags: 0
@@ -896,6 +900,8 @@ GameObject:
   - component: {fileID: 588184056}
   - component: {fileID: 588184058}
   - component: {fileID: 588184057}
+  - component: {fileID: 588184059}
+  - component: {fileID: 588184060}
   m_Layer: 0
   m_Name: Tool 4
   m_TagString: Untagged
@@ -996,6 +1002,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &588184059
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588184055}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &588184060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588184055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a338534a3a014c04b90aecaa443e9cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  symptomToCheck: 8
+  gameManager: {fileID: 306574973}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,6 +1154,8 @@ GameObject:
   - component: {fileID: 721552159}
   - component: {fileID: 721552161}
   - component: {fileID: 721552160}
+  - component: {fileID: 721552162}
+  - component: {fileID: 721552163}
   m_Layer: 0
   m_Name: Tool 2
   m_TagString: Untagged
@@ -1218,6 +1256,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &721552162
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721552158}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &721552163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721552158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a338534a3a014c04b90aecaa443e9cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  symptomToCheck: 3
+  gameManager: {fileID: 306574973}
 --- !u!1 &1038860611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,7 +1323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -113, y: -145}
+  m_AnchoredPosition: {x: -113, y: -160.00003}
   m_SizeDelta: {x: 115.2283, y: 52.3858}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1038860613
@@ -1304,7 +1372,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 306574974}
         m_TargetAssemblyTypeName: gamemanager, Assembly-CSharp
-        m_MethodName: NextNPC
+        m_MethodName: Approve
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1431,6 +1499,8 @@ GameObject:
   - component: {fileID: 1127877408}
   - component: {fileID: 1127877407}
   - component: {fileID: 1127877409}
+  - component: {fileID: 1127877411}
+  - component: {fileID: 1127877410}
   m_Layer: 0
   m_Name: Tool 1
   m_TagString: Untagged
@@ -1531,6 +1601,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1127877410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127877405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a338534a3a014c04b90aecaa443e9cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  symptomToCheck: 1
+  gameManager: {fileID: 306574973}
+--- !u!58 &1127877411
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127877405}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1161888451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1568,7 +1668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 47.000004, y: -144.99998}
+  m_AnchoredPosition: {x: 47.000004, y: -160}
   m_SizeDelta: {x: 115.2283, y: 52.3858}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1161888453
@@ -1617,7 +1717,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 306574974}
         m_TargetAssemblyTypeName: gamemanager, Assembly-CSharp
-        m_MethodName: NextNPC
+        m_MethodName: Detain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1753,6 +1853,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0.5
+  patientSymptomList: 00000000000000000000
 --- !u!61 &1183056499
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1990,6 +2091,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1204143094}
+  - component: {fileID: 1204143095}
   m_Layer: 0
   m_Name: Toolkit
   m_TagString: Untagged
@@ -2016,6 +2118,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1204143095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204143093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a217bb97d3e3a2408fae04c2bdf7331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1238978480
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,7 +2249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 251, y: -114.24}
+  m_AnchoredPosition: {x: 338.99, y: -126.5}
   m_SizeDelta: {x: 177.02, y: 49.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1256336737
@@ -2465,6 +2579,8 @@ GameObject:
   - component: {fileID: 2076343764}
   - component: {fileID: 2076343766}
   - component: {fileID: 2076343765}
+  - component: {fileID: 2076343767}
+  - component: {fileID: 2076343768}
   m_Layer: 0
   m_Name: Tool 3
   m_TagString: Untagged
@@ -2565,6 +2681,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &2076343767
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076343763}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &2076343768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076343763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a338534a3a014c04b90aecaa443e9cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  symptomToCheck: 4
+  gameManager: {fileID: 306574973}
 --- !u!1 &2082370127
 GameObject:
   m_ObjectHideFlags: 0

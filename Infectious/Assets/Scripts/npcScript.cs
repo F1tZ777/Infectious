@@ -11,7 +11,7 @@ public class npcScript : MonoBehaviour
     [SerializeField]private float []OddsForSymptomsNonContagious = new float[10];
     [SerializeField]private float []OddsForSymptomsMegaDisease = new float[10];
     [SerializeField]private float []OddsForSymptomsDehydration = new float[10];
-    private bool []patientSymptomList = new bool[10];
+    [HideInInspector]public bool []patientSymptomList = new bool[10];
 
     
     //[SerializeField]private float OddsForSymptoms;
@@ -24,9 +24,9 @@ public class npcScript : MonoBehaviour
         diseaseType = Random.Range(0,NoOfDieseaseTypes);
         InitializeDisease(diseaseType);
         Debug.Log("DiseaseType"+diseaseType);
-        for(int i=0; i<10; i++){
+        /*for(int i=0; i<10; i++){
             Debug.Log("Symptom"+i+" "+ patientSymptomList[i]);
-        }
+        }*/
     }
 
     // Update is called once per frame

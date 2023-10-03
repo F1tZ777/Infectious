@@ -10,10 +10,20 @@ public class gamemanager : MonoBehaviour
     public GameObject ActiveNPC;
     public int NPCsThisDay=7;
     public int CurrentNPC=0;
+    public GameObject toolkit;
+    private int correctDetains;
+    private int wrongfullyDetains;
+    private int correctApproves;
+    private int wrongfullyApproves;
+    private int totalNPCs;
+    [HideInInspector]public float performaceRange;
+    [HideInInspector]public float wrongfullyDetainedPercentage;
+    [HideInInspector]public float totalDetains;
+    
     // Start is called before the first frame update
     void Start()
     {
-        spawnNPC();
+        //spawnNPC();
     }
 
     // Update is called once per frame
@@ -25,12 +35,43 @@ public class gamemanager : MonoBehaviour
     public void spawnNPC(){
         ActiveNPC = Instantiate(NPC);
         CurrentNPC++;
+        //BroadcastMessage("NextNPCSpawned");
+        toolkit.GetComponent<TestScriptsIntermediate>().NextNPCSpawnedBroadcast();
     }
 
     public void NextNPC(){
         if(CurrentNPC<NPCsThisDay){
+            totalNPCs++;
+            performaceRange=(float)(totalNPCs-wrongfullyApproves)/(float)totalNPCs;
+            wrongfullyDetainedPercentage=(float)wrongfullyDetains/(float)totalNPCs;
+            Debug.Log("Performance Range = " + performaceRange);
+            Debug.Log("Wronfully Detained Percentage = " + wrongfullyDetainedPercentage);
             Destroy(ActiveNPC);
             spawnNPC();
     }
+    }
+
+    public void Detain(){
+        if(ActiveNPC.GetComponent<npcScript>().diseaseType==3){
+            correctDetains++;
+            totalDetains++;
+            NextNPC();
+        }
+        else{
+            wrongfullyDetains++;
+            totalDetains++;
+            NextNPC();
+        }
+        
+    }
+    public void Approve(){
+        if(ActiveNPC.GetComponent<npcScript>().diseaseType==3){
+            wrongfullyApproves++;
+            NextNPC();
+        }
+        else{
+            correctApproves++;
+            NextNPC();
+        }
     }
 }
