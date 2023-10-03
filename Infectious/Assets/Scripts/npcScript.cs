@@ -21,7 +21,7 @@ public class npcScript : MonoBehaviour
         float rand;
         rand = Random.Range(0.0f, 0.7f);
         GetComponent<Renderer>().material.color = new Color(rand, rand, rand);
-        diseaseType = Random.Range(0,NoOfDieseaseTypes + 1);
+        diseaseType = Random.Range(0,NoOfDieseaseTypes);
         InitializeDisease(diseaseType);
         Debug.Log("DiseaseType"+diseaseType);
         for(int i=0; i<10; i++){
