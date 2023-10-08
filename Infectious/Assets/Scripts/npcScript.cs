@@ -18,21 +18,23 @@ public class npcScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float rand;
-        rand = Random.Range(0.0f, 0.7f);
-        GetComponent<Renderer>().material.color = new Color(rand, rand, rand);
-        diseaseType = Random.Range(0,NoOfDieseaseTypes);
-        InitializeDisease(diseaseType);
-        Debug.Log("DiseaseType"+diseaseType);
-        /*for(int i=0; i<10; i++){
-            Debug.Log("Symptom"+i+" "+ patientSymptomList[i]);
-        }*/
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void initializeNPC(int disease){
+        if(disease>0){
+        InitializeDisease(disease-1);
+        }
+        else{
+            diseaseType = Random.Range(0,NoOfDieseaseTypes);
+        }
+        Debug.Log("DiseaseType"+diseaseType);
     }
 
     private void InitializeDisease(int diseaseT){
