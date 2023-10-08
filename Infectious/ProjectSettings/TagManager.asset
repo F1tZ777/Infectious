@@ -49,3 +49,21 @@ TagManager:
   - name: UI
     uniqueID: 3066601083
     locked: 0
+  - name: Head
+    uniqueID: 1389619561
+    locked: 0
+  - name: HeadShading
+    uniqueID: 3435676721
+    locked: 0
+  - name: Eyes
+    uniqueID: 2757646911
+    locked: 0
+  - name: Nose
+    uniqueID: 1604457339
+    locked: 0
+  - name: Mouth
+    uniqueID: 3734756275
+    locked: 0
+  - name: Body
+    uniqueID: 3869918971
+    locked: 0
