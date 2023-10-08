@@ -682,8 +682,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPC: {fileID: 6058645981336815923, guid: ce3d41e37b5d6a54f899c16d3ffd91ef, type: 3}
   ActiveNPC: {fileID: 1183056497}
-  NPCsThisDay: 7
-  CurrentNPC: 1
+  NPCsThisDay: 4
+  CurrentNPC: 0
   toolkit: {fileID: 1204143093}
   performaceRange: 0
   wrongfullyDetainedPercentage: 0
@@ -3094,6 +3094,7 @@ MonoBehaviour:
   - 0
   - 0.5
   patientSymptomList: 00000000000000000000
+  patientDiseaseList: 04000000000000000000000000000000
 --- !u!61 &1183056499
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3180,7 +3181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183056497}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.44, y: 1.3, z: 0}
+  m_LocalPosition: {x: -0.07, y: 1.01, z: 0}
   m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

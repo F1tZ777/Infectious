@@ -9,7 +9,7 @@ public class gamemanager : MonoBehaviour
     public GameObject NPC;
     public GameObject ActiveNPC;
     public int NPCsThisDay=7;
-    public int CurrentNPC=0;
+    [HideInInspector]public int CurrentNPC=0;
     public GameObject toolkit;
     private int correctDetains;
     private int wrongfullyDetains;
@@ -23,7 +23,7 @@ public class gamemanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //spawnNPC();
+        spawnNPC();
     }
 
     // Update is called once per frame
@@ -33,7 +33,9 @@ public class gamemanager : MonoBehaviour
     }
 
     public void spawnNPC(){
-        ActiveNPC = Instantiate(NPC);
+        //ActiveNPC = Instantiate(NPC);
+        ActiveNPC.GetComponent<npcScript>().NextNPC(CurrentNPC);
+        Debug.Log("CurrentNPC"+CurrentNPC);
         CurrentNPC++;
         //BroadcastMessage("NextNPCSpawned");
         toolkit.GetComponent<TestScriptsIntermediate>().NextNPCSpawnedBroadcast();
@@ -46,7 +48,7 @@ public class gamemanager : MonoBehaviour
             wrongfullyDetainedPercentage=(float)wrongfullyDetains/(float)totalNPCs;
             Debug.Log("Performance Range = " + performaceRange);
             Debug.Log("Wronfully Detained Percentage = " + wrongfullyDetainedPercentage);
-            Destroy(ActiveNPC);
+            //Destroy(ActiveNPC);
             spawnNPC();
     }
     }

@@ -34,6 +34,7 @@ public class npcScript : MonoBehaviour
 
     private void InitializeNPC(int disease){
         if(disease>0){
+        diseaseType = disease-1;
         InitializeDisease(disease-1);
         }
         else{
