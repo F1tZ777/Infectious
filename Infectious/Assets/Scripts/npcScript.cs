@@ -12,6 +12,7 @@ public class npcScript : MonoBehaviour
     [SerializeField]private float []OddsForSymptomsMegaDisease = new float[10];
     [SerializeField]private float []OddsForSymptomsDehydration = new float[10];
     [HideInInspector]public bool []patientSymptomList = new bool[10];
+    [SerializeField]private int []patientDiseaseList;
 
     
     //[SerializeField]private float OddsForSymptoms;
@@ -27,7 +28,11 @@ public class npcScript : MonoBehaviour
         
     }
 
-    public void initializeNPC(int disease){
+    public void NextNPC(int NPCNum){
+        InitializeNPC(patientDiseaseList[NPCNum]);
+    }
+
+    private void InitializeNPC(int disease){
         if(disease>0){
         InitializeDisease(disease-1);
         }
