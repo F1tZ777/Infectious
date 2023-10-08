@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
 
 public class gamemanager : MonoBehaviour
 {
     public GameObject NPC;
     public GameObject ActiveNPC;
+    public Dialogue dialogueScript;
     public int NPCsThisDay=7;
     [HideInInspector]public int CurrentNPC=0;
     public GameObject toolkit;
@@ -35,6 +37,7 @@ public class gamemanager : MonoBehaviour
     public void spawnNPC(){
         //ActiveNPC = Instantiate(NPC);
         ActiveNPC.GetComponent<npcScript>().NextNPC(CurrentNPC);
+        dialogueScript.StartDialogue();
         Debug.Log("CurrentNPC"+CurrentNPC);
         CurrentNPC++;
         //BroadcastMessage("NextNPCSpawned");
@@ -50,10 +53,11 @@ public class gamemanager : MonoBehaviour
             Debug.Log("Wronfully Detained Percentage = " + wrongfullyDetainedPercentage);
             //Destroy(ActiveNPC);
             spawnNPC();
-    }
+        }
     }
 
     public void Detain(){
+        dialogueScript.DeniedDialogue();
         if(ActiveNPC.GetComponent<npcScript>().diseaseType==3){
             correctDetains++;
             totalDetains++;
@@ -67,6 +71,7 @@ public class gamemanager : MonoBehaviour
         
     }
     public void Approve(){
+        dialogueScript.AcceptedDialogue();
         if(ActiveNPC.GetComponent<npcScript>().diseaseType==3){
             wrongfullyApproves++;
             NextNPC();
