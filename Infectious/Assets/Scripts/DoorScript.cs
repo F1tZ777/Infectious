@@ -34,7 +34,7 @@ public class DoorScript : MonoBehaviour
     {
         Debug.Log("Released");
         rend.color = normalColor;
-        //SceneManager.startGame();
+        SceneManager.startGame();
     }
 
     private void OnMouseExit()
