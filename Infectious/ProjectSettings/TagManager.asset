@@ -67,6 +67,9 @@ TagManager:
   - name: Table
     uniqueID: 4007223015
     locked: 0
-  - name: UI
+  - name: UI Background
     uniqueID: 3066601083
+    locked: 0
+  - name: UI
+    uniqueID: 773091577
     locked: 0
