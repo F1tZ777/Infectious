@@ -148,12 +148,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24600164}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -229, y: 221, z: -9918.368}
-  m_LocalScale: {x: 13.687366, y: 17.135298, z: 110.20409}
+  m_LocalPosition: {x: 19.999998, y: -40.36, z: -9918.368}
+  m_LocalScale: {x: 8.335607, y: 11.460088, z: 110.20409}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1304965044}
-  m_RootOrder: 1
+  m_Father: {fileID: 1773557119}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &24600166
 SpriteRenderer:
@@ -193,8 +193,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1228366213
-  m_SortingLayer: 9
+  m_SortingLayerID: 459470725
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b01573c7a449c084face5f8f406ee8fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -643,6 +643,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 588184060}
+        m_TargetAssemblyTypeName: TestScripts, Assembly-CSharp
+        m_MethodName: closemenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2385,6 +2397,9 @@ MonoBehaviour:
   testTitle: {fileID: 375750525}
   testResultText: {fileID: 2146844014}
   Buttons: {fileID: 2052673012}
+  AssetReady: 1
+  UrineTestTrue: {fileID: 619611366}
+  UrineTestFalse: {fileID: 24600164}
 --- !u!1 &616772771
 GameObject:
   m_ObjectHideFlags: 0
@@ -2506,7 +2521,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000fb46aae65b85784c69e9d3523144c8cc3f5a5ea47b13a25fb3db9bdee75ed9ee7b9ec8b6
+  m_ApplyToSortingLayers: 00000000fb46aae669e9d3525b85784c3144c8cc3f5a5ea47b13a25fb3db9bdee75ed9ee7b9ec8b685f7621b
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -2605,12 +2620,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619611366}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -229, y: 211, z: -9918.368}
-  m_LocalScale: {x: 13.68737, y: 17.1353, z: 110.20409}
+  m_LocalPosition: {x: 20, y: -47, z: -9918.368}
+  m_LocalScale: {x: 8.3356085, y: 11.46009, z: 110.20409}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1304965044}
-  m_RootOrder: 2
+  m_Father: {fileID: 1773557119}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &619611368
 SpriteRenderer:
@@ -2650,8 +2665,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1228366213
-  m_SortingLayer: 9
+  m_SortingLayerID: 459470725
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f86d70c9bd0017f4a815e16141fa07bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2814,6 +2829,9 @@ MonoBehaviour:
   testTitle: {fileID: 375750525}
   testResultText: {fileID: 2146844014}
   Buttons: {fileID: 2052673012}
+  AssetReady: 0
+  UrineTestTrue: {fileID: 619611366}
+  UrineTestFalse: {fileID: 24600164}
 --- !u!1 &767201760
 GameObject:
   m_ObjectHideFlags: 0
@@ -4277,6 +4295,9 @@ MonoBehaviour:
   testTitle: {fileID: 375750525}
   testResultText: {fileID: 2146844014}
   Buttons: {fileID: 2052673012}
+  AssetReady: 0
+  UrineTestTrue: {fileID: 619611366}
+  UrineTestFalse: {fileID: 24600164}
 --- !u!58 &1127877411
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4796,7 +4817,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1304965044
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4810,8 +4831,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 557021339}
-  - {fileID: 24600165}
-  - {fileID: 619611367}
   m_Father: {fileID: 371474180}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5767,6 +5786,8 @@ RectTransform:
   - {fileID: 375750524}
   - {fileID: 2146844013}
   - {fileID: 206470238}
+  - {fileID: 24600165}
+  - {fileID: 619611367}
   m_Father: {fileID: 371474180}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7114,6 +7135,9 @@ MonoBehaviour:
   testTitle: {fileID: 375750525}
   testResultText: {fileID: 2146844014}
   Buttons: {fileID: 2052673012}
+  AssetReady: 0
+  UrineTestTrue: {fileID: 619611366}
+  UrineTestFalse: {fileID: 24600164}
 --- !u!1 &2082370127
 GameObject:
   m_ObjectHideFlags: 0

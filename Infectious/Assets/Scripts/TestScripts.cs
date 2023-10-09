@@ -16,6 +16,9 @@ public class TestScripts : MonoBehaviour
     public TMP_Text testTitle;
     public TMP_Text testResultText;
     public GameObject Buttons;
+    public bool AssetReady;
+    public GameObject UrineTestTrue;
+    public GameObject UrineTestFalse;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,15 +36,33 @@ public class TestScripts : MonoBehaviour
         Buttons.SetActive(false);
         TestPromt.SetActive(true);
         testTitle.text = testName;
-        if(activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck]==true){
-            testResultText.text = testResultTextTrue;
+        if(AssetReady==false){
+            if(activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck]==true){
+                testResultText.text = testResultTextTrue;
+            }
+            else{
+                testResultText.text = testResultTextFalse;
+            }
+        
         }
         else{
-            testResultText.text = testResultTextFalse;
-        }
+            if(activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck]==true){
+                testResultText.text = "";
+                UrineTestTrue.SetActive(true);
+            }
+            else{
+                testResultText.text = "";
+                UrineTestFalse.SetActive(true);
+            }
+    }
+        
         Debug.Log("Symptom " + symptomToCheck + "" + activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck]);
     }
     void NextNPCSpawned(){
         activeNPC = gameManager.GetComponent<gamemanager>().ActiveNPC;
+    }
+    public void closemenu(){
+        UrineTestTrue.SetActive(false);
+        UrineTestFalse.SetActive(false);
     }
 }
