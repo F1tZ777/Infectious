@@ -22,12 +22,19 @@ public class DoorScript : MonoBehaviour
     {
         rend.color = pressedColor;
         Debug.Log("Pressed");
-        if (Input.GetMouseButtonUp(0))
+        /*if (Input.GetMouseButtonUp(0))
         {
             Debug.Log("Released");
             rend.color = normalColor;
             SceneManager.startGame();
-        }
+        }*/
+    }
+
+    private void OnMouseUpAsButton()
+    {
+        Debug.Log("Released");
+        rend.color = normalColor;
+        //SceneManager.startGame();
     }
 
     private void OnMouseExit()
