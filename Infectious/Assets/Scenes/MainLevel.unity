@@ -1100,6 +1100,7 @@ MonoBehaviour:
   NPC: {fileID: 1578833394}
   ActiveNPC: {fileID: 1578833394}
   dialogueScript: {fileID: 2000231173}
+  animator: {fileID: 1578833398}
   NPCsThisDay: 3
   CurrentNPC: 0
   toolkit: {fileID: 1204143093}
@@ -5371,6 +5372,7 @@ GameObject:
   - component: {fileID: 1578833395}
   - component: {fileID: 1578833396}
   - component: {fileID: 1578833397}
+  - component: {fileID: 1578833398}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -5518,6 +5520,19 @@ MonoBehaviour:
   body:
   - {fileID: 1828586127}
   - {fileID: 1889727248}
+--- !u!114 &1578833398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578833394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce18f19dea26d574eae77cdff94244c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _anim: {fileID: 0}
 --- !u!1 &1633893996
 GameObject:
   m_ObjectHideFlags: 0
@@ -6890,6 +6905,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2245399526505f5489b79e3595dd79b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 306574974}
+  animator: {fileID: 1578833398}
   textObject: {fileID: 1117914250}
   greet:
   - Hello sir, I come from far away. I spend all my money to get here, please let

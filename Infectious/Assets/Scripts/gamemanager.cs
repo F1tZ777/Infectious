@@ -10,6 +10,7 @@ public class gamemanager : MonoBehaviour
     public GameObject NPC;
     public GameObject ActiveNPC;
     public Dialogue dialogueScript;
+    public npcAnimation animator;
     public int NPCsThisDay=7;
     [HideInInspector]public int CurrentNPC=0;
     public GameObject toolkit;
@@ -21,7 +22,9 @@ public class gamemanager : MonoBehaviour
     [HideInInspector]public float performaceRange;
     [HideInInspector]public float wrongfullyDetainedPercentage;
     [HideInInspector]public float totalDetains;
-    
+
+    const string ENTER = "NPCEnter";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +49,7 @@ public class gamemanager : MonoBehaviour
 
     public void NextNPC(){
         if(CurrentNPC<NPCsThisDay){
+            animator.ChangeAnimation(ENTER);
             totalNPCs++;
             performaceRange=(float)(totalNPCs-wrongfullyApproves)/(float)totalNPCs;
             wrongfullyDetainedPercentage=(float)wrongfullyDetains/(float)totalNPCs;
@@ -61,12 +65,12 @@ public class gamemanager : MonoBehaviour
         if(ActiveNPC.GetComponent<npcScript>().diseaseType==3){
             correctDetains++;
             totalDetains++;
-            NextNPC();
+            //NextNPC();
         }
         else{
             wrongfullyDetains++;
             totalDetains++;
-            NextNPC();
+            //NextNPC();
         }
         
     }
@@ -74,11 +78,11 @@ public class gamemanager : MonoBehaviour
         dialogueScript.AcceptedDialogue();
         if(ActiveNPC.GetComponent<npcScript>().diseaseType==3){
             wrongfullyApproves++;
-            NextNPC();
+            //NextNPC();
         }
         else{
             correctApproves++;
-            NextNPC();
+            //NextNPC();
         }
     }
 }

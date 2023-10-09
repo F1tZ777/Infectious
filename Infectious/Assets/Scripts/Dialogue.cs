@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Security.Cryptography.X509Certificates;
 
 public class Dialogue : MonoBehaviour
 {
+
+    public gamemanager manager;
+    public npcAnimation animator;
 
     public TextMeshProUGUI textObject;
     [TextArea(2, 10)]
@@ -17,6 +21,9 @@ public class Dialogue : MonoBehaviour
     public string[] denied;
 
     private int rand;
+
+    const string APPROVED = "NPCAccept";
+    const string DENIED = "NPCDeny";
 
     // Start is called before the first frame update
     void Start()
@@ -55,11 +62,13 @@ public class Dialogue : MonoBehaviour
     public void AcceptedDialogue()
     {
         StartCoroutine(TypeAccepted());
+        
     }
 
     public void DeniedDialogue()
     {
         StartCoroutine(TypeDenied());
+        
     }
 
     IEnumerator TypeGreet()
@@ -84,20 +93,28 @@ public class Dialogue : MonoBehaviour
     IEnumerator TypeAccepted()
     {
         rand = Random.Range(0, accepted.Length);
+        textObject.text += "\n\n";
         foreach (char c in accepted[rand].ToCharArray())
         {
             textObject.text += c;
-            yield return null;
+            //yield return null;
         }
+        animator.ChangeAnimation(APPROVED);
+        yield return new WaitForSeconds(4.5f);
+        manager.NextNPC();
     }
 
     IEnumerator TypeDenied()
     {
         rand = Random.Range(0, denied.Length);
+        textObject.text += "\n\n";
         foreach (char c in denied[rand].ToCharArray())
         {
             textObject.text += c;
             yield return null;
         }
+        animator.ChangeAnimation(DENIED);
+        yield return new WaitForSeconds(4.5f);
+        manager.NextNPC();
     }
 }
