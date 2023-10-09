@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ef070408283c03f488d85145771f1cc4
+guid: 52d0539de67d4134b881de6b15d358ab
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,49 +127,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: eye 4_0
-      rect:
-        serializedVersion: 2
-        x: 357
-        y: 196
-        width: 632
-        height: 480
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6caeaee8b8e40c84c82d1a8d0df8d0ee
-      internalID: 676429625
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eye 4_1
-      rect:
-        serializedVersion: 2
-        x: 1116
-        y: 204
-        width: 632
-        height: 472
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1f7833d0fd30c24cb3f2af667d99b72
-      internalID: 1205481353
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -180,9 +138,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      eye 4_0: 2112086775
-      eye 4_1: 279476927
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

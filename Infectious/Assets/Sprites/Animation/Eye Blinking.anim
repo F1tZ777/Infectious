@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Clothing Animation
+  m_Name: Eye Blinking
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1804711980, guid: e56a97e346bf88f4e88a6bf67d92b47e, type: 3}
-    - time: 0.083333336
-      value: {fileID: -148097802, guid: e56a97e346bf88f4e88a6bf67d92b47e, type: 3}
+      value: {fileID: -839105325, guid: 16bacc04267e5784c9483039e4a0fc50, type: 3}
+    - time: 1.6666666
+      value: {fileID: 411688383, guid: 16bacc04267e5784c9483039e4a0fc50, type: 3}
+    - time: 1.75
+      value: {fileID: 411688383, guid: 16bacc04267e5784c9483039e4a0fc50, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,14 +44,15 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -1804711980, guid: e56a97e346bf88f4e88a6bf67d92b47e, type: 3}
-    - {fileID: -148097802, guid: e56a97e346bf88f4e88a6bf67d92b47e, type: 3}
+    - {fileID: -839105325, guid: 16bacc04267e5784c9483039e4a0fc50, type: 3}
+    - {fileID: 411688383, guid: 16bacc04267e5784c9483039e4a0fc50, type: 3}
+    - {fileID: 411688383, guid: 16bacc04267e5784c9483039e4a0fc50, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.16666667
+    m_StopTime: 1.8333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

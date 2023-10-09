@@ -43,14 +43,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Table
-    uniqueID: 4007223015
-    locked: 0
-  - name: UI
-    uniqueID: 3066601083
+  - name: Body
+    uniqueID: 3869918971
     locked: 0
   - name: Head
     uniqueID: 1389619561
+    locked: 0
+  - name: Hair
+    uniqueID: 1282966875
     locked: 0
   - name: HeadShading
     uniqueID: 3435676721
@@ -64,6 +64,9 @@ TagManager:
   - name: Mouth
     uniqueID: 3734756275
     locked: 0
-  - name: Body
-    uniqueID: 3869918971
+  - name: Table
+    uniqueID: 4007223015
+    locked: 0
+  - name: UI
+    uniqueID: 3066601083
     locked: 0
