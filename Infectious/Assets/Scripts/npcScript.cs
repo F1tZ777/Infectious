@@ -35,17 +35,17 @@ public class npcScript : MonoBehaviour
     private void InitializeNPC(int disease){
         if(disease>0){
         diseaseType = disease-1;
-        InitializeDisease(disease-1);
+        InitializeDisease(diseaseType);
         }
         else{
             diseaseType = Random.Range(0,NoOfDieseaseTypes);
+            InitializeDisease(diseaseType);
         }
         Debug.Log("DiseaseType"+diseaseType);
     }
 
     private void InitializeDisease(int diseaseT){
         float []activeDiseaseOdds = new float[10];
-        float DiseaseOddRan;
         switch(diseaseT){
             case 0: activeDiseaseOdds = OddsForSymptomsNoDiesase; break;
             case 1: activeDiseaseOdds = OddsForSymptomsMinorCold; break;
@@ -55,13 +55,13 @@ public class npcScript : MonoBehaviour
             default: Debug.Log("YOU FUCKED UP THE RANDOM RANGE FOR DISEASE TYPE"); break;
         }
         for(int i=0; i<10; i++){
-            DiseaseOddRan = Random.Range(0.0f, 1.0f);
-            if(DiseaseOddRan<=activeDiseaseOdds[i]){
+            if(Random.Range(0.0f, 1.0f)<=activeDiseaseOdds[i]){
                 patientSymptomList[i]=true;
             }
             else{
                 patientSymptomList[i]=false;
             }
+            Debug.Log("Symptom"+i+" "+patientSymptomList[i]);
         }
     }
 }
