@@ -19,6 +19,8 @@ public class TestScripts : MonoBehaviour
     public bool AssetReady;
     public GameObject UrineTestTrue;
     public GameObject UrineTestFalse;
+    public Sprite HighlightedSprite;
+    public Sprite NormalSprite;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,5 +66,15 @@ public class TestScripts : MonoBehaviour
     public void closemenu(){
         UrineTestTrue.SetActive(false);
         UrineTestFalse.SetActive(false);
+    }
+
+    public void OnMouseOver()
+    {
+        transform.GetComponent<SpriteRenderer>().sprite = HighlightedSprite;
+    }
+
+    public void OnMouseExit()
+    {
+        transform.GetComponent<SpriteRenderer>().sprite = NormalSprite;
     }
 }
