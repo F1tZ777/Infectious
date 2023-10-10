@@ -7,7 +7,7 @@ using TMPro;
 public class TestScripts : MonoBehaviour
 {
     public int symptomToCheck;
-    private GameObject activeNPC;
+    public GameObject activeNPC;
     public GameObject gameManager;
     public GameObject TestPromt;
     public string testName;
@@ -34,6 +34,7 @@ public class TestScripts : MonoBehaviour
     }
     void OnMouseUpAsButton()
     {
+        transform.GetComponent<SpriteRenderer>().sprite = NormalSprite;
         transform.parent.gameObject.SetActive(false);
         Buttons.SetActive(false);
         TestPromt.SetActive(true);

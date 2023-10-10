@@ -15,7 +15,7 @@ public class TestScriptsIntermediate : MonoBehaviour
     {
         
     }
-    public void NextNPCSpawnedBroadcast(){
+    /*public void NextNPCSpawnedBroadcast(){
         BroadcastMessage("NextNPCSpawned");
-    }
+    }*/
 }

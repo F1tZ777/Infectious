@@ -6,7 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 
 public class Dialogue : MonoBehaviour
 {
-
+    public SceneManager SceneManager;
     public gamemanager manager;
     public npcAnimation animator;
 
@@ -19,6 +19,8 @@ public class Dialogue : MonoBehaviour
     public string[] accepted;
     [TextArea(2, 10)]
     public string[] denied;
+    [TextArea(2, 10)]
+    public string[] boss;
 
     private int rand;
 
@@ -76,6 +78,11 @@ public class Dialogue : MonoBehaviour
         
     }
 
+    public void BossDialogue()
+    {
+        StartCoroutine(TypeBoss());
+    }
+
 
 
     IEnumerator TypeGreet()
@@ -123,6 +130,21 @@ public class Dialogue : MonoBehaviour
         animator.ChangeAnimation(DENIED);
         yield return new WaitForSeconds(4.5f);
         manager.NextNPC();
+    }
+
+    IEnumerator TypeBoss()
+    {
+        for (int i = 0; i < boss.Length; i++) {
+            foreach (char c in boss[i].ToCharArray())
+            {
+                textObject.text += c;
+                yield return null;
+            }
+            yield return new WaitForSeconds(3);
+            textObject.text += "\n\n";
+        }
+        yield return new WaitForSeconds(5);
+        SceneManager.End();
     }
 
     IEnumerator Denied()

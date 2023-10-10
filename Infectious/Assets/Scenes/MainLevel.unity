@@ -1111,8 +1111,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPC: {fileID: 1578833394}
   ActiveNPC: {fileID: 1578833394}
+  Boss: {fileID: 2050972639}
   dialogueScript: {fileID: 2000231173}
   animator: {fileID: 1578833398}
+  bossAnimator: {fileID: 2050972643}
   NPCsThisDay: 3
   CurrentNPC: 0
   toolkit: {fileID: 1204143093}
@@ -1269,7 +1271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
@@ -1318,6 +1320,7 @@ RectTransform:
   - {fileID: 2052673013}
   - {fileID: 1304965044}
   - {fileID: 1773557119}
+  - {fileID: 1742398783}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2392,6 +2395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   symptomToCheck: 8
+  activeNPC: {fileID: 1578833394}
   gameManager: {fileID: 306574973}
   TestPromt: {fileID: 1773557118}
   testName: URINE TEST
@@ -2713,6 +2717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4db0f4f0291191c4589496af645c054f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transition: {fileID: 1742398780}
 --- !u!4 &622583141
 Transform:
   m_ObjectHideFlags: 0
@@ -2870,6 +2875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   symptomToCheck: 3
+  activeNPC: {fileID: 1578833394}
   gameManager: {fileID: 306574973}
   TestPromt: {fileID: 1773557118}
   testName: X-RAY
@@ -4337,6 +4343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   symptomToCheck: 1
+  activeNPC: {fileID: 1578833394}
   gameManager: {fileID: 306574973}
   TestPromt: {fileID: 1773557118}
   testName: FLASHLIGHT TEST
@@ -5842,6 +5849,103 @@ Transform:
   m_Father: {fileID: 1578833395}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1742398779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1742398783}
+  - component: {fileID: 1742398782}
+  - component: {fileID: 1742398781}
+  - component: {fileID: 1742398780}
+  m_Layer: 5
+  m_Name: Crossfade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &1742398780
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742398779}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 22158582626c79a40977f019bd4d3cd5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1742398781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742398779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1742398782
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742398779}
+  m_CullTransparentMesh: 1
+--- !u!224 &1742398783
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742398779}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 371474180}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1773557118
 GameObject:
   m_ObjectHideFlags: 0
@@ -7015,6 +7119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2245399526505f5489b79e3595dd79b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneManager: {fileID: 622583140}
   manager: {fileID: 306574974}
   animator: {fileID: 1578833398}
   textObject: {fileID: 1117914250}
@@ -7044,6 +7149,16 @@ MonoBehaviour:
   - Why have you done this?
   - I'm fine! Please!
   - Please sir, I want to see my family again.
+  boss:
+  - Greetings, inspector
+  - I have watched over you. It seems that you have gotten the hang of this line
+    of work.
+  - Do not worry about being right or wrong for now. This is merely a trial run as
+    you know. Just to get you accustomized to the work.
+  - Hopefully we will not have to resort to performing these border checks, as the
+    disease continues to spread.
+  - You may leave now. I expect great things from you.
+  - Safe travels. And thank you for participating in this trial run...
 --- !u!1 &2050972639
 GameObject:
   m_ObjectHideFlags: 0
@@ -7055,6 +7170,7 @@ GameObject:
   - component: {fileID: 2050972642}
   - component: {fileID: 2050972641}
   - component: {fileID: 2050972640}
+  - component: {fileID: 2050972643}
   m_Layer: 0
   m_Name: Boss_png
   m_TagString: Untagged
@@ -7149,6 +7265,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2050972643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050972639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce18f19dea26d574eae77cdff94244c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _anim: {fileID: 0}
 --- !u!1 &2052673012
 GameObject:
   m_ObjectHideFlags: 0
@@ -7330,6 +7459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   symptomToCheck: 4
+  activeNPC: {fileID: 1578833394}
   gameManager: {fileID: 306574973}
   TestPromt: {fileID: 1773557118}
   testName: THERMOMETER

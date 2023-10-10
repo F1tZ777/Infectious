@@ -9,8 +9,10 @@ public class gamemanager : MonoBehaviour
 {
     public GameObject NPC;
     public GameObject ActiveNPC;
+    public GameObject Boss;
     public Dialogue dialogueScript;
     public npcAnimation animator;
+    public npcAnimation bossAnimator;
     public int NPCsThisDay=7;
     [HideInInspector]public int CurrentNPC=0;
     public GameObject toolkit;
@@ -24,6 +26,7 @@ public class gamemanager : MonoBehaviour
     private int totalNPCs;
     private bool entering;
     private Renderer NPCRender;
+    private Renderer BossRender;
     [HideInInspector]public float performaceRange;
     [HideInInspector]public float wrongfullyDetainedPercentage;
     [HideInInspector]public float totalDetains;
@@ -34,6 +37,7 @@ public class gamemanager : MonoBehaviour
     void Start()
     {
         NPCRender = NPC.GetComponent<Renderer>();
+        BossRender = Boss.GetComponent<Renderer>();
         spawnNPC();
         textObject.text = string.Empty;
     }
@@ -42,14 +46,14 @@ public class gamemanager : MonoBehaviour
     void Update()
     {
         if (animator.IsAnimationPlaying(animator._anim, ENTER) || animator.IsAnimationPlaying(animator._anim, "NPCAccept")
-            || animator.IsAnimationPlaying(animator._anim, "NPCDeny"))
+            || animator.IsAnimationPlaying(animator._anim, "NPCDeny") || animator.IsAnimationPlaying(bossAnimator._anim, "BossEnter"))
         {
             Debug.Log("NO");
             toolkit.SetActive(false);
             accept.SetActive(false);
             deny.SetActive(false);
         }
-        else if (!NPCRender.isVisible)
+        else if (!NPCRender.isVisible && !BossRender.isVisible)
         {
             Debug.Log("Cannot see");
             toolkit.SetActive(false);
@@ -60,16 +64,30 @@ public class gamemanager : MonoBehaviour
         {
             if (!entering)
             {
-                Debug.Log("Dialoguing");
-                toolkit.SetActive(true);
-                accept.SetActive(true);
-                deny.SetActive(true);
-                dialogueScript.StartDialogue();
-                entering = true;
+                if (NPCRender.isVisible)
+                {
+                    Debug.Log("Dialoguing");
+                    toolkit.SetActive(true);
+                    accept.SetActive(true);
+                    deny.SetActive(true);
+                    dialogueScript.StartDialogue();
+                    entering = true;
+                }
+                else if (BossRender.isVisible)
+                {
+                    Debug.Log("Boss Dialogue");
+                    toolkit.SetActive(false);
+                    accept.SetActive(false);
+                    deny.SetActive(false);
+                    dialogueScript.BossDialogue();
+                    entering = true;
+                }
             }
 
             else
+            { 
                 Debug.Log("YES");
+            }
         }
     }
 
@@ -80,14 +98,19 @@ public class gamemanager : MonoBehaviour
         Debug.Log("CurrentNPC"+CurrentNPC);
         CurrentNPC++;
         //BroadcastMessage("NextNPCSpawned");
-        toolkit.GetComponent<TestScriptsIntermediate>().NextNPCSpawnedBroadcast();
+        //toolkit.GetComponent<TestScriptsIntermediate>().NextNPCSpawnedBroadcast();
+    }
+
+    public void spawnBoss()
+    {
+        bossAnimator.ChangeAnimation("BossEnter");
     }
 
     public void NextNPC(){
-        if(CurrentNPC<NPCsThisDay){
+        textObject.text = string.Empty;
+        entering = false;
+        if (CurrentNPC<NPCsThisDay){
             animator.ChangeAnimation(ENTER);
-            entering = false;
-            textObject.text = string.Empty;
             totalNPCs++;
             performaceRange=(float)(totalNPCs-wrongfullyApproves)/(float)totalNPCs;
             wrongfullyDetainedPercentage=(float)wrongfullyDetains/(float)totalNPCs;
@@ -95,6 +118,10 @@ public class gamemanager : MonoBehaviour
             Debug.Log("Wronfully Detained Percentage = " + wrongfullyDetainedPercentage);
             //Destroy(ActiveNPC);
             spawnNPC();
+        }
+        else
+        {
+            spawnBoss();
         }
     }
 
