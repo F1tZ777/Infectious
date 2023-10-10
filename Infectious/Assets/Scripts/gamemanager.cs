@@ -14,11 +14,16 @@ public class gamemanager : MonoBehaviour
     public int NPCsThisDay=7;
     [HideInInspector]public int CurrentNPC=0;
     public GameObject toolkit;
+    public GameObject accept;
+    public GameObject deny;
+    public TextMeshProUGUI textObject;
     private int correctDetains;
     private int wrongfullyDetains;
     private int correctApproves;
     private int wrongfullyApproves;
     private int totalNPCs;
+    private bool entering;
+    private Renderer NPCRender;
     [HideInInspector]public float performaceRange;
     [HideInInspector]public float wrongfullyDetainedPercentage;
     [HideInInspector]public float totalDetains;
@@ -28,19 +33,50 @@ public class gamemanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        NPCRender = NPC.GetComponent<Renderer>();
         spawnNPC();
+        textObject.text = string.Empty;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (animator.IsAnimationPlaying(animator._anim, ENTER) || animator.IsAnimationPlaying(animator._anim, "NPCAccept")
+            || animator.IsAnimationPlaying(animator._anim, "NPCDeny"))
+        {
+            Debug.Log("NO");
+            toolkit.SetActive(false);
+            accept.SetActive(false);
+            deny.SetActive(false);
+        }
+        else if (!NPCRender.isVisible)
+        {
+            Debug.Log("Cannot see");
+            toolkit.SetActive(false);
+            accept.SetActive(false);
+            deny.SetActive(false);
+        }
+        else
+        {
+            if (!entering)
+            {
+                Debug.Log("Dialoguing");
+                toolkit.SetActive(true);
+                accept.SetActive(true);
+                deny.SetActive(true);
+                dialogueScript.StartDialogue();
+                entering = true;
+            }
+
+            else
+                Debug.Log("YES");
+        }
     }
 
     public void spawnNPC(){
         //ActiveNPC = Instantiate(NPC);
         ActiveNPC.GetComponent<npcScript>().NextNPC(CurrentNPC);
-        dialogueScript.StartDialogue();
+        //dialogueScript.StartDialogue();
         Debug.Log("CurrentNPC"+CurrentNPC);
         CurrentNPC++;
         //BroadcastMessage("NextNPCSpawned");
@@ -50,6 +86,8 @@ public class gamemanager : MonoBehaviour
     public void NextNPC(){
         if(CurrentNPC<NPCsThisDay){
             animator.ChangeAnimation(ENTER);
+            entering = false;
+            textObject.text = string.Empty;
             totalNPCs++;
             performaceRange=(float)(totalNPCs-wrongfullyApproves)/(float)totalNPCs;
             wrongfullyDetainedPercentage=(float)wrongfullyDetains/(float)totalNPCs;

@@ -28,7 +28,7 @@ public class Dialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //textObject.text = string.Empty;
+        textObject.text = string.Empty;
     }
 
     // Update is called once per frame
@@ -46,11 +46,16 @@ public class Dialogue : MonoBehaviour
                 SymptomDialogue();
             }
         }*/
+
+        /*if (textObject.text == denied[rand].ToString())
+        {
+            StartCoroutine(Denied());
+        }*/
     }
 
     public void StartDialogue()
     {
-        textObject.text = string.Empty;
+        //textObject.text = string.Empty;
         StartCoroutine(TypeGreet());
     }
 
@@ -70,6 +75,8 @@ public class Dialogue : MonoBehaviour
         StartCoroutine(TypeDenied());
         
     }
+
+
 
     IEnumerator TypeGreet()
     {
@@ -113,6 +120,13 @@ public class Dialogue : MonoBehaviour
             textObject.text += c;
             yield return null;
         }
+        animator.ChangeAnimation(DENIED);
+        yield return new WaitForSeconds(4.5f);
+        manager.NextNPC();
+    }
+
+    IEnumerator Denied()
+    {
         animator.ChangeAnimation(DENIED);
         yield return new WaitForSeconds(4.5f);
         manager.NextNPC();
