@@ -11,8 +11,9 @@ public class SceneManager : MonoBehaviour
         StartCoroutine(TransitionScene("MainLevel"));
     }
 
-    public void Quit() {
+    public void GameQuit() {
         Application.Quit();
+        Debug.Log("Quit");
     }
 
     public void End()
