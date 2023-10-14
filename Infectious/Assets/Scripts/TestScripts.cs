@@ -21,6 +21,7 @@ public class TestScripts : MonoBehaviour
     public GameObject UrineTestFalse;
     public Sprite HighlightedSprite;
     public Sprite NormalSprite;
+    public Vector2 originalPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,26 +40,32 @@ public class TestScripts : MonoBehaviour
     //    Buttons.SetActive(false);
     //    TestPromt.SetActive(true);
     //    testTitle.text = testName;
-    //    if(AssetReady==false){
-    //        if(activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck]==true){
+    //    if (AssetReady == false)
+    //    {
+    //        if (activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck] == true)
+    //        {
     //            testResultText.text = testResultTextTrue;
     //        }
-    //        else{
+    //        else
+    //        {
     //            testResultText.text = testResultTextFalse;
     //        }
-        
+
     //    }
-    //    else{
-    //        if(activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck]==true){
+    //    else
+    //    {
+    //        if (activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck] == true)
+    //        {
     //            testResultText.text = "";
     //            UrineTestTrue.SetActive(true);
     //        }
-    //        else{
+    //        else
+    //        {
     //            testResultText.text = "";
     //            UrineTestFalse.SetActive(true);
     //        }
     //    }
-        
+
     //    Debug.Log("Symptom " + symptomToCheck + "" + activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck]);
     //}
     void NextNPCSpawned(){
@@ -83,14 +90,63 @@ public class TestScripts : MonoBehaviour
         transform.GetComponent<SpriteRenderer>().sprite = NormalSprite;
     }
 
-    public void OnCollisionStay2D(Collision2D collision)
+    //public void OnCollisionStay2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.name == "NPC") 
+    //    {
+    //        Debug.Log("Touching NPC");
+    //        if (Input.GetMouseButtonUp(0))
+    //        {
+    //            Debug.Log("Let go on NPC");
+    //            transform.parent.gameObject.SetActive(false);
+    //            Buttons.SetActive(false);
+    //            TestPromt.SetActive(true);
+    //            testTitle.text = testName;
+    //            if (AssetReady == false)
+    //            {
+    //                if (activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck] == true)
+    //                {
+    //                    testResultText.text = testResultTextTrue;
+    //                }
+    //                else
+    //                {
+    //                    testResultText.text = testResultTextFalse;
+    //                }
+
+    //            }
+    //            else
+    //            {
+    //                if (activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck] == true)
+    //                {
+    //                    testResultText.text = "";
+    //                    UrineTestTrue.SetActive(true);
+    //                }
+    //                else
+    //                {
+    //                    testResultText.text = "";
+    //                    UrineTestFalse.SetActive(true);
+    //                }
+    //            }
+
+    //            Debug.Log("Symptom " + symptomToCheck + "" + activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck]);
+    //        }
+    //    }
+    //}
+
+    //public void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.name == "NPC")
+    //    {
+    //        Debug.Log("First Touch NPC");
+    //    }
+    //}
+
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "NPC") 
+        if (collision.gameObject.name == "NPC")
         {
-            Debug.Log("Touching NPC");
-            if (Input.GetMouseButtonUp(0))
-            {
-                Debug.Log("Let go on NPC");
+            Debug.Log("First Touch Trigger NPC");
+            transform.localPosition = originalPos;
                 transform.parent.gameObject.SetActive(false);
                 Buttons.SetActive(false);
                 TestPromt.SetActive(true);
@@ -122,23 +178,7 @@ public class TestScripts : MonoBehaviour
                 }
 
                 Debug.Log("Symptom " + symptomToCheck + "" + activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck]);
-            }
-        }
-    }
-
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "NPC")
-        {
-            Debug.Log("First Touch NPC");
-        }
-    }
-
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name == "NPC")
-        {
-            Debug.Log("First Touch Trigger NPC");
+                transform.localPosition = originalPos;
         }
     }
 }

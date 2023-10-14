@@ -2579,6 +2579,7 @@ MonoBehaviour:
   UrineTestFalse: {fileID: 24600164}
   HighlightedSprite: {fileID: 21300000, guid: d9962e02d5d7301469157151951cb816, type: 3}
   NormalSprite: {fileID: 21300000, guid: 970aa7148238d7743b57eda155abf606, type: 3}
+  originalPos: {x: 0, y: 0}
 --- !u!114 &588184061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2600,18 +2601,18 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588184055}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &616772771
 GameObject:
@@ -3078,6 +3079,7 @@ MonoBehaviour:
   UrineTestFalse: {fileID: 24600164}
   HighlightedSprite: {fileID: 21300000, guid: 8de5101f96975e24793ea792c5be3729, type: 3}
   NormalSprite: {fileID: 21300000, guid: 8050bcd2f73d069418d26e25126d394d, type: 3}
+  originalPos: {x: 0, y: 0}
 --- !u!114 &721552164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3099,18 +3101,18 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721552158}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &767201760
 GameObject:
@@ -4538,6 +4540,7 @@ GameObject:
   - component: {fileID: 1127877409}
   - component: {fileID: 1127877410}
   - component: {fileID: 1127877411}
+  - component: {fileID: 1127877412}
   m_Layer: 0
   m_Name: Tool 1
   m_TagString: Untagged
@@ -4665,6 +4668,7 @@ MonoBehaviour:
   UrineTestFalse: {fileID: 24600164}
   HighlightedSprite: {fileID: 21300000, guid: fc674bbba9a97da40ae3e131a7118c95, type: 3}
   NormalSprite: {fileID: 21300000, guid: d31ad83c2f20acb4dacc43dc1e62891c, type: 3}
+  originalPos: {x: 0, y: 0}
 --- !u!114 &1127877411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4678,6 +4682,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalPos: {x: 0, y: 0}
+--- !u!50 &1127877412
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127877405}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1152328173
 GameObject:
   m_ObjectHideFlags: 0
@@ -6005,14 +6030,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578833394}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -7912,6 +7937,7 @@ MonoBehaviour:
   UrineTestFalse: {fileID: 24600164}
   HighlightedSprite: {fileID: 21300000, guid: 35efe3337a614ec47b6dc49fdbd4cd34, type: 3}
   NormalSprite: {fileID: 21300000, guid: 1dde0f97b44ee7b43ae3903e2a687add, type: 3}
+  originalPos: {x: 0, y: 0}
 --- !u!114 &2076343769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7933,18 +7959,18 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076343763}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &2082370127
 GameObject:
