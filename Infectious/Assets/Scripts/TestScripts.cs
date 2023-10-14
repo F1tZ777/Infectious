@@ -33,6 +33,10 @@ public class TestScripts : MonoBehaviour
     {
         
     }
+    private void Awake()
+    {
+        originalPos = transform.localPosition;
+    }
     //void OnMouseUpAsButton()
     //{
     //    transform.GetComponent<SpriteRenderer>().sprite = NormalSprite;
