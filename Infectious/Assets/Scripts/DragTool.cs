@@ -34,7 +34,7 @@ public class DragTool : MonoBehaviour
 
     private void OnMouseUp()
     {
-        transform.position = originalPos;
+        transform.localPosition = originalPos;
     }
 
 }

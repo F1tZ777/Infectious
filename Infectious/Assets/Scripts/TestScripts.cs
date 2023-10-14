@@ -32,35 +32,35 @@ public class TestScripts : MonoBehaviour
     {
         
     }
-    void OnMouseUpAsButton()
-    {
-        transform.GetComponent<SpriteRenderer>().sprite = NormalSprite;
-        transform.parent.gameObject.SetActive(false);
-        Buttons.SetActive(false);
-        TestPromt.SetActive(true);
-        testTitle.text = testName;
-        if(AssetReady==false){
-            if(activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck]==true){
-                testResultText.text = testResultTextTrue;
-            }
-            else{
-                testResultText.text = testResultTextFalse;
-            }
+    //void OnMouseUpAsButton()
+    //{
+    //    transform.GetComponent<SpriteRenderer>().sprite = NormalSprite;
+    //    transform.parent.gameObject.SetActive(false);
+    //    Buttons.SetActive(false);
+    //    TestPromt.SetActive(true);
+    //    testTitle.text = testName;
+    //    if(AssetReady==false){
+    //        if(activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck]==true){
+    //            testResultText.text = testResultTextTrue;
+    //        }
+    //        else{
+    //            testResultText.text = testResultTextFalse;
+    //        }
         
-        }
-        else{
-            if(activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck]==true){
-                testResultText.text = "";
-                UrineTestTrue.SetActive(true);
-            }
-            else{
-                testResultText.text = "";
-                UrineTestFalse.SetActive(true);
-            }
-    }
+    //    }
+    //    else{
+    //        if(activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck]==true){
+    //            testResultText.text = "";
+    //            UrineTestTrue.SetActive(true);
+    //        }
+    //        else{
+    //            testResultText.text = "";
+    //            UrineTestFalse.SetActive(true);
+    //        }
+    //    }
         
-        Debug.Log("Symptom " + symptomToCheck + "" + activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck]);
-    }
+    //    Debug.Log("Symptom " + symptomToCheck + "" + activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck]);
+    //}
     void NextNPCSpawned(){
         activeNPC = gameManager.GetComponent<gamemanager>().ActiveNPC;
     }
@@ -72,10 +72,73 @@ public class TestScripts : MonoBehaviour
     public void OnMouseOver()
     {
         transform.GetComponent<SpriteRenderer>().sprite = HighlightedSprite;
+        if (Input.GetMouseButton(0))
+        {
+            transform.GetComponent<SpriteRenderer>().sprite = NormalSprite;
+        }
     }
 
     public void OnMouseExit()
     {
         transform.GetComponent<SpriteRenderer>().sprite = NormalSprite;
+    }
+
+    public void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "NPC") 
+        {
+            Debug.Log("Touching NPC");
+            if (Input.GetMouseButtonUp(0))
+            {
+                Debug.Log("Let go on NPC");
+                transform.parent.gameObject.SetActive(false);
+                Buttons.SetActive(false);
+                TestPromt.SetActive(true);
+                testTitle.text = testName;
+                if (AssetReady == false)
+                {
+                    if (activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck] == true)
+                    {
+                        testResultText.text = testResultTextTrue;
+                    }
+                    else
+                    {
+                        testResultText.text = testResultTextFalse;
+                    }
+
+                }
+                else
+                {
+                    if (activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck] == true)
+                    {
+                        testResultText.text = "";
+                        UrineTestTrue.SetActive(true);
+                    }
+                    else
+                    {
+                        testResultText.text = "";
+                        UrineTestFalse.SetActive(true);
+                    }
+                }
+
+                Debug.Log("Symptom " + symptomToCheck + "" + activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck]);
+            }
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "NPC")
+        {
+            Debug.Log("First Touch NPC");
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "NPC")
+        {
+            Debug.Log("First Touch Trigger NPC");
+        }
     }
 }

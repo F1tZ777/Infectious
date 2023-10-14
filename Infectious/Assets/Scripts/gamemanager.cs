@@ -48,14 +48,12 @@ public class gamemanager : MonoBehaviour
         if (animator.IsAnimationPlaying(animator._anim, ENTER) || animator.IsAnimationPlaying(animator._anim, "NPCAccept")
             || animator.IsAnimationPlaying(animator._anim, "NPCDeny") || animator.IsAnimationPlaying(bossAnimator._anim, "BossEnter"))
         {
-            Debug.Log("NO");
             toolkit.SetActive(false);
             accept.SetActive(false);
             deny.SetActive(false);
         }
         else if (!NPCRender.isVisible && !BossRender.isVisible)
         {
-            Debug.Log("Cannot see");
             toolkit.SetActive(false);
             accept.SetActive(false);
             deny.SetActive(false);
@@ -66,7 +64,6 @@ public class gamemanager : MonoBehaviour
             {
                 if (NPCRender.isVisible)
                 {
-                    Debug.Log("Dialoguing");
                     toolkit.SetActive(true);
                     accept.SetActive(true);
                     deny.SetActive(true);
@@ -75,18 +72,12 @@ public class gamemanager : MonoBehaviour
                 }
                 else if (BossRender.isVisible)
                 {
-                    Debug.Log("Boss Dialogue");
                     toolkit.SetActive(false);
                     accept.SetActive(false);
                     deny.SetActive(false);
                     dialogueScript.BossDialogue();
                     entering = true;
                 }
-            }
-
-            else
-            { 
-                Debug.Log("YES");
             }
         }
     }
