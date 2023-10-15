@@ -145,8 +145,9 @@ public class TestScripts : MonoBehaviour
     //    }
     //}
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
+        Debug.Log("Touching");
         if (collision.gameObject.name == "NPC")
         {
             Debug.Log("First Touch Trigger NPC");
