@@ -12,13 +12,14 @@ public class npcScript : MonoBehaviour
     [SerializeField]private float []OddsForSymptomsMegaDisease = new float[10];
     [SerializeField]private float []OddsForSymptomsDehydration = new float[10];
     [HideInInspector]public bool []patientSymptomList = new bool[10];
-    [SerializeField]private int []patientDiseaseList;
+    //[SerializeField]private int []patientDiseaseList;
     [SerializeField]private GameObject []head;
     [SerializeField]private GameObject []eyes;
     [SerializeField]private GameObject []nose;
     [SerializeField]private GameObject []mouth;
     [SerializeField]private GameObject []body;
     private int gender;
+    [SerializeField]private bool scriptedNPC;
     
     //[SerializeField]private float OddsForSymptoms;
     // Start is called before the first frame update
@@ -33,8 +34,8 @@ public class npcScript : MonoBehaviour
         
     }
 
-    public void NextNPC(int NPCNum){
-        InitializeNPC(patientDiseaseList[NPCNum]);
+    public void NextNPC(int NPCNum, int patientdisease){
+        InitializeNPC(patientdisease);
     }
 
     private void InitializeNPC(int disease){
@@ -68,7 +69,9 @@ public class npcScript : MonoBehaviour
             }
             //Debug.Log("Symptom"+i+" "+patientSymptomList[i]);
         }
+        if(!scriptedNPC){
         RandomizerNPCAppearance();
+        }
     }
 
     private void RandomizerNPCAppearance(){

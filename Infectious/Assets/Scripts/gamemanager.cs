@@ -30,6 +30,10 @@ public class gamemanager : MonoBehaviour
     [HideInInspector]public float performaceRange;
     [HideInInspector]public float wrongfullyDetainedPercentage;
     [HideInInspector]public float totalDetains;
+    public GameObject[] ScriptedNPC;
+    public GameObject randomNPCs;
+    public int[] NPCqueue;
+    [SerializeField]private int []patientDiseaseList;
 
     const string ENTER = "NPCEnter";
 
@@ -84,10 +88,19 @@ public class gamemanager : MonoBehaviour
 
     public void spawnNPC(){
         //ActiveNPC = Instantiate(NPC);
-        ActiveNPC.GetComponent<npcScript>().NextNPC(CurrentNPC);
+        if(NPCqueue[CurrentNPC]==0){
+            ActiveNPC=randomNPCs;
+            randomNPCs.GetComponent<npcScript>().NextNPC(CurrentNPC,patientDiseaseList[CurrentNPC]);
+        }
+        else{
+            ActiveNPC=ScriptedNPC[NPCqueue[CurrentNPC]-1];
+            ScriptedNPC[NPCqueue[CurrentNPC]-1].GetComponent<npcScript>().NextNPC(CurrentNPC,patientDiseaseList[CurrentNPC]);
+        }
         //dialogueScript.StartDialogue();
         Debug.Log("CurrentNPC"+CurrentNPC);
         CurrentNPC++;
+        Debug.Log(NPCqueue[CurrentNPC]);
+        Debug.Log(ActiveNPC);
         //BroadcastMessage("NextNPCSpawned");
         //toolkit.GetComponent<TestScriptsIntermediate>().NextNPCSpawnedBroadcast();
     }
