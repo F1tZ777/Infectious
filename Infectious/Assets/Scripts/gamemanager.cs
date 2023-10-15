@@ -10,9 +10,11 @@ public class gamemanager : MonoBehaviour
     public GameObject NPC;
     public GameObject ActiveNPC;
     public GameObject Boss;
+    public GameObject Scripted;
     public Dialogue dialogueScript;
     public npcAnimation animator;
     public npcAnimation bossAnimator;
+    public npcAnimation scriptedNPCAnimator;
     public int NPCsThisDay=7;
     [HideInInspector]public int CurrentNPC=0;
     public GameObject toolkit;
@@ -91,16 +93,18 @@ public class gamemanager : MonoBehaviour
         if(NPCqueue[CurrentNPC]==0){
             ActiveNPC=randomNPCs;
             randomNPCs.GetComponent<npcScript>().NextNPC(CurrentNPC,patientDiseaseList[CurrentNPC]);
+            animator.ChangeAnimation(ENTER);
         }
         else{
-            ActiveNPC=ScriptedNPC[NPCqueue[CurrentNPC]-1];
-            ScriptedNPC[NPCqueue[CurrentNPC]-1].GetComponent<npcScript>().NextNPC(CurrentNPC,patientDiseaseList[CurrentNPC]);
+            ActiveNPC = Scripted;
+            Scripted.GetComponent<npcScript>().NextNPC(CurrentNPC,patientDiseaseList[CurrentNPC]);
+            scriptedNPCAnimator.ChangeAnimation("ScriptedNPCEnter");
         }
         //dialogueScript.StartDialogue();
         Debug.Log("CurrentNPC"+CurrentNPC);
-        CurrentNPC++;
         Debug.Log(NPCqueue[CurrentNPC]);
         Debug.Log(ActiveNPC);
+        CurrentNPC++;
         //BroadcastMessage("NextNPCSpawned");
         //toolkit.GetComponent<TestScriptsIntermediate>().NextNPCSpawnedBroadcast();
     }
@@ -114,7 +118,6 @@ public class gamemanager : MonoBehaviour
         textObject.text = string.Empty;
         entering = false;
         if (CurrentNPC<NPCsThisDay){
-            animator.ChangeAnimation(ENTER);
             totalNPCs++;
             performaceRange=(float)(totalNPCs-wrongfullyApproves)/(float)totalNPCs;
             wrongfullyDetainedPercentage=(float)wrongfullyDetains/(float)totalNPCs;

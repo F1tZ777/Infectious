@@ -1196,9 +1196,11 @@ MonoBehaviour:
   NPC: {fileID: 1578833394}
   ActiveNPC: {fileID: 1578833394}
   Boss: {fileID: 2050972639}
+  Scripted: {fileID: 2031866155}
   dialogueScript: {fileID: 2000231173}
   animator: {fileID: 1578833398}
   bossAnimator: {fileID: 2050972643}
+  scriptedNPCAnimator: {fileID: 2031866159}
   NPCsThisDay: 3
   CurrentNPC: 0
   toolkit: {fileID: 1204143093}
@@ -6165,7 +6167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce18f19dea26d574eae77cdff94244c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _anim: {fileID: 0}
+  _anim: {fileID: 1578833396}
 --- !u!212 &1578833399
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7872,6 +7874,7 @@ GameObject:
   - component: {fileID: 2031866157}
   - component: {fileID: 2031866156}
   - component: {fileID: 2031866159}
+  - component: {fileID: 2031866160}
   m_Layer: 0
   m_Name: Scripted NPC
   m_TagString: Untagged
@@ -8034,7 +8037,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce18f19dea26d574eae77cdff94244c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _anim: {fileID: 0}
+  _anim: {fileID: 2031866160}
+--- !u!95 &2031866160
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031866155}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 880ad1467c3d551449dd8036409cdb6e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2050972639
 GameObject:
   m_ObjectHideFlags: 0
@@ -8153,7 +8176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce18f19dea26d574eae77cdff94244c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _anim: {fileID: 0}
+  _anim: {fileID: 2050972640}
 --- !u!1 &2052673012
 GameObject:
   m_ObjectHideFlags: 0

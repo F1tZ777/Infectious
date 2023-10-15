@@ -7,8 +7,6 @@ public class npcAnimation : MonoBehaviour
 {
     [HideInInspector]public Animator _anim;
     //string _currentState;
-    
-    
 
     private void Start()
     {
