@@ -15,11 +15,14 @@ public class gamemanager : MonoBehaviour
     public npcAnimation animator;
     public npcAnimation bossAnimator;
     public npcAnimation scriptedNPCAnimator;
+    public XRayClick XRayClick;
     public int NPCsThisDay=7;
     [HideInInspector]public int CurrentNPC=0;
     public GameObject toolkit;
     public GameObject accept;
     public GameObject deny;
+    public GameObject XRayIcon;
+    public GameObject XRayUses;
     public TextMeshProUGUI textObject;
     private int correctDetains;
     private int wrongfullyDetains;
@@ -57,12 +60,14 @@ public class gamemanager : MonoBehaviour
             toolkit.SetActive(false);
             accept.SetActive(false);
             deny.SetActive(false);
+            XRayUses.SetActive(false);
         }
         else if (!NPCRender.isVisible && !BossRender.isVisible)
         {
             toolkit.SetActive(false);
             accept.SetActive(false);
             deny.SetActive(false);
+            XRayUses.SetActive(false);
         }
         else
         {
@@ -73,14 +78,22 @@ public class gamemanager : MonoBehaviour
                     toolkit.SetActive(true);
                     accept.SetActive(true);
                     deny.SetActive(true);
+                    XRayUses.SetActive(true);
                     dialogueScript.StartDialogue();
                     entering = true;
+
+                    if (XRayClick.uses > 0)
+                    {
+                        XRayClick.cooldown = false;
+                        XRayClick.time = 20.0f;
+                    }
                 }
                 else if (BossRender.isVisible)
                 {
                     toolkit.SetActive(false);
                     accept.SetActive(false);
                     deny.SetActive(false);
+                    XRayUses.SetActive(false);
                     dialogueScript.BossDialogue();
                     entering = true;
                 }
