@@ -149,7 +149,7 @@ public class TestScripts : MonoBehaviour
     public void OnTriggerStay2D(Collider2D collision)
     {
         Debug.Log("Touching");
-        if (collision.gameObject.name == "NPC")
+        if (collision.gameObject.name == gameManager.GetComponent<gamemanager>().ActiveNPC.name)
         {
             Debug.Log("First Touch Trigger NPC");
             transform.localPosition = originalPos;
