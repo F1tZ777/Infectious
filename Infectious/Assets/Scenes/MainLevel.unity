@@ -713,6 +713,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206470237}
   m_CullTransparentMesh: 1
+--- !u!1 &232645779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 232645781}
+  - component: {fileID: 232645780}
+  m_Layer: 0
+  m_Name: Singleton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &232645780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232645779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff062955bfadd0742a9d37b29f011110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  performanceScore: 0
+  totalNPCs: 0
+--- !u!4 &232645781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232645779}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5333297, y: -1.8005506, z: -0.030362181}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &234840447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,8 +1285,67 @@ MonoBehaviour:
   ScriptedNPC:
   - {fileID: 2031866155}
   randomNPCs: {fileID: 1578833394}
-  NPCqueue: 000000000100000000000000
-  patientDiseaseList: 010000000400000002000000
+  NPCqueue: 0000000000000000000000000000000000000000000000000000000000000000
+  patientDiseaseList: 000000000000000000000000
+  singleton: {fileID: 232645779}
+  oddsForEachDiesease: 0400000004000000040000000400000004000000
+  OddsForSymptomsNoDiesase:
+  - 0.35
+  - 0
+  - 0.25
+  - 0
+  - 0
+  - 0.5
+  - 0.4
+  - 0
+  - 0
+  - 0.1
+  OddsForSymptomsMinorCold:
+  - 0.8
+  - 0.8
+  - 0.8
+  - 0
+  - 0.4
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0.5
+  OddsForSymptomsNonContagious:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 1
+  - 0
+  - 1
+  - 1
+  - 1
+  - 1
+  OddsForSymptomsMegaDisease:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  OddsForSymptomsDehydration:
+  - 0.5
+  - 1
+  - 0
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 1
+  patientSymptomList: 00000000000000000000
+  diseaseType: 0
 --- !u!4 &306574975
 Transform:
   m_ObjectHideFlags: 0
@@ -6386,64 +6491,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3beaca2f04a7441a38f95962472f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diseaseType: 0
-  NoOfDieseaseTypes: 5
-  OddsForSymptomsNoDiesase:
-  - 0.2
-  - 0
-  - 0.2
-  - 0
-  - 0
-  - 0.2
-  - 0.2
-  - 0
-  - 0
-  - 0.2
-  OddsForSymptomsMinorCold:
-  - 1
-  - 1
-  - 1
-  - 0
-  - 0.4
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0.4
-  OddsForSymptomsNonContagious:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0.6
-  - 0
-  - 1
-  - 0.5
-  - 0.4
-  - 0.6
-  OddsForSymptomsMegaDisease:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 0
-  - 0
-  - 0
-  - 0
-  OddsForSymptomsDehydration:
-  - 0
-  - 1
-  - 0
-  - 0
-  - 0
-  - 1
-  - 0
-  - 0
-  - 0
-  - 0.5
-  patientSymptomList: 00000000000000000000
   head:
   - {fileID: 1633893996}
   - {fileID: 1445169546}
@@ -6474,6 +6521,7 @@ MonoBehaviour:
   - {fileID: 1828586127}
   - {fileID: 1889727248}
   scriptedNPC: 0
+  patientSymptomListREADONLYPLS: 
 --- !u!114 &1578833398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8262,70 +8310,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3beaca2f04a7441a38f95962472f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diseaseType: 0
-  NoOfDieseaseTypes: 0
-  OddsForSymptomsNoDiesase:
-  - 0.2
-  - 0
-  - 0.2
-  - 0
-  - 0
-  - 0.2
-  - 0.2
-  - 0
-  - 0
-  - 0.2
-  OddsForSymptomsMinorCold:
-  - 1
-  - 1
-  - 1
-  - 0
-  - 0.4
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0.4
-  OddsForSymptomsNonContagious:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0.6
-  - 0
-  - 1
-  - 0.5
-  - 0.4
-  - 0.6
-  OddsForSymptomsMegaDisease:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 0
-  - 0
-  - 0
-  - 0
-  OddsForSymptomsDehydration:
-  - 0
-  - 1
-  - 0
-  - 0
-  - 0
-  - 1
-  - 0
-  - 0
-  - 0
-  - 0.5
-  patientSymptomList: 00000000000000000000
   head: []
   eyes: []
   nose: []
   mouth: []
   body: []
   scriptedNPC: 1
+  patientSymptomListREADONLYPLS: 
 --- !u!212 &2031866157
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -160,7 +160,7 @@ public class TestScripts : MonoBehaviour
             testTitle.text = testName;
             if (AssetReady == false)
             {
-                if (activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck] == true)
+                if (gameManager.GetComponent<gamemanager>().patientSymptomList[symptomToCheck] == true)
                 {
                     testResultText.text = testResultTextTrue;
                 }
@@ -172,7 +172,7 @@ public class TestScripts : MonoBehaviour
             }
             else
             {
-                if (activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck] == true)
+                if (gameManager.GetComponent<gamemanager>().patientSymptomList[symptomToCheck] == true)
                 {
                     testResultText.text = "";
                     UrineTestTrue.SetActive(true);
@@ -184,7 +184,7 @@ public class TestScripts : MonoBehaviour
                 }
             }
 
-            Debug.Log("Symptom " + symptomToCheck + "" + activeNPC.GetComponent<npcScript>().patientSymptomList[symptomToCheck]);
+            Debug.Log("Symptom " + symptomToCheck + "" + gameManager.GetComponent<gamemanager>().patientSymptomList[symptomToCheck]);
             transform.localPosition = originalPos;
         }
     }

@@ -41,7 +41,7 @@ public class GameTool : EditorWindow
         NPCsThisDay = GameManager.NPCsThisDay;
 
         npcScript = GameObject.FindGameObjectWithTag("NPC").GetComponent<npcScript>();
-        diseaseType = npcScript.diseaseType;
+        diseaseType = GameManager.diseaseType;
         
         Score = EditorGUILayout.IntField("Current score", Score); //Currently not in use, score system still in development
         Day = EditorGUILayout.IntField("Move to Day", Day); //Currently not in use, day system still in development

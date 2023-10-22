@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class npcScript : MonoBehaviour
 {
-    [HideInInspector]public int diseaseType;
-    [SerializeField]private int NoOfDieseaseTypes;
-    [SerializeField]private float []OddsForSymptomsNoDiesase = new float[10];
+    //[HideInInspector]public int diseaseType;
+    /*[SerializeField]private float []OddsForSymptomsNoDiesase = new float[10];
     [SerializeField]private float []OddsForSymptomsMinorCold = new float[10];
     [SerializeField]private float []OddsForSymptomsNonContagious = new float[10];
     [SerializeField]private float []OddsForSymptomsMegaDisease = new float[10];
     [SerializeField]private float []OddsForSymptomsDehydration = new float[10];
-    [HideInInspector]public bool []patientSymptomList = new bool[10];
+    [HideInInspector]public bool []patientSymptomList = new bool[10];*/
     //[SerializeField]private int []patientDiseaseList;
     [SerializeField]private GameObject []head;
     [SerializeField]private GameObject []eyes;
@@ -19,7 +18,8 @@ public class npcScript : MonoBehaviour
     [SerializeField]private GameObject []mouth;
     [SerializeField]private GameObject []body;
     private int gender;
-    [SerializeField]private bool scriptedNPC;
+    public bool scriptedNPC;
+    [HideInInspector]public bool []patientSymptomListREADONLYPLS;
     
     //[SerializeField]private float OddsForSymptoms;
     // Start is called before the first frame update
@@ -34,7 +34,7 @@ public class npcScript : MonoBehaviour
         
     }
 
-    public void NextNPC(int NPCNum, int patientdisease){
+    /*public void NextNPC(int patientdisease){
         InitializeNPC(patientdisease);
     }
 
@@ -44,8 +44,9 @@ public class npcScript : MonoBehaviour
         InitializeDisease(diseaseType);
         }
         else{
-            diseaseType = Random.Range(0,NoOfDieseaseTypes);
-            InitializeDisease(diseaseType);
+            //diseaseType = Random.Range(0,NoOfDieseaseTypes);
+            //InitializeDisease(diseaseType);
+            InitializeDisease(RandomizeDisease());
         }
         Debug.Log("DiseaseType"+diseaseType);
     }
@@ -72,9 +73,9 @@ public class npcScript : MonoBehaviour
         if(!scriptedNPC){
         RandomizerNPCAppearance();
         }
-    }
+    }*/
 
-    private void RandomizerNPCAppearance(){
+    public void RandomizerNPCAppearance(){
         gender = Random.Range(0,2);
         for(int i=0; i<head.Length; i++){
             head[i].SetActive(false);
@@ -101,7 +102,7 @@ public class npcScript : MonoBehaviour
         }
 
        
-        if(patientSymptomList[6]==false){
+        if(patientSymptomListREADONLYPLS[6]==false){
             eyes[Random.Range(0,5)].SetActive(true);
         }
         else{
