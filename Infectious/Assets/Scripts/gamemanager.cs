@@ -24,6 +24,7 @@ public class gamemanager : MonoBehaviour
     public GameObject XRayIcon;
     public GameObject XRayUses;
     public TextMeshProUGUI textObject;
+    public TMP_InputField notesText;
     private int correctDetains;
     private int wrongfullyDetains;
     private int correctApproves;
@@ -154,6 +155,7 @@ public class gamemanager : MonoBehaviour
 
     public void NextNPC(){
         textObject.text = string.Empty;
+        notesText.text = string.Empty;
         entering = false;
         if (CurrentNPC<NPCsThisDay){
             singleton.GetComponent<singleton>().totalNPCs++;
