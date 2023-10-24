@@ -6,9 +6,24 @@ public class DragTool : MonoBehaviour
 {
     //private RectTransform rectTransform;
     public Vector2 originalPos;
-
+    public float Timer = 0.05f;
+    public Behaviour BC2D;
     Vector3 mousePositionOffset;
-    
+    private bool timerStart;
+
+    private void Update()
+    {
+        if (timerStart)
+        {
+            Timer -= Time.deltaTime;
+            if (Timer < 0f)
+            {
+                transform.localPosition = originalPos;
+                Timer = 0.05f;
+                timerStart = false;
+            }
+        }
+    }
 
     private void Awake()
     {
@@ -29,12 +44,15 @@ public class DragTool : MonoBehaviour
 
     private void OnMouseDrag()
     {
+        BC2D.enabled = false;
         transform.position = GetMousePosition() + mousePositionOffset;
     }
 
     private void OnMouseUp()
     {
-        transform.localPosition = originalPos;
+        BC2D.enabled = true;
+        timerStart = true;
+        //transform.localPosition = originalPos;
     }
 
 }

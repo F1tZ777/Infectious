@@ -3536,6 +3536,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalPos: {x: 0, y: 0}
+  Timer: 0.05
+  BC2D: {fileID: 588184057}
 --- !u!50 &588184062
 Rigidbody2D:
   serializedVersion: 4
@@ -6631,6 +6633,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalPos: {x: 0, y: 0}
+  Timer: 0.05
+  BC2D: {fileID: 1127877409}
 --- !u!50 &1127877412
 Rigidbody2D:
   serializedVersion: 4
@@ -6650,7 +6654,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &1152328173
 GameObject:
@@ -8374,7 +8378,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578833394}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -8384,8 +8388,8 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &1606191352
 GameObject:
@@ -11349,6 +11353,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalPos: {x: 0, y: 0}
+  Timer: 0.05
+  BC2D: {fileID: 2076343765}
 --- !u!50 &2076343770
 Rigidbody2D:
   serializedVersion: 4
