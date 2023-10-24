@@ -52,6 +52,12 @@ public class gamemanager : MonoBehaviour
     [SerializeField]private float []OddsForSymptomsDehydration = new float[10];
     [HideInInspector]public bool []patientSymptomList = new bool[10];
     [HideInInspector]public int diseaseType;
+    public AudioClip[] Cough;
+    public AudioClip Sniff;
+    public AudioClip FemaleBreath;
+    public AudioClip MaleBreath;
+    public AudioSource AudioSource;
+
 
     const string ENTER = "NPCEnter";
 
@@ -146,6 +152,8 @@ public class gamemanager : MonoBehaviour
         CurrentNPC++;
         //BroadcastMessage("NextNPCSpawned");
         //toolkit.GetComponent<TestScriptsIntermediate>().NextNPCSpawnedBroadcast();
+        PlayAudio();
+        
     }
 
     public void spawnBoss()
@@ -232,6 +240,7 @@ public class gamemanager : MonoBehaviour
         if(!ActiveNPC.GetComponent<npcScript>().scriptedNPC){
             ActiveNPC.GetComponent<npcScript>().RandomizerNPCAppearance();
         }
+
     }
     private int RandomizeDisease(){
         int pool=0;
@@ -250,5 +259,20 @@ public class gamemanager : MonoBehaviour
                 
         }
         return 5;
+    }
+
+    void PlayAudio()
+    {
+        if (diseaseType == 0 || diseaseType == 1 || diseaseType == 3 || diseaseType == 4)
+        {
+            AudioSource.clip = Cough[Random.Range(0, Cough.Length)];
+            AudioSource.Play();
+            callAudio();
+        }
+    }
+
+    void callAudio()
+    {
+        Invoke("PlayAudio", 5);
     }
 }
