@@ -113,19 +113,23 @@ public class npcScript : MonoBehaviour
         if(gender==0){
             nose[Random.Range(0,2)].SetActive(true);
         }
-        else{
-            nose[Random.Range(2,4)].SetActive(true);
+        else if (patientSymptomListREADONLYPLS[7] == true && gender == 0)
+        {
+            nose[Random.Range(3, 5)].SetActive(true);
         }
-        
+        else
+        {
+            nose[Random.Range(6,7)].SetActive(true);
+        }
 
         mouth[Random.Range(0,5)].SetActive(true);
 
 
         if(gender==0){
-            body[0].SetActive(true);
+            body[Random.Range(0, 2)].SetActive(true);
         }
         else{
-            body[1].SetActive(true);
+            body[3].SetActive(true);
         }
     }
 }
