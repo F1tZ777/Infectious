@@ -16,8 +16,8 @@ public class gamemanager : MonoBehaviour
     public npcAnimation bossAnimator;
     public npcAnimation scriptedNPCAnimator;
     public XRayClick XRayClick;
-    [HideInInspector]public int NPCsThisDay;
-    [HideInInspector]public int CurrentNPC=0;
+    [HideInInspector] public int NPCsThisDay;
+    [HideInInspector] public int CurrentNPC = 0;
     public GameObject toolkit;
     public GameObject accept;
     public GameObject deny;
@@ -34,29 +34,25 @@ public class gamemanager : MonoBehaviour
     private Renderer NPCRender;
     //[SerializeField]private Renderer[] scriptedNPCRenderers;
     private Renderer BossRender;
-    [HideInInspector]public float performaceRange;
+    [HideInInspector] public float performaceRange;
     //[HideInInspector]public int performanceScore;
-    [HideInInspector]public float wrongfullyDetainedPercentage;
-    [HideInInspector]public float totalDetains;
+    [HideInInspector] public float wrongfullyDetainedPercentage;
+    [HideInInspector] public float totalDetains;
     public GameObject[] ScriptedNPC;
     public GameObject randomNPCs;
     public int[] NPCqueue;
-    [SerializeField]private int []patientDiseaseList;
+    [SerializeField] private int[] patientDiseaseList;
     private bool scriptedNPCvisible;
     public GameObject singleton;
     public int[] oddsForEachDiesease = new int[5];
-    [SerializeField]private float []OddsForSymptomsNoDiesase = new float[10];
-    [SerializeField]private float []OddsForSymptomsMinorCold = new float[10];
-    [SerializeField]private float []OddsForSymptomsNonContagious = new float[10];
-    [SerializeField]private float []OddsForSymptomsMegaDisease = new float[10];
-    [SerializeField]private float []OddsForSymptomsDehydration = new float[10];
-    [HideInInspector]public bool []patientSymptomList = new bool[10];
-    [HideInInspector]public int diseaseType;
-    public AudioClip[] Cough;
-    public AudioClip Sniff;
-    public AudioClip FemaleBreath;
-    public AudioClip MaleBreath;
-    public AudioSource AudioSource;
+    [SerializeField] private float[] OddsForSymptomsNoDiesase = new float[10];
+    [SerializeField] private float[] OddsForSymptomsMinorCold = new float[10];
+    [SerializeField] private float[] OddsForSymptomsNonContagious = new float[10];
+    [SerializeField] private float[] OddsForSymptomsMegaDisease = new float[10];
+    [SerializeField] private float[] OddsForSymptomsDehydration = new float[10];
+    [HideInInspector] public bool[] patientSymptomList = new bool[10];
+    [HideInInspector] public int diseaseType;
+
 
 
     const string ENTER = "NPCEnter";
@@ -64,7 +60,7 @@ public class gamemanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        NPCsThisDay=NPCqueue.Length;
+        NPCsThisDay = NPCqueue.Length;
         NPCRender = NPC.GetComponent<Renderer>();
         BossRender = Boss.GetComponent<Renderer>();
         /*for(int i=0;i<ScriptedNPC.Length;i++){
@@ -77,11 +73,13 @@ public class gamemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i=0;i<ScriptedNPC.Length;i++){
-            if(ScriptedNPC[i].GetComponent<Renderer>().isVisible){
-                scriptedNPCvisible=true;
-                }
+        for (int i = 0; i < ScriptedNPC.Length; i++)
+        {
+            if (ScriptedNPC[i].GetComponent<Renderer>().isVisible)
+            {
+                scriptedNPCvisible = true;
             }
+        }
         if (animator.IsAnimationPlaying(animator._anim, ENTER) || animator.IsAnimationPlaying(animator._anim, "NPCAccept")
             || animator.IsAnimationPlaying(animator._anim, "NPCDeny") || animator.IsAnimationPlaying(bossAnimator._anim, "BossEnter") || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "ScriptedNPCEnter"))
         {
@@ -101,9 +99,9 @@ public class gamemanager : MonoBehaviour
         {
             if (!entering)
             {
-                if (NPCRender.isVisible||scriptedNPCvisible)
+                if (NPCRender.isVisible || scriptedNPCvisible)
                 {
-                    scriptedNPCvisible=false;
+                    scriptedNPCvisible = false;
                     toolkit.SetActive(true);
                     accept.SetActive(true);
                     deny.SetActive(true);
@@ -131,29 +129,31 @@ public class gamemanager : MonoBehaviour
         }
     }
 
-    public void spawnNPC(){
+    public void spawnNPC()
+    {
         //ActiveNPC = Instantiate(NPC);
-        if(NPCqueue[CurrentNPC]==0){
-            ActiveNPC=randomNPCs;
+        if (NPCqueue[CurrentNPC] == 0)
+        {
+            ActiveNPC = randomNPCs;
             InitializeNPC(patientDiseaseList[CurrentNPC]);
             //animator.ChangeAnimation(ENTER);
             ActiveNPC.GetComponent<npcAnimation>().ChangeAnimation(ENTER);
         }
-        else{
-            ActiveNPC = ScriptedNPC[NPCqueue[CurrentNPC]-1];
+        else
+        {
+            ActiveNPC = ScriptedNPC[NPCqueue[CurrentNPC] - 1];
             InitializeNPC(patientDiseaseList[CurrentNPC]);
             //scriptedNPCAnimator.ChangeAnimation("ScriptedNPCEnter");
             ActiveNPC.GetComponent<npcAnimation>().ChangeAnimation("ScriptedNPCEnter");
         }
         //dialogueScript.StartDialogue();
-        Debug.Log("CurrentNPC"+CurrentNPC);
+        Debug.Log("CurrentNPC" + CurrentNPC);
         Debug.Log(NPCqueue[CurrentNPC]);
         Debug.Log(ActiveNPC);
         CurrentNPC++;
         //BroadcastMessage("NextNPCSpawned");
         //toolkit.GetComponent<TestScriptsIntermediate>().NextNPCSpawnedBroadcast();
-        PlayAudio();
-        
+
     }
 
     public void spawnBoss()
@@ -161,14 +161,16 @@ public class gamemanager : MonoBehaviour
         bossAnimator.ChangeAnimation("BossEnter");
     }
 
-    public void NextNPC(){
+    public void NextNPC()
+    {
         textObject.text = string.Empty;
         notesText.text = string.Empty;
         entering = false;
-        if (CurrentNPC<NPCsThisDay){
+        if (CurrentNPC < NPCsThisDay)
+        {
             singleton.GetComponent<singleton>().totalNPCs++;
-            performaceRange=(float)(singleton.GetComponent<singleton>().totalNPCs-wrongfullyApproves)/(float)singleton.GetComponent<singleton>().totalNPCs;
-            wrongfullyDetainedPercentage=(float)wrongfullyDetains/(float)singleton.GetComponent<singleton>().totalNPCs;
+            performaceRange = (float)(singleton.GetComponent<singleton>().totalNPCs - wrongfullyApproves) / (float)singleton.GetComponent<singleton>().totalNPCs;
+            wrongfullyDetainedPercentage = (float)wrongfullyDetains / (float)singleton.GetComponent<singleton>().totalNPCs;
             Debug.Log("Performance Range = " + performaceRange);
             Debug.Log("Wronfully Detained Percentage = " + wrongfullyDetainedPercentage);
             //Destroy(ActiveNPC);
@@ -180,47 +182,58 @@ public class gamemanager : MonoBehaviour
         }
     }
 
-    public void Detain(){
+    public void Detain()
+    {
         dialogueScript.DeniedDialogue();
-        if(diseaseType==3){
+        if (diseaseType == 3)
+        {
             correctDetains++;
             totalDetains++;
-            singleton.GetComponent<singleton>().performanceScore+=2;
+            singleton.GetComponent<singleton>().performanceScore += 2;
         }
-        else{
+        else
+        {
             wrongfullyDetains++;
             totalDetains++;
         }
-        
+
     }
-    public void Approve(){
+    public void Approve()
+    {
         dialogueScript.AcceptedDialogue();
-        if(diseaseType==3){
+        if (diseaseType == 3)
+        {
             wrongfullyApproves++;
-            singleton.GetComponent<singleton>().performanceScore-=5;
+            singleton.GetComponent<singleton>().performanceScore -= 5;
         }
-        else{
+        else
+        {
             correctApproves++;
-            singleton.GetComponent<singleton>().performanceScore+=1;
+            singleton.GetComponent<singleton>().performanceScore += 1;
         }
     }
 
-    private void InitializeNPC(int disease){
-        if(disease>0){
-        diseaseType = disease-1;
+    private void InitializeNPC(int disease)
+    {
+        if (disease > 0)
+        {
+            diseaseType = disease - 1;
         }
-        else{
+        else
+        {
             //diseaseType = Random.Range(0,NoOfDieseaseTypes);
             //InitializeDisease(diseaseType);
-            diseaseType=RandomizeDisease();
+            diseaseType = RandomizeDisease();
         }
         InitializeDisease(diseaseType);
-        Debug.Log("DiseaseType "+diseaseType);
+        Debug.Log("DiseaseType " + diseaseType);
     }
 
-    private void InitializeDisease(int diseaseT){
-        float []activeDiseaseOdds = new float[10];
-        switch(diseaseT){
+    private void InitializeDisease(int diseaseT)
+    {
+        float[] activeDiseaseOdds = new float[10];
+        switch (diseaseT)
+        {
             case 0: activeDiseaseOdds = OddsForSymptomsNoDiesase; break;
             case 1: activeDiseaseOdds = OddsForSymptomsMinorCold; break;
             case 2: activeDiseaseOdds = OddsForSymptomsNonContagious; break;
@@ -228,51 +241,47 @@ public class gamemanager : MonoBehaviour
             case 4: activeDiseaseOdds = OddsForSymptomsDehydration; break;
             default: Debug.Log("YOU FUCKED UP THE RANDOM RANGE FOR DISEASE TYPE"); break;
         }
-        for(int i=0; i<10; i++){
-            if(Random.Range(0.0f, 1.0f)<=activeDiseaseOdds[i]){
-                patientSymptomList[i]=true;
+        for (int i = 0; i < 10; i++)
+        {
+            if (Random.Range(0.0f, 1.0f) <= activeDiseaseOdds[i])
+            {
+                patientSymptomList[i] = true;
             }
-            else{
-                patientSymptomList[i]=false;
+            else
+            {
+                patientSymptomList[i] = false;
             }
         }
-        ActiveNPC.GetComponent<npcScript>().patientSymptomListREADONLYPLS=patientSymptomList;
-        if(!ActiveNPC.GetComponent<npcScript>().scriptedNPC){
+        ActiveNPC.GetComponent<npcScript>().patientSymptomListREADONLYPLS = patientSymptomList;
+        if (!ActiveNPC.GetComponent<npcScript>().scriptedNPC)
+        {
             ActiveNPC.GetComponent<npcScript>().RandomizerNPCAppearance();
         }
 
     }
-    private int RandomizeDisease(){
-        int pool=0;
-        for(int i=0; i<oddsForEachDiesease.Length;i++){
-            pool+=oddsForEachDiesease[i];
+    private int RandomizeDisease()
+    {
+        int pool = 0;
+        for (int i = 0; i < oddsForEachDiesease.Length; i++)
+        {
+            pool += oddsForEachDiesease[i];
         }
-        int rand=Random.Range(0,pool);
-        for(int i=0; i<oddsForEachDiesease.Length;i++){
-            if(rand<oddsForEachDiesease[i]){
+        int rand = Random.Range(0, pool);
+        for (int i = 0; i < oddsForEachDiesease.Length; i++)
+        {
+            if (rand < oddsForEachDiesease[i])
+            {
                 oddsForEachDiesease[i]--;
                 return i;
             }
-            else{
-                rand-=oddsForEachDiesease[i];
+            else
+            {
+                rand -= oddsForEachDiesease[i];
             }
-                
+
         }
         return 5;
     }
-
-    void PlayAudio()
-    {
-        if (diseaseType == 0 || diseaseType == 1 || diseaseType == 3 || diseaseType == 4)
-        {
-            AudioSource.clip = Cough[Random.Range(0, Cough.Length)];
-            AudioSource.Play();
-            callAudio();
-        }
-    }
-
-    void callAudio()
-    {
-        Invoke("PlayAudio", 5);
-    }
 }
+
+    

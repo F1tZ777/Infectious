@@ -20,12 +20,18 @@ public class npcScript : MonoBehaviour
     private int gender;
     public bool scriptedNPC;
     [HideInInspector]public bool []patientSymptomListREADONLYPLS;
-    
+    public AudioClip[] Cough;
+    public AudioClip Sniff;
+    public AudioClip FemaleBreath;
+    public AudioClip MaleBreath;
+    public AudioSource AudioSource;
+
     //[SerializeField]private float OddsForSymptoms;
     // Start is called before the first frame update
     void Start()
     {
-        
+        InvokeRepeating("PlayCoughSFX", 1.0f, Random.Range(10.0f, 15.0f));
+        InvokeRepeating("PlayRunningNoseSFX", 1.0f, Random.Range(10.0f, 15.0f));
     }
 
     // Update is called once per frame
@@ -111,7 +117,7 @@ public class npcScript : MonoBehaviour
 
         
         if(gender==0){
-            nose[Random.Range(0,2)].SetActive(true);
+            nose[Random.Range(0, 2)].SetActive(true);
         }
         else if (patientSymptomListREADONLYPLS[7] == true && gender == 0)
         {
@@ -131,5 +137,31 @@ public class npcScript : MonoBehaviour
         else{
             body[3].SetActive(true);
         }
+
+        
+    }
+
+    public void PlayCoughSFX()
+    {
+            if (patientSymptomListREADONLYPLS[0] == true && gender == 0)
+            {
+                AudioSource.clip = Cough[Random.Range(0, 1)];
+                AudioSource.Play();
+            }
+            else if (patientSymptomListREADONLYPLS[0] == true && gender == 1)
+            {
+                AudioSource.clip = Cough[2];
+                AudioSource.Play();
+            }
+    }
+
+    public void PlayRunningNoseSFX()
+    {
+        if (patientSymptomListREADONLYPLS[2] == true)
+        {
+            AudioSource.clip = Sniff;
+            AudioSource.Play();
+        }
     }
 }
+
