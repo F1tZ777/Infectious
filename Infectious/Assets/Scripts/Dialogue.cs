@@ -23,6 +23,7 @@ public class Dialogue : MonoBehaviour
     public string[] boss;
 
     private int rand;
+    private bool finishDialogue;
 
     const string APPROVED = "NPCAccept";
     const string DENIED = "NPCDeny";
@@ -87,12 +88,18 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeGreet()
     {
+        finishDialogue = false;
         rand = Random.Range(0, greet.Length);
         foreach (char c in greet[rand].ToCharArray())
         {
+            if (finishDialogue)
+            {
+                break;
+            }
             textObject.text += c;
             yield return null;
         }
+        finishDialogue = true;
     }
 
     IEnumerator TypeSymptom()
@@ -106,6 +113,12 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeAccepted()
     {
+        if(!finishDialogue)
+        {
+            textObject.text = "";
+            textObject.text = greet[rand];
+            finishDialogue = true;
+        }
         rand = Random.Range(0, accepted.Length);
         textObject.text += "\n\n";
         foreach (char c in accepted[rand].ToCharArray())
@@ -120,6 +133,12 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeDenied()
     {
+        if (!finishDialogue)
+        {
+            textObject.text = "";
+            textObject.text = greet[rand];
+            finishDialogue = true;
+        }
         rand = Random.Range(0, denied.Length);
         textObject.text += "\n\n";
         foreach (char c in denied[rand].ToCharArray())

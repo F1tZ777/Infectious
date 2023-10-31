@@ -13,8 +13,10 @@ public class XRayClick : MonoBehaviour
     public TextMeshProUGUI timer;
     public TextMeshProUGUI amount;
     public GameObject image;
+    public GameObject[] toolsToRemove;
     public bool cooldown;
     private bool timeStart;
+    private bool inUse;
 
     private void Start()
     {
@@ -23,11 +25,16 @@ public class XRayClick : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!cooldown)
+        if (!cooldown && !inUse)
         {
+            inUse = true;
             instantiatedObj = (GameObject)Instantiate(XRay);
             image.SetActive(true);
             timeStart = true;
+            for(int i = 0; i < toolsToRemove.Length; i++)
+            {
+                toolsToRemove[i].SetActive(false);
+            }
         }
     }
 
@@ -46,6 +53,11 @@ public class XRayClick : MonoBehaviour
                 uses -= 1;
                 amount.text = uses.ToString();
                 cooldown = true;
+                for (int i = 0; i < toolsToRemove.Length; i++)
+                {
+                    toolsToRemove[i].SetActive(true);
+                }
+                inUse = false;
             }
             //if (time <= 0.0f)
             //{

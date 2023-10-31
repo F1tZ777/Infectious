@@ -26,6 +26,6 @@ public class Calendar : MonoBehaviour
         {
             days[i].gameObject.SetActive(false);
         }
-        days[singleton.Instance.currentday].gameObject.SetActive(true);
+        days[singleton.Instance.currentday - 1].gameObject.SetActive(true);
     }
 }

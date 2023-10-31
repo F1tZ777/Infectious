@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 24600165}
   - component: {fileID: 24600166}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Urine test tube yellow (normal)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 63110604}
   - component: {fileID: 63110606}
   - component: {fileID: 63110605}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: ThermometerIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 74465746}
   - component: {fileID: 74465748}
   - component: {fileID: 74465747}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -754,7 +754,7 @@ GameObject:
   - component: {fileID: 206470241}
   - component: {fileID: 206470240}
   - component: {fileID: 206470239}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1149,7 +1149,7 @@ GameObject:
   - component: {fileID: 276500977}
   - component: {fileID: 276500976}
   - component: {fileID: 276500975}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1307,7 +1307,7 @@ GameObject:
   - component: {fileID: 282292357}
   - component: {fileID: 282292356}
   - component: {fileID: 282292355}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Scrollbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1192116417}
   m_HandleRect: {fileID: 1192116416}
   m_Direction: 2
-  m_Value: -0.00000007838285
+  m_Value: 0.010915946
   m_Size: 0.5219889
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1434,7 +1434,7 @@ GameObject:
   - component: {fileID: 296457830}
   - component: {fileID: 296457829}
   - component: {fileID: 296457828}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2138,7 +2138,7 @@ GameObject:
   - component: {fileID: 375750524}
   - component: {fileID: 375750526}
   - component: {fileID: 375750525}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2357,7 +2357,7 @@ GameObject:
   - component: {fileID: 395204783}
   - component: {fileID: 395204785}
   - component: {fileID: 395204784}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2434,7 +2434,7 @@ GameObject:
   - component: {fileID: 405486957}
   - component: {fileID: 405486959}
   - component: {fileID: 405486958}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Xray Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2568,7 +2568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 409260602}
   - component: {fileID: 409260603}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Text Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2944,7 +2944,7 @@ GameObject:
   - component: {fileID: 536334724}
   - component: {fileID: 536334726}
   - component: {fileID: 536334725}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3175,7 +3175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 557021339}
   - component: {fileID: 557021340}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Urine test tube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3260,7 +3260,7 @@ GameObject:
   - component: {fileID: 559698023}
   - component: {fileID: 559698025}
   - component: {fileID: 559698024}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: ThroatSwabIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3336,7 +3336,7 @@ GameObject:
   - component: {fileID: 560568549}
   - component: {fileID: 560568551}
   - component: {fileID: 560568550}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Page 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3570,7 +3570,7 @@ GameObject:
   - component: {fileID: 575675780}
   - component: {fileID: 575675782}
   - component: {fileID: 575675781}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4103,7 +4103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 619611367}
   - component: {fileID: 619611368}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Urine test tube red (blood)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4317,7 +4317,7 @@ GameObject:
   - component: {fileID: 694071443}
   - component: {fileID: 694071445}
   - component: {fileID: 694071444}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4625,6 +4625,11 @@ MonoBehaviour:
   timer: {fileID: 405486958}
   amount: {fileID: 880378785}
   image: {fileID: 395204782}
+  toolsToRemove:
+  - {fileID: 2052673012}
+  - {fileID: 1127877405}
+  - {fileID: 2076343763}
+  - {fileID: 588184055}
   cooldown: 0
 --- !u!1 &733246519
 GameObject:
@@ -4637,7 +4642,7 @@ GameObject:
   - component: {fileID: 733246520}
   - component: {fileID: 733246522}
   - component: {fileID: 733246521}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Xray Uses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4714,7 +4719,7 @@ GameObject:
   - component: {fileID: 767201761}
   - component: {fileID: 767201763}
   - component: {fileID: 767201762}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5054,7 +5059,7 @@ GameObject:
   - component: {fileID: 837472062}
   - component: {fileID: 837472061}
   - component: {fileID: 837472063}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Calendar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5080,7 +5085,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 246, y: 408}
+  m_AnchoredPosition: {x: -804, y: -173}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &837472061
@@ -5274,7 +5279,7 @@ GameObject:
   - component: {fileID: 877713001}
   - component: {fileID: 877713003}
   - component: {fileID: 877713002}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Page 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5415,7 +5420,7 @@ GameObject:
   - component: {fileID: 880378784}
   - component: {fileID: 880378786}
   - component: {fileID: 880378785}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5550,7 +5555,7 @@ GameObject:
   - component: {fileID: 897570139}
   - component: {fileID: 897570141}
   - component: {fileID: 897570140}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: 28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5685,7 +5690,7 @@ GameObject:
   - component: {fileID: 903536394}
   - component: {fileID: 903536396}
   - component: {fileID: 903536395}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Page 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6071,7 +6076,7 @@ GameObject:
   - component: {fileID: 1009408741}
   - component: {fileID: 1009408740}
   - component: {fileID: 1009408739}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Page 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6226,7 +6231,7 @@ GameObject:
   - component: {fileID: 1029938442}
   - component: {fileID: 1029938444}
   - component: {fileID: 1029938443}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6495,7 +6500,7 @@ GameObject:
   - component: {fileID: 1053788245}
   - component: {fileID: 1053788247}
   - component: {fileID: 1053788246}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Page 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6715,7 +6720,7 @@ GameObject:
   - component: {fileID: 1085943421}
   - component: {fileID: 1085943423}
   - component: {fileID: 1085943422}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6987,7 +6992,7 @@ GameObject:
   - component: {fileID: 1111149503}
   - component: {fileID: 1111149505}
   - component: {fileID: 1111149504}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7121,7 +7126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1116188760}
   - component: {fileID: 1116188761}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: TextContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7260,7 +7265,7 @@ GameObject:
   - component: {fileID: 1117914249}
   - component: {fileID: 1117914251}
   - component: {fileID: 1117914250}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7284,7 +7289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 175.175, y: 407.25003}
+  m_AnchoredPosition: {x: 175.175, y: 403}
   m_SizeDelta: {x: 350.35, y: 814.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1117914250
@@ -7385,7 +7390,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 12.311066, y: 0, z: 0, w: 18.466614}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7825,7 +7830,7 @@ GameObject:
   - component: {fileID: 1152328174}
   - component: {fileID: 1152328176}
   - component: {fileID: 1152328175}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8189,7 +8194,7 @@ GameObject:
   - component: {fileID: 1192116416}
   - component: {fileID: 1192116418}
   - component: {fileID: 1192116417}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8397,7 +8402,7 @@ GameObject:
   - component: {fileID: 1244498099}
   - component: {fileID: 1244498101}
   - component: {fileID: 1244498100}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Page 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8550,7 +8555,7 @@ GameObject:
   - component: {fileID: 1263980978}
   - component: {fileID: 1263980977}
   - component: {fileID: 1263980976}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Page 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8712,7 +8717,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1304965044}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Urine Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8751,7 +8756,7 @@ GameObject:
   - component: {fileID: 1366079502}
   - component: {fileID: 1366079504}
   - component: {fileID: 1366079503}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9087,7 +9092,7 @@ GameObject:
   - component: {fileID: 1493022937}
   - component: {fileID: 1493022939}
   - component: {fileID: 1493022938}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9220,7 +9225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1512677556}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Sliding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9481,7 +9486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578833394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.07, y: -1.77, z: 0}
+  m_LocalPosition: {x: 2.07, y: -1.77, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9958,7 +9963,7 @@ GameObject:
   - component: {fileID: 1654712249}
   - component: {fileID: 1654712248}
   - component: {fileID: 1654712247}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10092,7 +10097,7 @@ GameObject:
   - component: {fileID: 1657372355}
   - component: {fileID: 1657372354}
   - component: {fileID: 1657372353}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: NotesTyping
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10384,7 +10389,7 @@ GameObject:
   - component: {fileID: 1688242598}
   - component: {fileID: 1688242600}
   - component: {fileID: 1688242599}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Oct
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10524,7 +10529,7 @@ GameObject:
   - component: {fileID: 1693235474}
   - component: {fileID: 1693235476}
   - component: {fileID: 1693235475}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: UrineCupIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10600,7 +10605,7 @@ GameObject:
   - component: {fileID: 1699311649}
   - component: {fileID: 1699311651}
   - component: {fileID: 1699311650}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10683,7 +10688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1742398780
 Animator:
   serializedVersion: 4
@@ -10857,7 +10862,7 @@ GameObject:
   - component: {fileID: 1773557119}
   - component: {fileID: 1773557121}
   - component: {fileID: 1773557120}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: TestPrompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10938,7 +10943,7 @@ GameObject:
   - component: {fileID: 1800773583}
   - component: {fileID: 1800773585}
   - component: {fileID: 1800773584}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: 31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11158,7 +11163,7 @@ GameObject:
   - component: {fileID: 1819368328}
   - component: {fileID: 1819368327}
   - component: {fileID: 1819368326}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: ReferenceBook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11489,7 +11494,7 @@ GameObject:
   - component: {fileID: 1866520399}
   - component: {fileID: 1866520401}
   - component: {fileID: 1866520400}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11625,7 +11630,7 @@ GameObject:
   - component: {fileID: 1882588228}
   - component: {fileID: 1882588227}
   - component: {fileID: 1882588229}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: RefSheet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11904,7 +11909,7 @@ GameObject:
   - component: {fileID: 1898294384}
   - component: {fileID: 1898294386}
   - component: {fileID: 1898294385}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12123,7 +12128,7 @@ GameObject:
   - component: {fileID: 1922271189}
   - component: {fileID: 1922271191}
   - component: {fileID: 1922271190}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: 27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12375,7 +12380,7 @@ GameObject:
   - component: {fileID: 1978461683}
   - component: {fileID: 1978461685}
   - component: {fileID: 1978461684}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: X-rayIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12453,7 +12458,7 @@ GameObject:
   - component: {fileID: 2000231170}
   - component: {fileID: 2000231172}
   - component: {fileID: 2000231173}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12902,7 +12907,7 @@ GameObject:
   - component: {fileID: 2047706391}
   - component: {fileID: 2047706393}
   - component: {fileID: 2047706392}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: 30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13154,7 +13159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2052673013}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: UI Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13196,7 +13201,7 @@ GameObject:
   - component: {fileID: 2071241650}
   - component: {fileID: 2071241649}
   - component: {fileID: 2071241648}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Prev
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13575,8 +13580,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082370127}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.7021604, y: -3.3741426, z: -0.24766801}
-  m_LocalScale: {x: 1.4875176, y: 2.0124311, z: 1}
+  m_LocalPosition: {x: -6.7021604, y: -3.4388, z: -0.24766801}
+  m_LocalScale: {x: 1.4875176, y: 1.8830318, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 913308091}
@@ -13619,7 +13624,7 @@ GameObject:
   - component: {fileID: 2096446800}
   - component: {fileID: 2096446802}
   - component: {fileID: 2096446801}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: 29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13973,7 +13978,7 @@ GameObject:
   - component: {fileID: 2141637824}
   - component: {fileID: 2141637826}
   - component: {fileID: 2141637825}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Nov
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14111,7 +14116,7 @@ GameObject:
   - component: {fileID: 2146844013}
   - component: {fileID: 2146844015}
   - component: {fileID: 2146844014}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
