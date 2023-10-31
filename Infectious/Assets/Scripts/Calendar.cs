@@ -11,7 +11,7 @@ public class Calendar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (gamemanager.days < 5)
+        if (singleton.Instance.currentday < 5)
         {
             months[0].gameObject.SetActive(true);
             months[1].gameObject.SetActive(false);
@@ -26,6 +26,6 @@ public class Calendar : MonoBehaviour
         {
             days[i].gameObject.SetActive(false);
         }
-        days[gamemanager.days].gameObject.SetActive(true);
+        days[singleton.Instance.currentday].gameObject.SetActive(true);
     }
 }

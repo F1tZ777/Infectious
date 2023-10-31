@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 public class SceneManager : MonoBehaviour
@@ -8,7 +9,15 @@ public class SceneManager : MonoBehaviour
     public Animator transition;
     public void startGame()
     {
-        StartCoroutine(TransitionScene("MainLevel"));
+        StartCoroutine(TransitionScene("Day1"));
+    }
+
+    public void nextDay(){
+        if(singleton.Instance.currentday<=singleton.Instance.totaldays){
+            StartCoroutine(TransitionScene("Day"+singleton.Instance.currentday));
+        }
+        else
+            End();
     }
 
     public void GameQuit() {

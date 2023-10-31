@@ -7,7 +7,9 @@ public class singleton : MonoBehaviour
     public static singleton Instance;
     public int performanceScore;
     public int totalNPCs;
-    public int days;
+    public int totaldays=7;
+    public int currentday=1;
+    public float[] SymptomProbabiityShiftParty = new float[10]; 
     private void Awake() 
     { 
     // If there is an instance, and it's not me, delete myself.
@@ -18,7 +20,8 @@ public class singleton : MonoBehaviour
         } 
     else 
         { 
-        Instance = this; 
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
         } 
     }
 }

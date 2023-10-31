@@ -18,7 +18,7 @@ public class gamemanager : MonoBehaviour
     public XRayClick XRayClick;
     [HideInInspector] public int NPCsThisDay;
     [HideInInspector] public int CurrentNPC = 0;
-    public int days;
+    public int currentday;
     public GameObject toolkit;
     public GameObject accept;
     public GameObject deny;
@@ -44,7 +44,6 @@ public class gamemanager : MonoBehaviour
     public int[] NPCqueue;
     [SerializeField] private int[] patientDiseaseList;
     private bool scriptedNPCvisible;
-    public GameObject singleton;
     public GameObject sceneManager;
     public int[] oddsForEachDiesease = new int[5];
     [SerializeField] private float[] OddsForSymptomsNoDiesase = new float[10];
@@ -53,6 +52,7 @@ public class gamemanager : MonoBehaviour
     [SerializeField] private float[] OddsForSymptomsMegaDisease = new float[10];
     [SerializeField] private float[] OddsForSymptomsDehydration = new float[10];
     [HideInInspector] public bool[] patientSymptomList = new bool[10];
+    private float[] currentDayProbabilityInjector = new float[10];
     [HideInInspector] public int diseaseType;
 
 
@@ -62,15 +62,24 @@ public class gamemanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        days = singleton.GetComponent<singleton>().days;
+        currentday = singleton.Instance.currentday;
         NPCsThisDay = NPCqueue.Length;
         NPCRender = NPC.GetComponent<Renderer>();
         BossRender = Boss.GetComponent<Renderer>();
         /*for(int i=0;i<ScriptedNPC.Length;i++){
             scriptedNPCRenderers[i] = ScriptedNPC[i].GetComponent<Renderer>();
         }*/
-        spawnNPC();
         textObject.text = string.Empty;
+
+        if(singleton.Instance.currentday==2){
+            currentDayProbabilityInjector=singleton.Instance.SymptomProbabiityShiftParty;
+        }
+        else{
+            for(int i=0;i<10;i++)
+                currentDayProbabilityInjector[i]=0;
+        }
+
+        spawnNPC();
     }
 
     // Update is called once per frame
@@ -171,9 +180,9 @@ public class gamemanager : MonoBehaviour
         entering = false;
         if (CurrentNPC < NPCsThisDay)
         {
-            singleton.GetComponent<singleton>().totalNPCs++;
-            performaceRange = (float)(singleton.GetComponent<singleton>().totalNPCs - wrongfullyApproves) / (float)singleton.GetComponent<singleton>().totalNPCs;
-            wrongfullyDetainedPercentage = (float)wrongfullyDetains / (float)singleton.GetComponent<singleton>().totalNPCs;
+            singleton.Instance.totalNPCs++;
+            performaceRange = (float)(singleton.Instance.totalNPCs - wrongfullyApproves) / (float)singleton.Instance.totalNPCs;
+            wrongfullyDetainedPercentage = (float)wrongfullyDetains / (float)singleton.Instance.totalNPCs;
             Debug.Log("Performance Range = " + performaceRange);
             Debug.Log("Wronfully Detained Percentage = " + wrongfullyDetainedPercentage);
             //Destroy(ActiveNPC);
@@ -181,8 +190,8 @@ public class gamemanager : MonoBehaviour
         }
         else
         {
-            singleton.GetComponent<singleton>().days++;
-            sceneManager.GetComponent<SceneManager>().startGame();
+            singleton.Instance.currentday++;
+            sceneManager.GetComponent<SceneManager>().nextDay();
         }
     }
 
@@ -193,7 +202,7 @@ public class gamemanager : MonoBehaviour
         {
             correctDetains++;
             totalDetains++;
-            singleton.GetComponent<singleton>().performanceScore += 2;
+            singleton.Instance.performanceScore += 2;
         }
         else
         {
@@ -208,12 +217,12 @@ public class gamemanager : MonoBehaviour
         if (diseaseType == 3)
         {
             wrongfullyApproves++;
-            singleton.GetComponent<singleton>().performanceScore -= 5;
+            singleton.Instance.performanceScore -= 5;
         }
         else
         {
             correctApproves++;
-            singleton.GetComponent<singleton>().performanceScore += 1;
+            singleton.Instance.performanceScore += 1;
         }
     }
 
@@ -247,7 +256,7 @@ public class gamemanager : MonoBehaviour
         }
         for (int i = 0; i < 10; i++)
         {
-            if (Random.Range(0.0f, 1.0f) <= activeDiseaseOdds[i])
+            if (Random.Range(0.0f, 1.0f) <= activeDiseaseOdds[i]+currentDayProbabilityInjector[i])
             {
                 patientSymptomList[i] = true;
             }

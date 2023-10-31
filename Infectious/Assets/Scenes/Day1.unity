@@ -955,7 +955,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   performanceScore: 0
   totalNPCs: 0
-  days: 0
+  totaldays: 2
+  currentday: 1
+  SymptomProbabiityShiftParty:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
 --- !u!4 &232645781
 Transform:
   m_ObjectHideFlags: 0
@@ -1643,7 +1655,7 @@ MonoBehaviour:
   XRayClick: {fileID: 721552166}
   NPCsThisDay: 3
   CurrentNPC: 0
-  days: 0
+  currentday: 0
   toolkit: {fileID: 1204143093}
   accept: {fileID: 1038860611}
   deny: {fileID: 1161888451}
@@ -1657,9 +1669,8 @@ MonoBehaviour:
   ScriptedNPC:
   - {fileID: 2031866155}
   randomNPCs: {fileID: 1578833394}
-  NPCqueue: 00000000000000000000000000000000000000000000000000000000
+  NPCqueue: 000000000000000000000000
   patientDiseaseList: 00000000000000000000000000000000000000000000000000000000
-  singleton: {fileID: 232645779}
   sceneManager: {fileID: 622583139}
   oddsForEachDiesease: 0400000004000000040000000400000004000000
   OddsForSymptomsNoDiesase:
