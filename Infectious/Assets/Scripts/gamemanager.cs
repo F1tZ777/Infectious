@@ -18,6 +18,7 @@ public class gamemanager : MonoBehaviour
     public XRayClick XRayClick;
     [HideInInspector] public int NPCsThisDay;
     [HideInInspector] public int CurrentNPC = 0;
+    public int days;
     public GameObject toolkit;
     public GameObject accept;
     public GameObject deny;
@@ -44,6 +45,7 @@ public class gamemanager : MonoBehaviour
     [SerializeField] private int[] patientDiseaseList;
     private bool scriptedNPCvisible;
     public GameObject singleton;
+    public GameObject sceneManager;
     public int[] oddsForEachDiesease = new int[5];
     [SerializeField] private float[] OddsForSymptomsNoDiesase = new float[10];
     [SerializeField] private float[] OddsForSymptomsMinorCold = new float[10];
@@ -60,6 +62,7 @@ public class gamemanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        days = singleton.GetComponent<singleton>().days;
         NPCsThisDay = NPCqueue.Length;
         NPCRender = NPC.GetComponent<Renderer>();
         BossRender = Boss.GetComponent<Renderer>();
@@ -178,7 +181,8 @@ public class gamemanager : MonoBehaviour
         }
         else
         {
-            spawnBoss();
+            singleton.GetComponent<singleton>().days++;
+            sceneManager.GetComponent<SceneManager>().startGame();
         }
     }
 
