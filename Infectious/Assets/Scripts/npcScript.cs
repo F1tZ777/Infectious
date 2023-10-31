@@ -30,8 +30,8 @@ public class npcScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("PlayCoughSFX", 1.0f, Random.Range(10.0f, 15.0f));
-        InvokeRepeating("PlayRunningNoseSFX", 1.0f, Random.Range(10.0f, 15.0f));
+        InvokeRepeating("PlayCoughSFX", 1.0f, Random.Range(25.0f, 30.0f));
+        InvokeRepeating("PlayRunningNoseSFX", 1.0f, Random.Range(20.0f, 25.0f));
     }
 
     // Update is called once per frame
