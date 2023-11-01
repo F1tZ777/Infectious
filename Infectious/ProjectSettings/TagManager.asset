@@ -6,6 +6,8 @@ TagManager:
   tags:
   - GameManager
   - NPC
+  - SceneLoader
+  - singleton
   layers:
   - Default
   - TransparentFX

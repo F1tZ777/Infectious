@@ -9,6 +9,8 @@ public class Dialogue : MonoBehaviour
     public SceneManager SceneManager;
     public gamemanager manager;
     public npcAnimation animator;
+    public float playTime = 1.3f;
+    public AudioSource PlaySound;
 
     public TextMeshProUGUI textObject;
     [TextArea(2, 10)]
@@ -37,6 +39,10 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PlaySound.time > 1.3f)
+        {
+            PlaySound.Stop();
+        }
         /*if(Input.GetMouseButtonDown(0))
         {
             if (textObject.text == string.Empty)
@@ -58,25 +64,29 @@ public class Dialogue : MonoBehaviour
 
     public void StartDialogue()
     {
-        //textObject.text = string.Empty;
+        PlaySound.Play();
         StartCoroutine(TypeGreet());
+        //textObject.text = string.Empty; 
+        
+        
     }
 
     public void SymptomDialogue()
     {
+        PlaySound.Play();
         StartCoroutine(TypeSymptom());
     }
 
     public void AcceptedDialogue()
     {
+        PlaySound.Play();
         StartCoroutine(TypeAccepted());
-        
     }
 
     public void DeniedDialogue()
     {
+        PlaySound.Play();
         StartCoroutine(TypeDenied());
-        
     }
 
     public void BossDialogue()
@@ -113,7 +123,7 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeAccepted()
     {
-        if(!finishDialogue)
+        if (!finishDialogue)
         {
             textObject.text = "";
             textObject.text = greet[rand];
@@ -171,5 +181,13 @@ public class Dialogue : MonoBehaviour
         animator.ChangeAnimation(DENIED);
         yield return new WaitForSeconds(4.5f);
         manager.NextNPC();
+    }
+
+    IEnumerator PlayWritingSound()
+    {
+       
+            PlaySound.Play();
+            yield return new WaitForSeconds(playTime);
+     
     }
 }

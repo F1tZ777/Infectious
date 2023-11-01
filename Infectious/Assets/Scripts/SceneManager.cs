@@ -35,7 +35,7 @@ public class SceneManager : MonoBehaviour
         StartCoroutine(TransitionScene("MainMenuDemo"));
     }
 
-    IEnumerator TransitionScene(string sceneName)
+    public IEnumerator TransitionScene(string sceneName)
     {
         transition.SetTrigger("Start");
 
