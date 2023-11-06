@@ -66,9 +66,7 @@ public class Dialogue : MonoBehaviour
     {
         PlaySound.Play();
         StartCoroutine(TypeGreet());
-        //textObject.text = string.Empty; 
-        
-        
+        //textObject.text = string.Empty;
     }
 
     public void SymptomDialogue()
