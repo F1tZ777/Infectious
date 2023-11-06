@@ -1746,7 +1746,7 @@ MonoBehaviour:
   ScriptedNPC:
   - {fileID: 2031866155}
   randomNPCs: {fileID: 1578833394}
-  NPCqueue: 000000000000000000000000
+  NPCqueue: 00000000
   patientDiseaseList: 00000000000000000000000000000000000000000000000000000000
   sceneManager: {fileID: 622583139}
   oddsForEachDiesease: 0400000004000000040000000400000004000000
@@ -2328,10 +2328,10 @@ RectTransform:
   - {fileID: 837472060}
   - {fileID: 395204783}
   - {fileID: 733246520}
-  - {fileID: 1742398783}
   - {fileID: 573464560}
   - {fileID: 1357897354}
   - {fileID: 1502021167}
+  - {fileID: 1742398783}
   m_Father: {fileID: 913308091}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4281,7 +4281,7 @@ RectTransform:
   - {fileID: 1827126138}
   - {fileID: 704489914}
   m_Father: {fileID: 371474180}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10473,7 +10473,7 @@ RectTransform:
   - {fileID: 652248538}
   - {fileID: 1726481977}
   m_Father: {fileID: 371474180}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11555,7 +11555,7 @@ RectTransform:
   - {fileID: 922244372}
   - {fileID: 1366212153}
   m_Father: {fileID: 371474180}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13791,7 +13791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1742398780
 Animator:
   serializedVersion: 4
@@ -13863,7 +13863,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 371474180}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

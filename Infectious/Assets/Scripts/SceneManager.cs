@@ -12,8 +12,13 @@ public class SceneManager : MonoBehaviour
         StartCoroutine(TransitionScene("Day1"));
     }
 
+    public void endDay()
+    {
+        StartCoroutine(TransitionScene("DayEnd"));
+    }
+
     public void nextDay(){
-        if(singleton.Instance.currentday<=singleton.Instance.totaldays){
+        if(singleton.Instance.currentday<singleton.Instance.totaldays){
             StartCoroutine(TransitionScene("Day"+singleton.Instance.currentday));
         }
         else

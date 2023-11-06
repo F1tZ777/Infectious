@@ -190,8 +190,8 @@ public class gamemanager : MonoBehaviour
         }
         else
         {
-            singleton.Instance.currentday++;
-            sceneManager.GetComponent<SceneManager>().nextDay();
+            //singleton.Instance.currentday++;
+            sceneManager.GetComponent<SceneManager>().endDay();
         }
     }
 
