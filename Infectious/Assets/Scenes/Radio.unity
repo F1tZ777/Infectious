@@ -499,6 +499,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 884366114}
+  - component: {fileID: 884366115}
   m_Layer: 0
   m_Name: RadioManager
   m_TagString: Untagged
@@ -521,6 +522,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &884366115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884366112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f668df6978f8dfe4f814d20ab5b4b749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  singleton: {fileID: 177233227}
+  sceneManager: {fileID: 1759772127}
+  radiotext: {fileID: 1684676621}
+  radioD1:
+  - Gooood morning listeners! Once again you are listening to the Vanastaria entertainment
+    radio network!
+  - Today the Vanastaria border is opening to refugees from other countries, along
+    with a disease checkpoint.
+  - "The Vanastarian public has had a variety of reactions to the opening because
+    well, obviously we don\u2019t want to bring the White Death into our homes, but
+    hey, we\u2019ll just have to see how it goes."
+  - As always, stick to VERN for daily news updates!
+  radioD2:
+  - Gooood morning listeners! Once again you are listening to the Vanastaria entertainment
+    radio network!
+  - Today marks the second day that the border has been opened to refugees, however
+    the rate at which people can be let in is definitely taking a while.
+  - So some have decided to kill time with a party outside of the border which included
+    alcohol, drugs, the whole shabang!
+  - Anyways, of course guards eventually caught wind and shut everything down, As
+    always, stick to VERN for daily news updates!
+  radioD3:
+  - Gooood morning listeners! Once again you are listening to the Vanastaria Entertainment
+    radio network!
+  - Big headline today is the big scary new conspiracy group that has attempted to
+    stop refugees from entering the country by attacking them outside the border.
+  - "However, the government has said that this isn\u2019t a big issue and the authorities
+    have already begun to round up all these guys."
+  - As always, be sure to tune in tomorrow for more news on VERN!
 --- !u!1 &987821378
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +871,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1675331500
 Animator:
   serializedVersion: 4
@@ -920,7 +962,7 @@ GameObject:
   - component: {fileID: 1684676622}
   - component: {fileID: 1684676621}
   m_Layer: 5
-  m_Name: DayX End
+  m_Name: RadioText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -966,7 +1008,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Day X Completed
+  m_text: Radio Text Here
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -1009,7 +1051,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}

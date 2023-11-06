@@ -8,7 +8,7 @@ public class singleton : MonoBehaviour
     public int performanceScore;
     public int totalNPCs;
     public int totaldays=7;
-    public int currentday=1;
+    public int currentday=0;
     public float[] SymptomProbabiityShiftParty = new float[10]; 
     private void Awake() 
     { 

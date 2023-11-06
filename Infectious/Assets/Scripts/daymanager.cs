@@ -20,7 +20,7 @@ public class daymanager : MonoBehaviour
     IEnumerator DayEnd()
     {
         yield return new WaitForSeconds(10);
-        sceneManager.nextDay();
-        singleton.Instance.currentday++;
+        singleton.Instance.currentday = singleton.Instance.currentday + 1;
+        sceneManager.Radio();
     }
 }

@@ -9,7 +9,7 @@ public class SceneManager : MonoBehaviour
     public Animator transition;
     public void startGame()
     {
-        StartCoroutine(TransitionScene("Day1"));
+        StartCoroutine(TransitionScene("Radio"));
     }
 
     public void endDay()
@@ -18,7 +18,7 @@ public class SceneManager : MonoBehaviour
     }
 
     public void nextDay(){
-        if(singleton.Instance.currentday<singleton.Instance.totaldays){
+        if(singleton.Instance.currentday<=singleton.Instance.totaldays){
             StartCoroutine(TransitionScene("Day"+singleton.Instance.currentday));
         }
         else
@@ -28,6 +28,11 @@ public class SceneManager : MonoBehaviour
     public void GameQuit() {
         Application.Quit();
         Debug.Log("Quit");
+    }
+
+    public void Radio()
+    {
+        StartCoroutine(TransitionScene("Radio"));
     }
 
     public void End()
