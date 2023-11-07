@@ -45,6 +45,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Behind Window
+    uniqueID: 1312420389
+    locked: 0
+  - name: Behind window shadows
+    uniqueID: 170562391
+    locked: 0
+  - name: Background
+    uniqueID: 262540349
+    locked: 0
   - name: Body
     uniqueID: 3869918971
     locked: 0
