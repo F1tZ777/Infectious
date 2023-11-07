@@ -1078,11 +1078,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   performanceScore: 0
   totalNPCs: 0
-  totaldays: 2
+  totaldays: 3
   currentday: 1
-  masterVolume: 0
-  musicVolume: 0
-  sfxVolume: 0
+  totalDetainPercentage: 0
+  totalApprovePercentage: 0
   SymptomProbabiityShiftParty:
   - 1
   - 1
@@ -1996,7 +1995,7 @@ MonoBehaviour:
   ScriptedNPC:
   - {fileID: 2031866155}
   randomNPCs: {fileID: 1578833394}
-  NPCqueue: 00000000000000000000000000000000000000000000000000000000
+  NPCqueue: 000000000000000000000000
   patientDiseaseList: 00000000000000000000000000000000000000000000000000000000
   sceneManager: {fileID: 622583139}
   oddsForEachDiesease: 0400000004000000040000000400000004000000
@@ -10309,10 +10308,8 @@ MonoBehaviour:
 
     - Cough
 
-    - Throat inflammation
-
-    -
-    Running nose
+    - Running
+    nose
 
     - Fever
 
@@ -16193,16 +16190,10 @@ MonoBehaviour:
   - There must have been a mistake. Please, run the tests again
   - No. No. NO!!
   - This country was my last hope. It is over for me now
-  boss:
-  - Greetings, inspector
-  - I have watched over you. It seems that you have gotten the hang of this line
-    of work.
-  - Do not worry about being right or wrong for now. This is merely a trial run as
-    you know. Just to get you accustomized to the work.
-  - Hopefully we will not have to resort to performing these border checks, as the
-    disease continues to spread.
-  - You may leave now. I expect great things from you.
-  - Safe travels. And thank you for participating in this trial run...
+  bossGoodEnd: []
+  bossBadEnd: []
+  bossFiredEnd: []
+  bossArrestedEnd: []
 --- !u!82 &2000231174
 AudioSource:
   m_ObjectHideFlags: 0

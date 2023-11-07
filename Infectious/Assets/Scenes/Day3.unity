@@ -1090,11 +1090,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   performanceScore: 0
   totalNPCs: 0
-  totaldays: 2
+  totaldays: 3
   currentday: 1
-  masterVolume: 1
-  musicVolume: 1
-  sfxVolume: 1
+  totalDetainPercentage: 0
+  totalApprovePercentage: 0
   SymptomProbabiityShiftParty:
   - 1
   - 1
@@ -2020,7 +2019,7 @@ MonoBehaviour:
   ScriptedNPC:
   - {fileID: 2031866155}
   randomNPCs: {fileID: 1578833394}
-  NPCqueue: 00000000000000000000000000000000000000000000000000000000
+  NPCqueue: 000000000000000000000000
   patientDiseaseList: 00000000000000000000000000000000000000000000000000000000
   sceneManager: {fileID: 622583139}
   oddsForEachDiesease: 0400000004000000040000000400000004000000
@@ -4326,7 +4325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &575675780
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10333,10 +10332,8 @@ MonoBehaviour:
 
     - Cough
 
-    - Throat inflammation
-
-    -
-    Running nose
+    - Running
+    nose
 
     - Fever
 
@@ -13598,7 +13595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1699311649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16229,16 +16226,33 @@ MonoBehaviour:
   - There must have been a mistake. Please, run the tests again
   - No. No. NO!!
   - This country was my last hope. It is over for me now
-  boss:
-  - Greetings, inspector
-  - I have watched over you. It seems that you have gotten the hang of this line
-    of work.
-  - Do not worry about being right or wrong for now. This is merely a trial run as
-    you know. Just to get you accustomized to the work.
-  - Hopefully we will not have to resort to performing these border checks, as the
-    disease continues to spread.
-  - You may leave now. I expect great things from you.
-  - Safe travels. And thank you for participating in this trial run...
+  bossGoodEnd:
+  - Greetings inspector
+  - I have been keeping a watchful eye on your performance this week and I must say
+    you have proven yourself to be exceptional
+  - You have correctly confirmed the vast majority of infected persons so far, and
+    responded accordingly even with our limited technology
+  - You will be a great asset to Vanastaria
+  bossBadEnd:
+  - Greetings inspector
+  - I have been keeping a close watch on your performance. And I must say that the
+    results have been disappointing
+  - You have allowed a vast majority of infected to enter the country. It has been
+    a complete headache to detain all of these immigrants
+  - I fear for the consequences of your actions towards Vanastaria
+  bossFiredEnd:
+  - Greetings inspector
+  - I have arrived to inform you of your stubbornness
+  - You have denied every single person who has come across this border, treating
+    some who are not infected unfairly
+  - I apologize, but I must relieve you from your duties
+  bossArrestedEnd:
+  - Inspector
+  - Your negligence have arisen our attention. You have approved everyone who comes
+    across this border
+  - The government suspected you as a potential threat to Vanastaria, as your actions
+    may have been purposely done
+  - Stay still, you are under arrest!
 --- !u!82 &2000231174
 AudioSource:
   m_ObjectHideFlags: 0

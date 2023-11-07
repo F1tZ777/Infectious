@@ -23,7 +23,13 @@ public class Dialogue : MonoBehaviour
     [TextArea(2, 10)]
     public string[] denied;
     [TextArea(2, 10)]
-    public string[] boss;
+    public string[] bossGoodEnd;
+    [TextArea(2, 10)]
+    public string[] bossBadEnd;
+    [TextArea(2, 10)]
+    public string[] bossFiredEnd;
+    [TextArea(2, 10)]
+    public string[] bossArrestedEnd;
 
     private int rand;
     private bool finishDialogue;
@@ -90,7 +96,19 @@ public class Dialogue : MonoBehaviour
 
     public void BossDialogue()
     {
-        StartCoroutine(TypeBoss());
+        if(singleton.Instance.totalDetainPercentage == 1)
+            StartCoroutine(TypeBossFired());
+        else if(singleton.Instance.totalApprovePercentage == 1)
+            StartCoroutine(TypeBossArrested());
+        else
+        {
+            if (singleton.Instance.performanceScore > 0)
+            {
+                StartCoroutine(TypeBossGood());
+            }
+            else
+                StartCoroutine(TypeBossBad());
+        }
     }
 
 
@@ -160,19 +178,75 @@ public class Dialogue : MonoBehaviour
         manager.NextNPC();
     }
 
-    IEnumerator TypeBoss()
+    IEnumerator TypeBossGood()
     {
-        for (int i = 0; i < boss.Length; i++) {
-            foreach (char c in boss[i].ToCharArray())
+        for (int i = 0; i < bossGoodEnd.Length; i++) {
+            audiomanager.PlaySFX("PencilScratch");
+            foreach (char c in bossGoodEnd[i].ToCharArray())
             {
                 textObject.text += c;
                 yield return null;
             }
             yield return new WaitForSeconds(3);
-            textObject.text += "\n\n";
+            if (i < bossGoodEnd.Length - 1)
+                textObject.text += "\n\n";
         }
         yield return new WaitForSeconds(5);
-        SceneManager.End();
+        SceneManager.Ending();
+    }
+
+    IEnumerator TypeBossBad()
+    {
+        for (int i = 0; i < bossBadEnd.Length; i++)
+        {
+            audiomanager.PlaySFX("PencilScratch");
+            foreach (char c in bossBadEnd[i].ToCharArray())
+            {
+                textObject.text += c;
+                yield return null;
+            }
+            yield return new WaitForSeconds(3);
+            if (i < bossBadEnd[i].Length - 1)
+                textObject.text += "\n\n";
+        }
+        yield return new WaitForSeconds(5);
+        SceneManager.Ending();
+    }
+
+    IEnumerator TypeBossFired()
+    {
+        for (int i = 0; i < bossFiredEnd.Length; i++)
+        {
+            audiomanager.PlaySFX("PencilScratch");
+            foreach (char c in bossFiredEnd[i].ToCharArray())
+            {
+                textObject.text += c;
+                yield return null;
+            }
+            yield return new WaitForSeconds(3);
+            if (i < bossFiredEnd.Length - 1)
+                textObject.text += "\n\n";
+        }
+        yield return new WaitForSeconds(5);
+        SceneManager.Ending();
+    }
+
+    IEnumerator TypeBossArrested()
+    {
+        for (int i = 0; i < bossArrestedEnd.Length; i++)
+        {
+            audiomanager.PlaySFX("PencilScratch");
+            foreach (char c in bossArrestedEnd[i].ToCharArray())
+            {
+                textObject.text += c;
+                yield return null;
+            }
+            yield return new WaitForSeconds(3);
+            if (i < bossArrestedEnd.Length - 1)
+                textObject.text += "\n\n";
+        }
+        yield return new WaitForSeconds(5);
+        SceneManager.Ending();
     }
 
     IEnumerator Denied()

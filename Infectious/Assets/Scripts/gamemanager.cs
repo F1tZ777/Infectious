@@ -73,7 +73,7 @@ public class gamemanager : MonoBehaviour
         }*/
         textObject.text = string.Empty;
 
-        if(singleton.Instance.currentday==2){
+        if(singleton.Instance.currentday==3){
             currentDayProbabilityInjector=singleton.Instance.SymptomProbabiityShiftParty;
         }
         else{
@@ -194,9 +194,6 @@ public class gamemanager : MonoBehaviour
         entering = false;
         if (CurrentNPC < NPCsThisDay)
         {
-            singleton.Instance.totalNPCs++;
-            performaceRange = (float)(singleton.Instance.totalNPCs - wrongfullyApproves) / (float)singleton.Instance.totalNPCs;
-            wrongfullyDetainedPercentage = (float)wrongfullyDetains / (float)singleton.Instance.totalNPCs;
             Debug.Log("Performance Range = " + performaceRange);
             Debug.Log("Wronfully Detained Percentage = " + wrongfullyDetainedPercentage);
             //Destroy(ActiveNPC);
@@ -204,8 +201,11 @@ public class gamemanager : MonoBehaviour
         }
         else
         {
-            //singleton.Instance.currentday++;
-            sceneManager.GetComponent<SceneManager>().endDay();
+            if (singleton.Instance.currentday < singleton.Instance.totaldays)
+                //singleton.Instance.currentday++;
+                sceneManager.GetComponent<SceneManager>().endDay();
+            else
+                spawnBoss();
         }
     }
 
@@ -215,15 +215,15 @@ public class gamemanager : MonoBehaviour
         if (diseaseType == 3)
         {
             correctDetains++;
-            totalDetains++;
             singleton.Instance.performanceScore += 2;
         }
         else
         {
             wrongfullyDetains++;
-            totalDetains++;
+            singleton.Instance.performanceScore -= 1;
         }
-
+        singleton.Instance.totalDetains++;
+        CalculatePercentage();
     }
     public void Approve()
     {
@@ -238,6 +238,14 @@ public class gamemanager : MonoBehaviour
             correctApproves++;
             singleton.Instance.performanceScore += 1;
         }
+        CalculatePercentage();
+    }
+
+    public void CalculatePercentage()
+    {
+        singleton.Instance.totalNPCs++;
+        singleton.Instance.totalDetainPercentage = (float)singleton.Instance.totalDetains / (float)singleton.Instance.totalNPCs;
+        singleton.Instance.totalApprovePercentage = ((float)singleton.Instance.totalNPCs - (float)singleton.Instance.totalDetains) / (float)singleton.Instance.totalNPCs;
     }
 
     private void InitializeNPC(int disease)

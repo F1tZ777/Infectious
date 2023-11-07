@@ -15,17 +15,26 @@ EditorBuildSettings:
     path: Assets/Scenes/Day1.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/RadioD2.unity
-    guid: aa5a3ef90f212dd4cb5fe85fa3537ed8
-  - enabled: 1
     path: Assets/Scenes/Day2.unity
     guid: 456df3f85c69c454fb7c6ac1c0da9d88
   - enabled: 1
-    path: Assets/Scenes/RadioD3.unity
-    guid: 82f5870638c30b941a5c3d90d516c0d5
+    path: Assets/Scenes/Day3.unity
+    guid: ebd18dd45d038eb40860716ee920b45e
   - enabled: 1
     path: Assets/Scenes/DayEnd.unity
     guid: 1c3139349e645644d811cd45ede97825
+  - enabled: 1
+    path: Assets/Scenes/GoodEnd.unity
+    guid: 22b140f9089c5e2409d672ec28c11ce6
+  - enabled: 1
+    path: Assets/Scenes/BadEnd.unity
+    guid: c88efd6ac3f836042b39ab12028b7de3
+  - enabled: 1
+    path: Assets/Scenes/FiredEnd.unity
+    guid: dbbcd96fe54635f4b9ccf9ad9def101e
+  - enabled: 1
+    path: Assets/Scenes/ArrestedEnd.unity
+    guid: d0b6f8dce507289408cfdb9d43b4976b
   - enabled: 1
     path: Assets/Scenes/End.unity
     guid: 9de5a8ba2fb7cf347b86c1a389515d2c

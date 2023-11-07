@@ -154,14 +154,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   performanceScore: 0
   totalNPCs: 0
-  totaldays: 3
+  totaldays: 2
   currentday: 1
   totalDetains: 0
   totalDetainPercentage: 0
   totalApprovePercentage: 0
   SymptomProbabiityShiftParty:
   - 1
-  - 0
+  - 1
   - 1
   - 1
   - 1
@@ -506,7 +506,7 @@ GameObject:
   - component: {fileID: 884366114}
   - component: {fileID: 884366115}
   m_Layer: 0
-  m_Name: RadioManager
+  m_Name: EndingManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -536,44 +536,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 884366112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f668df6978f8dfe4f814d20ab5b4b749, type: 3}
+  m_Script: {fileID: 11500000, guid: 77d9ef508fa1c154cb3666a85acf43bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   singleton: {fileID: 177233227}
   sceneManager: {fileID: 1759772127}
   audiomanager: {fileID: 669803870}
-  radiotext: {fileID: 1684676621}
-  radioD1:
-  - Gooood morning listeners! Once again you are listening to the Vanastaria entertainment
-    radio network!
-  - Today the Vanastaria border is opening to refugees from other countries, along
-    with a disease checkpoint.
-  - "The Vanastarian public has had a variety of reactions to the opening because
-    well, obviously we don\u2019t want to bring the White Death into our homes, but
-    hey, we\u2019ll just have to see how it goes."
-  - As always, stick to VERN for daily news updates!
-  radioD2:
-  - Gooood morning listeners! Once again you are listening to the Vanastaria entertainment
-    radio network!
-  - Today marks the second day that the border has been opened to refugees, however
-    the rate at which people can be let in is definitely taking a while.
-  - So some have decided to kill time with a party outside of the border which included
-    alcohol, drugs, the whole shabang!
-  - Anyways, of course guards eventually caught wind and shut everything down, As
-    always, stick to VERN for daily news updates!
-  radioD3:
-  - Gooood morning listeners! Once again you are listening to the Vanastaria Entertainment
-    radio network!
-  - Big headline today is the big scary new conspiracy group that has attempted to
-    stop refugees from entering the country by attacking them outside the border.
-  - "However, the government has said that this isn\u2019t a big issue and the authorities
-    have already begun to round up all these guys."
-  - 'As always, be sure to tune in tomorrow for more news on VERN!
+  endingtext: {fileID: 1684676621}
+  goodEnd: 'Congratulations, Inspector. Due to your exceptional performance as the
+    border inspector of Vanastaria, you have contributed to preventing the White
+    Death disease from spreading into the country. The government awards you with
+    this Medal of Honor.
 
 
-    (While listening
-    to the radio, you found new tools to aid you and a torn piece of paper taken
-    from your reference book. Check your reference book)'
+    Glory be Vanastaria'
+  badEnd: 'Due to your poor performance as the border inspector of Vanastaria, you
+    have let too many infected people into the country. The disease spread like wildfire,
+    causing infection and death rates to skyrocket.
+
+
+    The fall of Vanastaria
+    is by your hands'
+  firedEnd: 
+  arrestedEnd: 'The police have arrived at your booth. Your negligence at performing
+    your duties have risen suspicion of the government. You have been arrested under
+    the suspicion of being a threat to Vanastaria.
+
+
+    Vanastaria will clean up
+    the mess you have made while you rot in a prison cell'
 --- !u!1 &987821378
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,7 +964,7 @@ GameObject:
   - component: {fileID: 1684676622}
   - component: {fileID: 1684676621}
   m_Layer: 5
-  m_Name: RadioText
+  m_Name: EndingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1019,7 +1010,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Radio Text Here
+  m_text: End Text Here
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -1046,8 +1037,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56
-  m_fontSizeBase: 56
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1229,7 +1220,7 @@ GameObject:
   - component: {fileID: 1841577281}
   - component: {fileID: 1841577280}
   m_Layer: 5
-  m_Name: Radio
+  m_Name: EndingPNG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1253,7 +1244,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 176}
-  m_SizeDelta: {x: 745.04, y: 332.75}
+  m_SizeDelta: {x: 745.04, y: 480.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1841577280
 MonoBehaviour:
@@ -1275,7 +1266,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 974d73af6f78dfa44b33ee78c7b53a2b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ffa4020077f85f4db0525ebdda9818c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
