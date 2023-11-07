@@ -156,6 +156,9 @@ MonoBehaviour:
   totalNPCs: 0
   totaldays: 2
   currentday: 1
+  masterVolume: 1
+  musicVolume: 1
+  sfxVolume: 1
   SymptomProbabiityShiftParty:
   - 1
   - 1
@@ -208,7 +211,7 @@ AudioSource:
   m_GameObject: {fileID: 308147961}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7313125436664898106, guid: 4e181070c3fbbf04bb588954f957e72d, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -388,7 +391,7 @@ AudioSource:
   m_GameObject: {fileID: 829807985}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 1704247732616703343, guid: 4e181070c3fbbf04bb588954f957e72d, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

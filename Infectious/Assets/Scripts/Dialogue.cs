@@ -9,8 +9,9 @@ public class Dialogue : MonoBehaviour
     public SceneManager SceneManager;
     public gamemanager manager;
     public npcAnimation animator;
-    public float playTime = 1.3f;
-    public AudioSource PlaySound;
+    //public float playTime = 1.3f;
+    //public AudioSource PlaySound;
+    public audiomanager audiomanager;
 
     public TextMeshProUGUI textObject;
     [TextArea(2, 10)]
@@ -39,10 +40,10 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlaySound.time > 1.3f)
-        {
-            PlaySound.Stop();
-        }
+        //if (PlaySound.time > 1.3f)
+        //{
+        //    PlaySound.Stop();
+        //}
         /*if(Input.GetMouseButtonDown(0))
         {
             if (textObject.text == string.Empty)
@@ -64,26 +65,26 @@ public class Dialogue : MonoBehaviour
 
     public void StartDialogue()
     {
-        PlaySound.Play();
+        audiomanager.PlaySFX("PencilScratch");
         StartCoroutine(TypeGreet());
         //textObject.text = string.Empty;
     }
 
     public void SymptomDialogue()
     {
-        PlaySound.Play();
+        audiomanager.PlaySFX("PencilScratch");
         StartCoroutine(TypeSymptom());
     }
 
     public void AcceptedDialogue()
     {
-        PlaySound.Play();
+        audiomanager.PlaySFX("PencilScratch");
         StartCoroutine(TypeAccepted());
     }
 
     public void DeniedDialogue()
     {
-        PlaySound.Play();
+        audiomanager.PlaySFX("PencilScratch");
         StartCoroutine(TypeDenied());
     }
 
@@ -181,11 +182,11 @@ public class Dialogue : MonoBehaviour
         manager.NextNPC();
     }
 
-    IEnumerator PlayWritingSound()
-    {
+    //IEnumerator PlayWritingSound()
+    //{
        
-            PlaySound.Play();
-            yield return new WaitForSeconds(playTime);
+    //        audiomanager.PlaySFX("PencilScratch");
+    //        yield return new WaitForSeconds(playTime);
      
-    }
+    //}
 }

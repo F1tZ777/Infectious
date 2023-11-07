@@ -16,6 +16,7 @@ public class gamemanager : MonoBehaviour
     public npcAnimation bossAnimator;
     public npcAnimation scriptedNPCAnimator;
     public XRayClick XRayClick;
+    public audiomanager audiomanager;
     [HideInInspector] public int NPCsThisDay;
     [HideInInspector] public int CurrentNPC = 0;
     public int currentday;
@@ -62,6 +63,7 @@ public class gamemanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audiomanager.PlayMusic("ClockTicking");
         currentday = singleton.Instance.currentday;
         NPCsThisDay = NPCqueue.Length;
         NPCRender = NPC.GetComponent<Renderer>();
