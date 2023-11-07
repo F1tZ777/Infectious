@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
-
+    
     public Animator transition;
     public void startGame()
     {
@@ -57,6 +57,7 @@ public class SceneManager : MonoBehaviour
 
     public void MainMenu()
     {
+        singleton.Instance.currentday = 1;
         StartCoroutine(TransitionScene("MainMenuDemo"));
     }
 

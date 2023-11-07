@@ -1890,6 +1890,7 @@ MonoBehaviour:
   NPC: {fileID: 1578833394}
   ActiveNPC: {fileID: 1578833394}
   Boss: {fileID: 2050972639}
+  Niko: {fileID: 2031866155}
   dialogueScript: {fileID: 2000231173}
   animator: {fileID: 1578833398}
   bossAnimator: {fileID: 2050972643}
@@ -1912,7 +1913,7 @@ MonoBehaviour:
   ScriptedNPC:
   - {fileID: 2031866155}
   randomNPCs: {fileID: 1578833394}
-  NPCqueue: 000000000000000000000000
+  NPCqueue: 00000000000000000000000000000000
   patientDiseaseList: 00000000000000000000000000000000000000000000000000000000
   sceneManager: {fileID: 622583139}
   oddsForEachDiesease: 0400000004000000040000000400000004000000
@@ -13902,7 +13903,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1742398780
 Animator:
   serializedVersion: 4
@@ -16584,6 +16585,9 @@ MonoBehaviour:
   - There must have been a mistake. Please, run the tests again
   - No. No. NO!!
   - This country was my last hope. It is over for me now
+  nikogreet: 
+  nikoaccepted: 
+  nikodenied: 
   bossGoodEnd: []
   bossBadEnd: []
   bossFiredEnd: []

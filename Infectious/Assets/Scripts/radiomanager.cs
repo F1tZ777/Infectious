@@ -16,7 +16,7 @@ public class radiomanager : MonoBehaviour
     [TextArea(2, 10)]
     public string[] radioD3;
     private string[] radio = new string[4];
-    private bool finishLine;
+    private bool finishTuning;
 
     int lineCount = 0;
     int day;
@@ -34,14 +34,17 @@ public class radiomanager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(finishTuning)
         {
-            if(radiotext.text == radio[lineCount])
-                NextLine();
-            else
+            if (Input.GetMouseButtonDown(0))
             {
-                StopAllCoroutines();
-                radiotext.text = radio[lineCount];
+                if (radiotext.text == radio[lineCount])
+                    NextLine();
+                else
+                {
+                    StopAllCoroutines();
+                    radiotext.text = radio[lineCount];
+                }
             }
         }
     }
@@ -55,6 +58,7 @@ public class radiomanager : MonoBehaviour
     }
     void InitializeRadioArr()
     {
+        finishTuning = true;
         if (singleton.Instance.currentday == 1)
         {
             for (int i = 0; i < radioD1.Length; i++)

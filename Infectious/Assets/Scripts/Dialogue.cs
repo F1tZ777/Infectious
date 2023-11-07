@@ -23,6 +23,12 @@ public class Dialogue : MonoBehaviour
     [TextArea(2, 10)]
     public string[] denied;
     [TextArea(2, 10)]
+    public string nikogreet;
+    [TextArea(2, 10)]
+    public string nikoaccepted;
+    [TextArea(2, 10)]
+    public string nikodenied;
+    [TextArea(2, 10)]
     public string[] bossGoodEnd;
     [TextArea(2, 10)]
     public string[] bossBadEnd;
@@ -92,6 +98,24 @@ public class Dialogue : MonoBehaviour
     {
         audiomanager.PlaySFX("PencilScratch");
         StartCoroutine(TypeDenied());
+    }
+
+    public void NikoStartDialogue()
+    {
+        audiomanager.PlaySFX("PencilScratch");
+        StartCoroutine(TypeNikoGreet());
+    }
+
+    public void NikoAcceptedDialogue()
+    {
+        audiomanager.PlaySFX("PencilScratch");
+        StartCoroutine(TypeNikoAccepted());
+    }
+
+    public void NikoDeniedDialogue()
+    {
+        audiomanager.PlaySFX("PencilScratch");
+        StartCoroutine(TypeNikoDenied());
     }
 
     public void BossDialogue()
@@ -174,6 +198,60 @@ public class Dialogue : MonoBehaviour
             yield return null;
         }
         animator.ChangeAnimation(DENIED);
+        yield return new WaitForSeconds(4.5f);
+        manager.NextNPC();
+    }
+
+    IEnumerator TypeNikoGreet()
+    {
+        finishDialogue = false;
+        foreach (char c in nikogreet.ToCharArray())
+        {
+            if (finishDialogue)
+            {
+                break;
+            }
+            textObject.text += c;
+            yield return null;
+        }
+        finishDialogue = true;
+    }
+
+    IEnumerator TypeNikoAccepted()
+    {
+        if (!finishDialogue)
+        {
+            StopCoroutine(TypeNikoGreet());
+            textObject.text = "";
+            textObject.text = nikogreet;
+            finishDialogue = true;
+        }
+        textObject.text += "\n\n";
+        foreach (char c in nikoaccepted.ToCharArray())
+        {
+            textObject.text += c;
+        }
+        //animator.ChangeAnimation("ScriptedNPCApproved");
+        yield return new WaitForSeconds(4.5f);
+        manager.NextNPC();
+    }
+
+    IEnumerator TypeNikoDenied()
+    {
+        if (!finishDialogue)
+        {
+            StopCoroutine(TypeNikoGreet());
+            textObject.text = "";
+            textObject.text = nikogreet;
+            finishDialogue = true;
+        }
+        textObject.text += "\n\n";
+        finishDialogue = false;
+        foreach (char c in nikodenied.ToCharArray())
+        {
+            textObject.text += c;
+        }
+        //animator.ChangeAnimation("ScriptedNPCDenied");
         yield return new WaitForSeconds(4.5f);
         manager.NextNPC();
     }

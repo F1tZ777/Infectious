@@ -11,6 +11,7 @@ public class gamemanager : MonoBehaviour
     public GameObject NPC;
     public GameObject ActiveNPC;
     public GameObject Boss;
+    public GameObject Niko;
     public Dialogue dialogueScript;
     public npcAnimation animator;
     public npcAnimation bossAnimator;
@@ -36,6 +37,7 @@ public class gamemanager : MonoBehaviour
     private Renderer NPCRender;
     //[SerializeField]private Renderer[] scriptedNPCRenderers;
     private Renderer BossRender;
+    private Renderer NikoRender;
     [HideInInspector] public float performaceRange;
     //[HideInInspector]public int performanceScore;
     [HideInInspector] public float wrongfullyDetainedPercentage;
@@ -45,6 +47,7 @@ public class gamemanager : MonoBehaviour
     public int[] NPCqueue;
     [SerializeField] private int[] patientDiseaseList;
     private bool scriptedNPCvisible;
+    private bool scriptedNPCdecide;
     public GameObject sceneManager;
     public int[] oddsForEachDiesease = new int[5];
     [SerializeField] private float[] OddsForSymptomsNoDiesase = new float[10];
@@ -68,6 +71,7 @@ public class gamemanager : MonoBehaviour
         NPCsThisDay = NPCqueue.Length;
         NPCRender = NPC.GetComponent<Renderer>();
         BossRender = Boss.GetComponent<Renderer>();
+        NikoRender = Niko.GetComponent<Renderer>();
         /*for(int i=0;i<ScriptedNPC.Length;i++){
             scriptedNPCRenderers[i] = ScriptedNPC[i].GetComponent<Renderer>();
         }*/
@@ -87,15 +91,17 @@ public class gamemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < ScriptedNPC.Length; i++)
-        {
-            if (ScriptedNPC[i].GetComponent<Renderer>().isVisible)
-            {
-                scriptedNPCvisible = true;
-            }
-        }
+        //for (int i = 0; i < ScriptedNPC.Length; i++)
+        //{
+        //    if (ScriptedNPC[i].GetComponent<Renderer>().isVisible)
+        //    {
+        //        scriptedNPCvisible = true;
+        //    }
+        //}
         if (animator.IsAnimationPlaying(animator._anim, ENTER) || animator.IsAnimationPlaying(animator._anim, "NPCAccept")
-            || animator.IsAnimationPlaying(animator._anim, "NPCDeny") || animator.IsAnimationPlaying(bossAnimator._anim, "BossEnter") || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "ScriptedNPCEnter"))
+            || animator.IsAnimationPlaying(animator._anim, "NPCDeny") || animator.IsAnimationPlaying(bossAnimator._anim, "BossEnter")
+            || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "ScriptedNPCEnter") || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "ScriptedNPCApproved")
+            || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "ScriptedNPCDenied"))
         {
             toolkit.SetActive(false);
             accept.SetActive(false);
@@ -105,7 +111,7 @@ public class gamemanager : MonoBehaviour
                 XRayUses.SetActive(false);
             }
         }
-        else if (!NPCRender.isVisible && !BossRender.isVisible && !scriptedNPCvisible)
+        else if (!NPCRender.isVisible && !BossRender.isVisible && /*!scriptedNPCvisible*/!NikoRender.isVisible)
         {
             toolkit.SetActive(false);
             accept.SetActive(false);
@@ -119,9 +125,9 @@ public class gamemanager : MonoBehaviour
         {
             if (!entering)
             {
-                if (NPCRender.isVisible || scriptedNPCvisible)
+                if (NPCRender.isVisible || /*scriptedNPCvisible*/NikoRender.isVisible)
                 {
-                    scriptedNPCvisible = false;
+                    //scriptedNPCvisible = false;
                     toolkit.SetActive(true);
                     accept.SetActive(true);
                     deny.SetActive(true);
@@ -129,7 +135,13 @@ public class gamemanager : MonoBehaviour
                     {
                         XRayUses.SetActive(true);
                     }
-                    dialogueScript.StartDialogue();
+                    if (/*scriptedNPCvisible*/NikoRender.isVisible)
+                    {
+                        dialogueScript.NikoStartDialogue();
+                        //scriptedNPCvisible = false;
+                    }
+                    else if (NPCRender.isVisible)
+                        dialogueScript.StartDialogue();
                     entering = true;
 
                     if (XRayClick.uses > 0)
@@ -170,6 +182,7 @@ public class gamemanager : MonoBehaviour
             ActiveNPC = ScriptedNPC[NPCqueue[CurrentNPC] - 1];
             InitializeNPC(patientDiseaseList[CurrentNPC]);
             //scriptedNPCAnimator.ChangeAnimation("ScriptedNPCEnter");
+            scriptedNPCdecide = true;
             ActiveNPC.GetComponent<npcAnimation>().ChangeAnimation("ScriptedNPCEnter");
         }
         //dialogueScript.StartDialogue();
@@ -211,7 +224,14 @@ public class gamemanager : MonoBehaviour
 
     public void Detain()
     {
-        dialogueScript.DeniedDialogue();
+        if (scriptedNPCdecide)
+        {
+            dialogueScript.NikoDeniedDialogue();
+            ActiveNPC.GetComponent<npcAnimation>().ChangeAnimation("ScriptedNPCDenied");
+            scriptedNPCdecide = false;
+        }
+        else
+            dialogueScript.DeniedDialogue();
         if (diseaseType == 3)
         {
             correctDetains++;
@@ -227,7 +247,14 @@ public class gamemanager : MonoBehaviour
     }
     public void Approve()
     {
-        dialogueScript.AcceptedDialogue();
+        if (scriptedNPCdecide)
+        {
+            dialogueScript.NikoAcceptedDialogue();
+            ActiveNPC.GetComponent<npcAnimation>().ChangeAnimation("ScriptedNPCApproved");
+            scriptedNPCdecide = false;
+        }
+        else
+            dialogueScript.AcceptedDialogue();
         if (diseaseType == 3)
         {
             wrongfullyApproves++;
