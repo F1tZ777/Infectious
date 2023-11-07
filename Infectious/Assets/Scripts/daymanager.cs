@@ -13,14 +13,14 @@ public class daymanager : MonoBehaviour
     void Start()
     {
         audiomanager.PlaySFX("DayEnd");
-        daytext.text = "Day " + singleton.currentday.ToString() + " Completed!";
+        daytext.text = "Day " + singleton.Instance.currentday.ToString() + " Completed!";
         StartCoroutine(DayEnd());
     }
 
     IEnumerator DayEnd()
     {
         yield return new WaitForSeconds(10);
-        singleton.Instance.currentday = singleton.Instance.currentday + 1;
+        singleton.Instance.currentday++;
         sceneManager.Radio();
     }
 }

@@ -356,7 +356,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febce1f06c613ac448e591bc21f19287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: []
+  music:
+  - name: RadioStatic
+    clip: {fileID: 8300000, guid: 4bd7aa7a536a8a24082919a4aad97f35, type: 3}
   sfx:
   - name: RadioDial
     clip: {fileID: 8300000, guid: a545b87291bccb346939bd9b81407df2, type: 3}
@@ -393,7 +395,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

@@ -98,14 +98,20 @@ public class gamemanager : MonoBehaviour
             toolkit.SetActive(false);
             accept.SetActive(false);
             deny.SetActive(false);
-            XRayUses.SetActive(false);
+            if (singleton.Instance.currentday >= 3)
+            {
+                XRayUses.SetActive(false);
+            }
         }
         else if (!NPCRender.isVisible && !BossRender.isVisible && !scriptedNPCvisible)
         {
             toolkit.SetActive(false);
             accept.SetActive(false);
             deny.SetActive(false);
-            XRayUses.SetActive(false);
+            if (singleton.Instance.currentday >= 3)
+            {
+                XRayUses.SetActive(false);
+            }
         }
         else
         {
@@ -117,7 +123,10 @@ public class gamemanager : MonoBehaviour
                     toolkit.SetActive(true);
                     accept.SetActive(true);
                     deny.SetActive(true);
-                    XRayUses.SetActive(true);
+                    if (singleton.Instance.currentday >= 3)
+                    {
+                        XRayUses.SetActive(true);
+                    }
                     dialogueScript.StartDialogue();
                     entering = true;
 
@@ -132,7 +141,10 @@ public class gamemanager : MonoBehaviour
                     toolkit.SetActive(false);
                     accept.SetActive(false);
                     deny.SetActive(false);
-                    XRayUses.SetActive(false);
+                    if (singleton.Instance.currentday >= 3)
+                    {
+                        XRayUses.SetActive(false);
+                    }
                     dialogueScript.BossDialogue();
                     entering = true;
                 }

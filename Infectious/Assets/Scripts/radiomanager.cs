@@ -48,7 +48,9 @@ public class radiomanager : MonoBehaviour
 
     IEnumerator WaitForSFX()
     {
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(5.8f);
+        audiomanager.PlayMusic("RadioStatic");
+        yield return new WaitForSeconds(0.2f);
         InitializeRadioArr();
     }
     void InitializeRadioArr()
