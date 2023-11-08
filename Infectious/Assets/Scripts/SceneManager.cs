@@ -57,7 +57,8 @@ public class SceneManager : MonoBehaviour
 
     public void MainMenu()
     {
-        singleton.Instance.currentday = 1;
+        singleton.Instance.resetVar();
+
         StartCoroutine(TransitionScene("MainMenuDemo"));
     }
 

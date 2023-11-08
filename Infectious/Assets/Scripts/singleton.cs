@@ -27,4 +27,12 @@ public class singleton : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         } 
     }
+
+    public void resetVar()
+    {
+        currentday = 1;
+        performanceScore = 0;
+        totalNPCs = 0;
+        totalDetains = 0;
+    }
 }
