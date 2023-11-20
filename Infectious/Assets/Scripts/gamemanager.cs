@@ -58,6 +58,7 @@ public class gamemanager : MonoBehaviour
     [HideInInspector] public bool[] patientSymptomList = new bool[10];
     private float[] currentDayProbabilityInjector = new float[10];
     [HideInInspector] public int diseaseType;
+    private bool referencebookopen=false;
 
 
 
@@ -125,7 +126,7 @@ public class gamemanager : MonoBehaviour
         {
             if (!entering)
             {
-                if (NPCRender.isVisible || /*scriptedNPCvisible*/NikoRender.isVisible)
+                if ((NPCRender.isVisible || /*scriptedNPCvisible*/NikoRender.isVisible) && !referencebookopen)
                 {
                     //scriptedNPCvisible = false;
                     toolkit.SetActive(true);
@@ -344,6 +345,14 @@ public class gamemanager : MonoBehaviour
         }
         return 5;
     }
+
+    public void openrefbook(){
+        referencebookopen=true;
+    }
+    public void closerefbook(){
+        referencebookopen=false;
+    }
+
 }
 
     
