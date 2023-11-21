@@ -10,9 +10,15 @@ public class singleton : MonoBehaviour
     public int totaldays;
     public int currentday;
     public int totalDetains;
+    public int wrongfullyDetains;
+    public int wrongfullyApproves;
     public float totalDetainPercentage;
     public float totalApprovePercentage;
+    public float wrongfullyDetainedPercentage;
+    public float wrongfullyApprovedPercentage;
     public float[] SymptomProbabiityShiftParty = new float[10]; 
+    [HideInInspector]public bool d5rebel=false, d6rebel=false, d7rebel=false;
+    public bool riot;
     private void Awake() 
     { 
     // If there is an instance, and it's not me, delete myself.

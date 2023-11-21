@@ -15,7 +15,23 @@ public class radiomanager : MonoBehaviour
     public string[] radioD2;
     [TextArea(2, 10)]
     public string[] radioD3;
-    private string[] radio = new string[4];
+    [TextArea(2, 10)]
+    public string[] radioD4;
+    [TextArea(2, 10)]
+    public string[] radioD5;
+    [TextArea(2, 10)]
+    public string[] radioD6;
+    [TextArea(2, 10)]
+    public string[] radioD7;
+    [TextArea(2, 10)]
+    public string[] radioD6Rebel;
+    [TextArea(2, 10)]
+    public string[] radioD7Rebel;
+    [TextArea(2, 10)]
+    public string[] radioRiot;
+
+
+    private string[] radio = new string[8];
     private bool finishTuning;
 
     int lineCount = 0;
@@ -59,42 +75,100 @@ public class radiomanager : MonoBehaviour
     void InitializeRadioArr()
     {
         finishTuning = true;
-        if (singleton.Instance.currentday == 1)
-        {
+        switch(singleton.Instance.currentday){
+        case 1:
             for (int i = 0; i < radioD1.Length; i++)
             {
                 radio[i] = radioD1[i];
             }
-        }
-        else if (singleton.Instance.currentday == 2)
-        {
+            break;
+        
+        case 2:
+        
             for (int i = 0; i < radioD2.Length; i++)
             {
                 radio[i] = radioD2[i];
             }
-        }
-        else if (singleton.Instance.currentday == 3)
-        {
+            break;
+        
+        case 3:
+        
             for (int i = 0; i < radioD3.Length; i++)
             {
                 radio[i] = radioD3[i];
             }
+            break;
+
+        case 4:
+        
+            for (int i = 0; i < radioD4.Length; i++)
+            {
+                radio[i] = radioD4[i];
+            }
+            break;
+
+        case 5:
+        
+            for (int i = 0; i < radioD5.Length; i++)
+            {
+                radio[i] = radioD5[i];
+            }
+            break;
+
+        case 6:
+            if(singleton.Instance.d5rebel){
+                for (int i = 0; i < radioD6Rebel.Length; i++)
+                {
+                radio[i] = radioD6Rebel[i];
+                }
+            }
+            else{
+                for (int i = 0; i < radioD6.Length; i++)
+                {
+                radio[i] = radioD6[i];
+                }
+            }
+            if(singleton.Instance.riot){
+                for (int i = radioD6.Length; i < radioD6.Length + radioRiot.Length; i++)
+                {
+                radio[i] = radioRiot[i-radioD6.Length];
+                }
+            }
+            break;
+
+        case 7:
+            if(singleton.Instance.d6rebel){
+                for (int i = 0; i < radioD7Rebel.Length; i++)
+                {
+                radio[i] = radioD7Rebel[i];
+                }
+                break;
+            }
+            else{
+                for (int i = 0; i < radioD7.Length; i++)
+                {
+                radio[i] = radioD7[i];
+                }
+                break;
+            }
+
         }
         StartCoroutine(RadioTextWrite());
     }
+    
 
     IEnumerator RadioTextWrite()
     {
         foreach (char c in radio[lineCount].ToCharArray())
         {
             radiotext.text += c;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.03f);
         }
     }
 
     void NextLine()
     {
-        if(lineCount < radio.Length - 1)
+        if(lineCount < radio.Length - 1&&radio[lineCount+1]!=null)
         {
             radiotext.text = "";
             lineCount++;

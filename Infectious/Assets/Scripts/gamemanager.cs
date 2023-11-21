@@ -28,10 +28,10 @@ public class gamemanager : MonoBehaviour
     public GameObject XRayUses;
     public TextMeshProUGUI textObject;
     public TMP_InputField notesText;
-    private int correctDetains;
-    private int wrongfullyDetains;
-    private int correctApproves;
-    private int wrongfullyApproves;
+    //private int correctDetains;
+    //private int wrongfullyDetains;
+    //private int correctApproves;
+    //private int wrongfullyApproves;
     //private int totalNPCs;
     private bool entering;
     private Renderer NPCRender;
@@ -78,12 +78,15 @@ public class gamemanager : MonoBehaviour
         }*/
         textObject.text = string.Empty;
 
-        if(singleton.Instance.currentday==3){
+        if(singleton.Instance.currentday==2){
             currentDayProbabilityInjector=singleton.Instance.SymptomProbabiityShiftParty;
         }
         else{
             for(int i=0;i<10;i++)
                 currentDayProbabilityInjector[i]=0;
+        }
+        if(currentday==6&&singleton.Instance.riot){
+            riot();
         }
 
         spawnNPC();
@@ -208,8 +211,8 @@ public class gamemanager : MonoBehaviour
         entering = false;
         if (CurrentNPC < NPCsThisDay)
         {
-            Debug.Log("Performance Range = " + performaceRange);
-            Debug.Log("Wronfully Detained Percentage = " + wrongfullyDetainedPercentage);
+            //Debug.Log("Performance Range = " + performaceRange);
+            //Debug.Log("Wronfully Detained Percentage = " + wrongfullyDetainedPercentage);
             //Destroy(ActiveNPC);
             spawnNPC();
         }
@@ -235,13 +238,13 @@ public class gamemanager : MonoBehaviour
             dialogueScript.DeniedDialogue();
         if (diseaseType == 3)
         {
-            correctDetains++;
+            //correctDetains++;
             singleton.Instance.performanceScore += 2;
         }
         else
         {
-            wrongfullyDetains++;
-            singleton.Instance.performanceScore -= 1;
+            singleton.Instance.wrongfullyDetains++;
+            singleton.Instance.performanceScore -= 3;
         }
         singleton.Instance.totalDetains++;
         CalculatePercentage();
@@ -258,13 +261,21 @@ public class gamemanager : MonoBehaviour
             dialogueScript.AcceptedDialogue();
         if (diseaseType == 3)
         {
-            wrongfullyApproves++;
-            singleton.Instance.performanceScore -= 5;
+            singleton.Instance.wrongfullyApproves++;
+            singleton.Instance.performanceScore -= 8;
         }
         else
         {
-            correctApproves++;
+            //correctApproves++;
             singleton.Instance.performanceScore += 1;
+        }
+        if(ActiveNPC.GetComponent<npcScript>().rebel){
+            switch(currentday){
+                case 5: singleton.Instance.d5rebel = true; break;
+                case 6: singleton.Instance.d6rebel = true; break;
+                case 7: singleton.Instance.d7rebel = true; break;
+                default: Debug.Log("YOU FUCKED UP REBEL CODE"); break;
+            }
         }
         CalculatePercentage();
     }
@@ -274,6 +285,14 @@ public class gamemanager : MonoBehaviour
         singleton.Instance.totalNPCs++;
         singleton.Instance.totalDetainPercentage = (float)singleton.Instance.totalDetains / (float)singleton.Instance.totalNPCs;
         singleton.Instance.totalApprovePercentage = ((float)singleton.Instance.totalNPCs - (float)singleton.Instance.totalDetains) / (float)singleton.Instance.totalNPCs;
+        singleton.Instance.wrongfullyDetainedPercentage = (float)singleton.Instance.wrongfullyDetains / (float)singleton.Instance.totalDetains;
+        singleton.Instance.wrongfullyApprovedPercentage = (float)singleton.Instance.wrongfullyApproves /((float)singleton.Instance.totalNPCs-(float)singleton.Instance.totalDetains);
+        if(wrongfullyDetainedPercentage>0.3f){
+            singleton.Instance.riot=true;
+        }
+        else{
+            singleton.Instance.riot=false;
+        }
     }
 
     private void InitializeNPC(int disease)
@@ -351,6 +370,10 @@ public class gamemanager : MonoBehaviour
     }
     public void closerefbook(){
         referencebookopen=false;
+    }
+
+    public void riot(){
+        singleton.Instance.performanceScore-=15;
     }
 
 }

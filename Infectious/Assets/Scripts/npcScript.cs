@@ -20,6 +20,7 @@ public class npcScript : MonoBehaviour
     [SerializeField]private GameObject []body;
     private int gender;
     public bool scriptedNPC;
+    public bool rebel;
     [HideInInspector]public bool []patientSymptomListREADONLYPLS;
     public AudioClip[] Cough;
     public AudioClip Sniff;

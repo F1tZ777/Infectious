@@ -154,22 +154,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   performanceScore: 0
   totalNPCs: 0
-  totaldays: 3
-  currentday: 1
+  totaldays: 7
+  currentday: 0
   totalDetains: 0
+  wrongfullyDetains: 0
+  wrongfullyApproves: 0
   totalDetainPercentage: 0
   totalApprovePercentage: 0
+  wrongfullyDetainedPercentage: 0
+  wrongfullyApprovedPercentage: 0
   SymptomProbabiityShiftParty:
-  - 1
   - 0
-  - 1
   - 0
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  d5rebel: 0
+  d6rebel: 0
+  d7rebel: 0
+  riot: 0
 --- !u!4 &177233228
 Transform:
   m_ObjectHideFlags: 0
@@ -574,6 +582,41 @@ MonoBehaviour:
     (While listening
     to the radio, you found new tools and a torn piece of paper. Check your reference
     book)'
+  radioD4:
+  - 
+  - 
+  - 
+  - 
+  radioD5:
+  - 
+  - 
+  - 
+  - 
+  radioD6:
+  - test
+  - test
+  - test
+  - test
+  radioD7:
+  - 
+  - 
+  - 
+  - 
+  radioD6Rebel:
+  - 
+  - 
+  - 
+  - 
+  radioD7Rebel:
+  - 
+  - 
+  - 
+  - 
+  radioRiot:
+  - Never
+  - Gonna
+  - Give
+  - You Up
 --- !u!1 &987821378
 GameObject:
   m_ObjectHideFlags: 0
