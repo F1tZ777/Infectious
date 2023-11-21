@@ -89,10 +89,10 @@ public class npcScript : MonoBehaviour
 
     public void RandomizerNPCAppearance(){
         gender = Random.Range(0,2);
-        for (int i = 0; i < hair.Length; i++)
-        {
-            hair[i].SetActive(false);
-        }
+        //for (int i = 0; i < hair.Length; i++)
+        //{
+        //    hair[i].SetActive(false);
+        //}
         for (int i=0; i<head.Length; i++){
             head[i].SetActive(false);
         }
@@ -109,14 +109,14 @@ public class npcScript : MonoBehaviour
             body[i].SetActive(false);
         }
 
-        if (gender == 0)
-        {
-            hair[Random.Range(0,1)].SetActive(true);
-        }
-        else
-        {
-            hair[Random.Range(2,3)].SetActive(true);
-        }
+        //if (gender == 0)
+        //{
+        //    hair[Random.Range(0,1)].SetActive(true);
+        //}
+        //else
+        //{
+        //    hair[Random.Range(2,3)].SetActive(true);
+        //}
 
         if (gender==0){
             head[Random.Range(0,1)].SetActive(true);
