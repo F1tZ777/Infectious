@@ -12,6 +12,7 @@ public class npcScript : MonoBehaviour
     [SerializeField]private float []OddsForSymptomsDehydration = new float[10];
     [HideInInspector]public bool []patientSymptomList = new bool[10];*/
     //[SerializeField]private int []patientDiseaseList;
+    [SerializeField]private GameObject[] hair;
     [SerializeField]private GameObject []head;
     [SerializeField]private GameObject []eyes;
     [SerializeField]private GameObject []nose;
@@ -88,7 +89,11 @@ public class npcScript : MonoBehaviour
 
     public void RandomizerNPCAppearance(){
         gender = Random.Range(0,2);
-        for(int i=0; i<head.Length; i++){
+        for (int i = 0; i < hair.Length; i++)
+        {
+            hair[i].SetActive(false);
+        }
+        for (int i=0; i<head.Length; i++){
             head[i].SetActive(false);
         }
         for(int i=0; i<eyes.Length; i++){
@@ -104,9 +109,17 @@ public class npcScript : MonoBehaviour
             body[i].SetActive(false);
         }
 
-        
-        if(gender==0){
-            head[Random.Range(0,2)].SetActive(true);
+        if (gender == 0)
+        {
+            hair[Random.Range(0,1)].SetActive(true);
+        }
+        else
+        {
+            hair[Random.Range(2,3)].SetActive(true);
+        }
+
+        if (gender==0){
+            head[Random.Range(0,1)].SetActive(true);
         }
         else{
             head[2].SetActive(true);
