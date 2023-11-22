@@ -22,6 +22,9 @@ public class gamemanager : MonoBehaviour
     [HideInInspector] public int CurrentNPC = 0;
     public int currentday;
     public GameObject toolkit;
+    public GameObject ApprovalDocument;
+    public GameObject ApprovalDocumentOpen;
+    public GameObject refBook;
     public GameObject accept;
     public GameObject deny;
     public GameObject XRayIcon;
@@ -108,8 +111,10 @@ public class gamemanager : MonoBehaviour
             || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "ScriptedNPCDenied"))
         {
             toolkit.SetActive(false);
-            accept.SetActive(false);
-            deny.SetActive(false);
+            ApprovalDocument.SetActive(false);
+            refBook.SetActive(false);
+            //accept.SetActive(false);
+            //deny.SetActive(false);
             if (singleton.Instance.currentday >= 3)
             {
                 XRayUses.SetActive(false);
@@ -118,8 +123,10 @@ public class gamemanager : MonoBehaviour
         else if (!NPCRender.isVisible && !BossRender.isVisible && /*!scriptedNPCvisible*/!NikoRender.isVisible)
         {
             toolkit.SetActive(false);
-            accept.SetActive(false);
-            deny.SetActive(false);
+            ApprovalDocument.SetActive(false);
+            refBook.SetActive(false);
+            //accept.SetActive(false);
+            //deny.SetActive(false);
             if (singleton.Instance.currentday >= 3)
             {
                 XRayUses.SetActive(false);
@@ -133,8 +140,10 @@ public class gamemanager : MonoBehaviour
                 {
                     //scriptedNPCvisible = false;
                     toolkit.SetActive(true);
-                    accept.SetActive(true);
-                    deny.SetActive(true);
+                    ApprovalDocument.SetActive(true);
+                    refBook.SetActive(true);
+                    //accept.SetActive(true);
+                    //deny.SetActive(true);
                     if (singleton.Instance.currentday >= 3)
                     {
                         XRayUses.SetActive(true);
@@ -157,8 +166,10 @@ public class gamemanager : MonoBehaviour
                 else if (BossRender.isVisible)
                 {
                     toolkit.SetActive(false);
-                    accept.SetActive(false);
-                    deny.SetActive(false);
+                    ApprovalDocument.SetActive(false);
+                    refBook.SetActive(false);
+                    //accept.SetActive(false);
+                    //deny.SetActive(false);
                     if (singleton.Instance.currentday >= 3)
                     {
                         XRayUses.SetActive(false);
@@ -228,6 +239,7 @@ public class gamemanager : MonoBehaviour
 
     public void Detain()
     {
+        ApprovalDocumentOpen.SetActive(false);
         if (scriptedNPCdecide)
         {
             dialogueScript.NikoDeniedDialogue();
@@ -251,6 +263,7 @@ public class gamemanager : MonoBehaviour
     }
     public void Approve()
     {
+        ApprovalDocumentOpen.SetActive(false);
         if (scriptedNPCdecide)
         {
             dialogueScript.NikoAcceptedDialogue();
