@@ -121,7 +121,7 @@ public class npcScript : MonoBehaviour
         //}
 
         if (gender==0){
-            head[Random.Range(0,1)].SetActive(true);
+            head[Random.Range(0,2)].SetActive(true);
         }
         else{
             head[2].SetActive(true);
