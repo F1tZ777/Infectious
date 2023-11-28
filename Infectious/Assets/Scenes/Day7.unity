@@ -1898,10 +1898,10 @@ MonoBehaviour:
   wrongfullyDetainedPercentage: 0
   totalDetains: 0
   ScriptedNPC:
-  - {fileID: 2031866155}
+  - {fileID: 422381494}
   randomNPCs: {fileID: 1578833394}
   NPCqueue: 000000000000000001000000000000000000000000000000
-  patientDiseaseList: 000000000000000000000000000000000000000000000000
+  patientDiseaseList: 000000000000000004000000000000000000000000000000
   sceneManager: {fileID: 622583139}
   oddsForEachDiesease: 0400000004000000040000000400000004000000
   OddsForSymptomsNoDiesase:
@@ -3310,6 +3310,7 @@ GameObject:
   - component: {fileID: 422381497}
   - component: {fileID: 422381496}
   - component: {fileID: 422381495}
+  - component: {fileID: 422381499}
   m_Layer: 0
   m_Name: Preggo Ladio
   m_TagString: Untagged
@@ -3417,6 +3418,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &422381499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422381494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3beaca2f04a7441a38f95962472f12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hair: []
+  head: []
+  eyes: []
+  nose: []
+  mouth: []
+  body: []
+  scriptedNPC: 1
+  rebel: 1
+  patientSymptomListREADONLYPLS: 
+  Cough: []
+  Sniff: {fileID: 0}
+  FemaleBreath: {fileID: 0}
+  MaleBreath: {fileID: 0}
+  AudioSource: {fileID: 0}
 --- !u!1 &428042937
 GameObject:
   m_ObjectHideFlags: 0
