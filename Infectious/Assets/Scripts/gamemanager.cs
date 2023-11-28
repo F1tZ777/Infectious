@@ -29,6 +29,7 @@ public class gamemanager : MonoBehaviour
     public GameObject deny;
     public GameObject XRayIcon;
     public GameObject XRayUses;
+    [SerializeField]private GameObject []xray_result;
     public TextMeshProUGUI textObject;
     public TMP_InputField notesText;
     //private int correctDetains;
@@ -199,6 +200,15 @@ public class gamemanager : MonoBehaviour
             //scriptedNPCAnimator.ChangeAnimation("ScriptedNPCEnter");
             scriptedNPCdecide = true;
             ActiveNPC.GetComponent<npcAnimation>().ChangeAnimation("ScriptedNPCEnter");
+        }
+
+         if(patientSymptomList[3] == true){
+            xray_result[1].SetActive(true);
+            xray_result[0].SetActive(false);
+        }
+        else{
+            xray_result[0].SetActive(true);
+            xray_result[1].SetActive(false);
         }
         //dialogueScript.StartDialogue();
         Debug.Log("CurrentNPC" + CurrentNPC);

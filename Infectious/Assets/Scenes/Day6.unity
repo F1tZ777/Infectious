@@ -958,8 +958,12 @@ MonoBehaviour:
   totaldays: 3
   currentday: 3
   totalDetains: 0
+  wrongfullyDetains: 0
+  wrongfullyApproves: 0
   totalDetainPercentage: 0
   totalApprovePercentage: 0
+  wrongfullyDetainedPercentage: 0
+  wrongfullyApprovedPercentage: 0
   SymptomProbabiityShiftParty:
   - 1
   - 0
@@ -971,6 +975,10 @@ MonoBehaviour:
   - 1
   - 1
   - 1
+  d5rebel: 0
+  d6rebel: 0
+  d7rebel: 0
+  riot: 0
 --- !u!4 &232645781
 Transform:
   m_ObjectHideFlags: 0
@@ -1874,10 +1882,16 @@ MonoBehaviour:
   CurrentNPC: 0
   currentday: 0
   toolkit: {fileID: 1204143093}
+  ApprovalDocument: {fileID: 0}
+  ApprovalDocumentOpen: {fileID: 0}
+  refBook: {fileID: 0}
   accept: {fileID: 1038860611}
   deny: {fileID: 1161888451}
   XRayIcon: {fileID: 721552158}
   XRayUses: {fileID: 733246519}
+  xray_result:
+  - {fileID: 775483511}
+  - {fileID: 576274397}
   textObject: {fileID: 1117914250}
   notesText: {fileID: 1657372353}
   performaceRange: 0
@@ -12699,6 +12713,7 @@ MonoBehaviour:
   - {fileID: 356469820}
   - {fileID: 1889727248}
   scriptedNPC: 0
+  rebel: 0
   patientSymptomListREADONLYPLS: 
   Cough:
   - {fileID: 8300000, guid: b809df10690305541b017bcd888681ac, type: 3}
@@ -16898,6 +16913,7 @@ MonoBehaviour:
   mouth: []
   body: []
   scriptedNPC: 1
+  rebel: 0
   patientSymptomListREADONLYPLS: 
   Cough:
   - {fileID: 8300000, guid: b809df10690305541b017bcd888681ac, type: 3}

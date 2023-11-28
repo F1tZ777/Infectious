@@ -1928,6 +1928,9 @@ MonoBehaviour:
   deny: {fileID: 1161888451}
   XRayIcon: {fileID: 721552158}
   XRayUses: {fileID: 733246519}
+  xray_result:
+  - {fileID: 775483511}
+  - {fileID: 576274397}
   textObject: {fileID: 1117914250}
   notesText: {fileID: 1657372353}
   performaceRange: 0

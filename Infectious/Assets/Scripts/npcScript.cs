@@ -18,6 +18,7 @@ public class npcScript : MonoBehaviour
     [SerializeField]private GameObject []nose;
     [SerializeField]private GameObject []mouth;
     [SerializeField]private GameObject []body;
+    
     private int gender;
     public bool scriptedNPC;
     public bool rebel;
@@ -156,6 +157,8 @@ public class npcScript : MonoBehaviour
         else{
             body[3].SetActive(true);
         }
+
+       
 
         
     }
