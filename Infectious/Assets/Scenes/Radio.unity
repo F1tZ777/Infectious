@@ -154,8 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   performanceScore: 0
   totalNPCs: 0
-  totaldays: 7
-  currentday: 0
+  totaldays: 3
+  currentday: 1
   totalDetains: 0
   wrongfullyDetains: 0
   wrongfullyApproves: 0
