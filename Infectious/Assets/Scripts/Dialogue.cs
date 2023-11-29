@@ -25,6 +25,8 @@ public class Dialogue : MonoBehaviour
     [TextArea(2, 10)]
     public string nikogreet;
     [TextArea(2, 10)]
+    public string[] rebelgreet;
+    [TextArea(2, 10)]
     public string nikoaccepted;
     [TextArea(2, 10)]
     public string nikodenied;
@@ -103,7 +105,12 @@ public class Dialogue : MonoBehaviour
     public void NikoStartDialogue()
     {
         audiomanager.PlaySFX("PencilScratch");
-        StartCoroutine(TypeNikoGreet());
+        if(singleton.Instance.currentday!=5){
+            StartCoroutine(TypeNikoGreet());
+        }
+        else{
+            StartCoroutine(TypeRebelGreet());
+        }
     }
 
     public void NikoAcceptedDialogue()
@@ -213,6 +220,22 @@ public class Dialogue : MonoBehaviour
             }
             textObject.text += c;
             yield return null;
+        }
+        finishDialogue = true;
+    }
+
+    IEnumerator TypeRebelGreet(){
+        finishDialogue = false;
+        for (int i = 0; i < rebelgreet.Length; i++) {
+            audiomanager.PlaySFX("PencilScratch");
+            foreach (char c in rebelgreet[i].ToCharArray())
+            {
+                textObject.text += c;
+                yield return null;
+            }
+            yield return new WaitForSeconds(3);
+            if (i < rebelgreet.Length - 1)
+                textObject.text += "\n\n";
         }
         finishDialogue = true;
     }
