@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 80
+  controlID: 72
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 81
+  controlID: 73
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 82
+  controlID: 74
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -485,7 +485,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 47196
+  m_LastSelectedObjectID: 28498
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -761,36 +761,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/TextMesh Pro/Fonts
+    - Assets/Sprites/UI Assets/Toolkit Assets/throat test
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/TextMesh Pro/Fonts
+  - Assets/Sprites/UI Assets/Toolkit Assets/throat test
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Github\Infectious\Infectious
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 226}
-    m_SelectedIDs: 9c870000
-    m_LastClickedID: 34716
-    m_ExpandedIDs: 00000000aa750000ac750000ae750000b0750000b4750000b6750000b8750000bc750000f07500001476000016760000
+    scrollPos: {x: 0, y: 98}
+    m_SelectedIDs: f6780000
+    m_LastClickedID: 30966
+    m_ExpandedIDs: 00000000e4750000e6750000e8750000ea750000ec750000ee750000f0750000f2750000f47500001a7600004c910000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Animation
-      m_OriginalName: Animation
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 30130
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
@@ -804,7 +804,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000aa750000ac750000ae750000b0750000b2750000b4750000b6750000b8750000ba750000bc750000
+    m_ExpandedIDs: 00000000e4750000e6750000e8750000ea750000ec750000ee750000f0750000f2750000f4750000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -934,7 +934,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: be29feffcedafeff3e02ffff4a05ffff1223ffff6229ffffa62effffb03affffb499ffffb69affff26fbffff026e00005a6f00008a820000128400002484000096840000fe8400001a85000056850000ba8500000a86000000870000028f0000669000000c960000fc9600003e97000096970000149a00006e9f0000f6a0000008a10000e2a1000010a30000faaa0000f6ab000074ac000086ac00006eae000086b00000acb10000eab1000028b2000088b3000024b6000098b80000c6b8000028b9000054b9000040ba0000
+      m_ExpandedIDs: 0efbffffaa6c0000386e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1240,7 +1240,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 0.44999063, y: 0.121245645, z: 0.6497596}
     speed: 2
-    m_Value: {x: 0.6378012, y: 0.081633, z: 0.6474434}
+    m_Value: {x: 0.44999063, y: 0.121245645, z: 0.6497596}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1293,7 +1293,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 4.9154344
     speed: 2
-    m_Value: 5.147052
+    m_Value: 4.9154344
   m_Ortho:
     m_Target: 1
     speed: 2

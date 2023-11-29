@@ -12138,6 +12138,7 @@ MonoBehaviour:
   HeavyMucus: {fileID: 21300000, guid: 301b22718fe118c43a7b835a96875a8c, type: 3}
   Healthy: {fileID: 21300000, guid: b5967986e10626f4bb533f0a7cb36f54, type: 3}
   InMouth: {fileID: 21300000, guid: c46c9449db741b04dae37df984f6e442, type: 3}
+  OriginalSprite: {fileID: 21300000, guid: 6ce1733852ce2a34cb5b2400b279507d, type: 3}
   BC2D: {fileID: 1284523256}
   MouthScreen: {fileID: 1452120223}
   swabTest: {fileID: 1284523250}
@@ -18696,6 +18697,7 @@ MonoBehaviour:
   - No. No. NO!!
   - This country was my last hope. It is over for me now
   nikogreet: 
+  rebelgreet: []
   nikoaccepted: 
   nikodenied: 
   bossGoodEnd: []
