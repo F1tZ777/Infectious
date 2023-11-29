@@ -15,7 +15,7 @@ C:/Github/Infectious/Infectious
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-55562
+60058
 Successfully changed project path to: C:/Github/Infectious/Infectious
 C:/Github/Infectious/Infectious
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ C:/Github/Infectious/Infectious
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [7004] Host "[IP] 192.168.100.201 [Port] 0 [Flags] 2 [Guid] 1789586068 [EditorId] 1789586068 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-P58CEPR) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [6128] Host "[IP] 192.168.100.201 [Port] 0 [Flags] 2 [Guid] 3713796863 [EditorId] 3713796863 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-P58CEPR) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [7004] Host "[IP] 192.168.100.201 [Port] 0 [Flags] 2 [Guid] 1789586068 [EditorId] 1789586068 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-P58CEPR) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [6128] Host "[IP] 192.168.100.201 [Port] 0 [Flags] 2 [Guid] 3713796863 [EditorId] 3713796863 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-P58CEPR) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 145.06 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 127.76 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.15f1 (e8e88683f834)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/Resources/UnitySubsystems
@@ -68,82 +68,82 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56704
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56368
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007418 seconds.
+Registered in 0.007698 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 123.60 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 129.52 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.756 seconds
+- Completed reload, in  0.744 seconds
 Domain Reload Profiling:
-	ReloadAssembly (757ms)
-		BeginReloadAssembly (77ms)
+	ReloadAssembly (745ms)
+		BeginReloadAssembly (78ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (561ms)
-			LoadAssemblies (74ms)
+		EndReloadAssembly (546ms)
+			LoadAssemblies (75ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (114ms)
+			SetupTypeCache (106ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (28ms)
-			SetupLoadedEditorAssemblies (358ms)
+			SetupLoadedEditorAssemblies (356ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (62ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (124ms)
+				InitializePlatformSupportModulesInManaged (63ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (130ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (118ms)
-				ProcessInitializeOnLoadMethodAttributes (52ms)
+				ProcessInitializeOnLoadAttributes (109ms)
+				ProcessInitializeOnLoadMethodAttributes (51ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008638 seconds.
+Registered in 0.008849 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Github\Infectious\Infectious\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Github\Infectious\Infectious\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 135.79 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 124.47 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.561 seconds
+- Completed reload, in  1.497 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1562ms)
-		BeginReloadAssembly (220ms)
+	ReloadAssembly (1498ms)
+		BeginReloadAssembly (232ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (124ms)
-		EndReloadAssembly (1212ms)
-			LoadAssemblies (103ms)
+			CreateAndSetChildDomain (137ms)
+		EndReloadAssembly (1144ms)
+			LoadAssemblies (99ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (287ms)
+			SetupTypeCache (269ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (83ms)
-			SetupLoadedEditorAssemblies (683ms)
+			RebuildScriptCaches (68ms)
+			SetupLoadedEditorAssemblies (656ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (17ms)
+				InitializePlatformSupportModulesInManaged (15ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (136ms)
-				BeforeProcessingInitializeOnLoad (136ms)
-				ProcessInitializeOnLoadAttributes (278ms)
-				ProcessInitializeOnLoadMethodAttributes (107ms)
-				AfterProcessingInitializeOnLoad (8ms)
+				RefreshPlugins (125ms)
+				BeforeProcessingInitializeOnLoad (134ms)
+				ProcessInitializeOnLoadAttributes (274ms)
+				ProcessInitializeOnLoadMethodAttributes (99ms)
+				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (6ms)
@@ -151,12 +151,12 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 1.41 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 1.28 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5547 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 43 unused Assets / (0.7 MB). Loaded Objects now: 6002.
-Memory consumption went from 234.8 MB to 234.1 MB.
-Total: 5.832700 ms (FindLiveObjects: 0.588300 ms CreateObjectMapping: 0.460700 ms MarkObjects: 4.422000 ms  DeleteObjects: 0.360400 ms)
+Unloading 5548 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 43 unused Assets / (0.7 MB). Loaded Objects now: 6003.
+Memory consumption went from 234.9 MB to 234.2 MB.
+Total: 5.375100 ms (FindLiveObjects: 0.560000 ms CreateObjectMapping: 0.540200 ms MarkObjects: 3.928600 ms  DeleteObjects: 0.345300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -171,13 +171,193 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 7417.178271 seconds.
-  path: Assets/Sprites/NPC Assets/Female NPC extra.png
-  artifactKey: Guid(77409efbba3c94f449941ebd7d862782) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/NPC Assets/Female NPC extra.png using Guid(77409efbba3c94f449941ebd7d862782) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cd0d742ba846bae812624cb6fd132eb') in 0.366988 seconds 
+  Time since last request: 5214.285005 seconds.
+  path: Assets/Sprites/UI Assets/Toolkit Assets/Ref Book/torn book right side.png
+  artifactKey: Guid(1bd28062e1fe99049837693118246d47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI Assets/Toolkit Assets/Ref Book/torn book right side.png using Guid(1bd28062e1fe99049837693118246d47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2155e3ee93e149bc62c9d8b03a679356') in 0.502496 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 12.777027 seconds.
-  path: Assets/Sprites/NPC Assets/Scripted NPC/Preggo Ladio.png
-  artifactKey: Guid(7b44c378b531bab4d8a49311cb871c14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/NPC Assets/Scripted NPC/Preggo Ladio.png using Guid(7b44c378b531bab4d8a49311cb871c14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c78d6ccdeb0483bb324cf19089977b2d') in 0.124366 seconds 
+  Time since last request: 0.000028 seconds.
+  path: Assets/Sprites/UI Assets/Toolkit Assets/Ref Book/Full page.png
+  artifactKey: Guid(c7d2cda3475d7bd47b417110e3706092) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI Assets/Toolkit Assets/Ref Book/Full page.png using Guid(c7d2cda3475d7bd47b417110e3706092) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '164369fdb6adc5b92a4e3262d70274a4') in 0.368459 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 50.923545 seconds.
+  path: Assets/Sprites/ending scenes/ending scene 4.png
+  artifactKey: Guid(b461d9b37bbfd9e4e9dbf7f2c59a32eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/ending scenes/ending scene 4.png using Guid(b461d9b37bbfd9e4e9dbf7f2c59a32eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3838a4f21bde8434e7d434009cb2205') in 0.192078 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 80.952838 seconds.
+  path: Assets/Sprites/UI Assets/Toolkit Assets/UrineTest/Urine test tube icon 1.png
+  artifactKey: Guid(02c2b048b2756a341990c842ff8632d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI Assets/Toolkit Assets/UrineTest/Urine test tube icon 1.png using Guid(02c2b048b2756a341990c842ff8632d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aac4028cd01677fe16dbc40c492f1c25') in 0.081563 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 62.732649 seconds.
+  path: Assets/Sprites/UI Assets/Toolkit Assets/bell
+  artifactKey: Guid(af2ff8816e0c5bb409af7346520bf90f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI Assets/Toolkit Assets/bell using Guid(af2ff8816e0c5bb409af7346520bf90f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba4de25a469800b3443811139f4c8e28') in 0.010675 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 579.518107 seconds.
+  path: Assets/Sprites/NPC Assets/Heads/hairs/hair 1_0.controller
+  artifactKey: Guid(3f7591ae85ab46c40a95bd8264a136a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Heads/hairs/hair 1_0.controller using Guid(3f7591ae85ab46c40a95bd8264a136a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f546700cc1a57427e1f2860dd3b71cca') in 0.016884 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.673868 seconds.
+  path: Assets/Sprites/Animation/Hair/Male Hair 1.anim
+  artifactKey: Guid(8b6995bbfdd890c4a9932edd5aacf508) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Animation/Hair/Male Hair 1.anim using Guid(8b6995bbfdd890c4a9932edd5aacf508) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b5adcd70b0a3ef3955f4d998c82819e') in 0.013339 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.953705 seconds.
+  path: Assets/Sprites/Animation/Hair/hair 1_0 - Copy.controller
+  artifactKey: Guid(3f7591ae85ab46c40a95bd8264a136a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Animation/Hair/hair 1_0 - Copy.controller using Guid(3f7591ae85ab46c40a95bd8264a136a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddee8b439533e7359bd541335752a06e') in 0.009371 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 322.868778 seconds.
+  path: Assets/Sprites/NPC Assets/Heads/hairs/hair 2_0.controller
+  artifactKey: Guid(591cfd7901b935e4ba02e3757b2364a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Heads/hairs/hair 2_0.controller using Guid(591cfd7901b935e4ba02e3757b2364a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0eb7400091f2f496a5cf3f086fa283d') in 0.010679 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 135.686404 seconds.
+  path: Assets/Sprites/NPC Assets/Heads/hairs/Female hair 1.anim
+  artifactKey: Guid(0f5f02088d2781d4aac49ac6f6ec880c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Heads/hairs/Female hair 1.anim using Guid(0f5f02088d2781d4aac49ac6f6ec880c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebeb9d00914e360309944d529291a127') in 0.011135 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.364097 seconds.
+  path: Assets/Sprites/NPC Assets/Heads/hairs/Hair 2 animation sprite sheet_0.controller
+  artifactKey: Guid(d9d89a48af62e4c40ae21b25de3c7878) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Heads/hairs/Hair 2 animation sprite sheet_0.controller using Guid(d9d89a48af62e4c40ae21b25de3c7878) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a287077c36829dcb0e343e894a8a10e1') in 0.012148 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 63.113670 seconds.
+  path: Assets/Sprites/Animation/Hair/Female hair 1.controller
+  artifactKey: Guid(d9d89a48af62e4c40ae21b25de3c7878) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Animation/Hair/Female hair 1.controller using Guid(d9d89a48af62e4c40ae21b25de3c7878) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba5a92c1deaf71cd7c41f2cf846e5447') in 0.002981 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.879385 seconds.
+  path: Assets/Sprites/Animation/Hair/Male hair 1.controller
+  artifactKey: Guid(3f7591ae85ab46c40a95bd8264a136a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Animation/Hair/Male hair 1.controller using Guid(3f7591ae85ab46c40a95bd8264a136a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27e514f0461dadf8b115620f962d04f3') in 0.009945 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.866256 seconds.
+  path: Assets/Sprites/Animation/Hair/Male hair 2.controller
+  artifactKey: Guid(591cfd7901b935e4ba02e3757b2364a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Animation/Hair/Male hair 2.controller using Guid(591cfd7901b935e4ba02e3757b2364a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '072d2dcce86e8c1389231e00b27eebfa') in 0.010041 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 224.857881 seconds.
+  path: Assets/Sprites/NPC Assets/Heads/hairs/Female hair 2.anim
+  artifactKey: Guid(876203c4352679c4f9e8a9d4330ce5e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Heads/hairs/Female hair 2.anim using Guid(876203c4352679c4f9e8a9d4330ce5e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51946361027d25d01e8b6cc582f5c144') in 0.012370 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 223.779252 seconds.
+  path: Assets/Sprites/NPC Assets/Heads/hairs/Hair 1 animation sprite sheet.png
+  artifactKey: Guid(b6ff5114201aa054babf7e2c274b22a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Heads/hairs/Hair 1 animation sprite sheet.png using Guid(b6ff5114201aa054babf7e2c274b22a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25b5bab1893687d9494478e627798052') in 0.189211 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 375.870579 seconds.
+  path: Assets/Sprites/NPC Assets/Eyes/Eye 1 sprite sheet.png
+  artifactKey: Guid(7161cef1b9deb464d919a1b07a381d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Eyes/Eye 1 sprite sheet.png using Guid(7161cef1b9deb464d919a1b07a381d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a79b28aca7af731816113a4dbfabfc41') in 0.019954 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 40.853334 seconds.
+  path: Assets/Sprites/NPC Assets/Eyes/eye 1 bloody sprite sheet.png
+  artifactKey: Guid(1e45513edcbd89443b72fb74162ce1bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Eyes/eye 1 bloody sprite sheet.png using Guid(1e45513edcbd89443b72fb74162ce1bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27487436018f7b97fe27e51b08bdcbc1') in 0.020196 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 43.744649 seconds.
+  path: Assets/Sprites/NPC Assets/Eyes/eye 1 bloody sprite sheet.png
+  artifactKey: Guid(1e45513edcbd89443b72fb74162ce1bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Eyes/eye 1 bloody sprite sheet.png using Guid(1e45513edcbd89443b72fb74162ce1bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1388591205717e93585e00b820198122') in 0.082514 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.440301 seconds.
+  path: Assets/Sprites/NPC Assets/Eyes/Eye 1 sprite sheet.png
+  artifactKey: Guid(7161cef1b9deb464d919a1b07a381d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Eyes/Eye 1 sprite sheet.png using Guid(7161cef1b9deb464d919a1b07a381d54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '467e178c6f99a7cea8c7d2da76414255') in 0.078833 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.929380 seconds.
+  path: Assets/Sprites/NPC Assets/Eyes/eye 2 bloody sprite sheet.png
+  artifactKey: Guid(241e994e1a3c2194fa4a8e0cdc778595) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Eyes/eye 2 bloody sprite sheet.png using Guid(241e994e1a3c2194fa4a8e0cdc778595) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '194d05491273a2d356ecc5fac6011c88') in 0.021754 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.889037 seconds.
+  path: Assets/Sprites/NPC Assets/Eyes/eye 2 bloody sprite sheet.png
+  artifactKey: Guid(241e994e1a3c2194fa4a8e0cdc778595) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Eyes/eye 2 bloody sprite sheet.png using Guid(241e994e1a3c2194fa4a8e0cdc778595) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdc3ab79d409040e5222f8f3c6be939d') in 0.047226 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.760487 seconds.
+  path: Assets/Sprites/NPC Assets/Eyes/eye 2 sprite sheet.png
+  artifactKey: Guid(73ab83806e42e14479d88f391f884adb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Eyes/eye 2 sprite sheet.png using Guid(73ab83806e42e14479d88f391f884adb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a374d8fe626713ab2613e92a41d6016') in 0.014148 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.831648 seconds.
+  path: Assets/Sprites/NPC Assets/Eyes/eye 2 sprite sheet.png
+  artifactKey: Guid(73ab83806e42e14479d88f391f884adb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Eyes/eye 2 sprite sheet.png using Guid(73ab83806e42e14479d88f391f884adb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '617fd5b8128555049eeb118707924535') in 0.058975 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.556771 seconds.
+  path: Assets/Sprites/NPC Assets/Eyes/eye 3 bloody sprite sheet.png
+  artifactKey: Guid(7cce30447a7d0ac44a87c085265903b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Eyes/eye 3 bloody sprite sheet.png using Guid(7cce30447a7d0ac44a87c085265903b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db35dd3a4e8e4e51a4d744f6871d2f32') in 0.020055 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.436500 seconds.
+  path: Assets/Sprites/NPC Assets/Eyes/eye 3 bloody sprite sheet.png
+  artifactKey: Guid(7cce30447a7d0ac44a87c085265903b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Eyes/eye 3 bloody sprite sheet.png using Guid(7cce30447a7d0ac44a87c085265903b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd932ee60099dc97da7705996be7b875') in 0.057433 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.979890 seconds.
+  path: Assets/Sprites/NPC Assets/Eyes/eye 3 sprite sheet.png
+  artifactKey: Guid(2e87cd0bd1cc882409dfa2f743f3e51c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Eyes/eye 3 sprite sheet.png using Guid(2e87cd0bd1cc882409dfa2f743f3e51c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd514e7f4725be2dc56781ac045129ed0') in 0.020030 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.584126 seconds.
+  path: Assets/Sprites/NPC Assets/Eyes/eye 3 sprite sheet.png
+  artifactKey: Guid(2e87cd0bd1cc882409dfa2f743f3e51c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Eyes/eye 3 sprite sheet.png using Guid(2e87cd0bd1cc882409dfa2f743f3e51c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e786427e620bde7fbfc6726d34cf1cab') in 0.046446 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 305.861092 seconds.
+  path: Assets/Sprites/NPC Assets/Eyes/New Folder
+  artifactKey: Guid(aa2fee2ea194be04e831b9afeaf354b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Eyes/New Folder using Guid(aa2fee2ea194be04e831b9afeaf354b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb1c3af4759d727823a8480d857b1568') in 0.010575 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 59.734615 seconds.
+  path: Assets/Sprites/NPC Assets/Eyes/New Folder 1
+  artifactKey: Guid(b67aeb2d3189b9d43953dabe6aa0777c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Eyes/New Folder 1 using Guid(b67aeb2d3189b9d43953dabe6aa0777c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b8f3793083353cbfc700d50fdd946ba') in 0.009194 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 107.636752 seconds.
+  path: Assets/Sprites/NPC Assets/Eyes/Bloody Eyes
+  artifactKey: Guid(231f319771c02b84693b271cdd881f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Eyes/Bloody Eyes using Guid(231f319771c02b84693b271cdd881f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6900c20f092cd1be8de8355e7e2a75d7') in 0.009340 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 581.799813 seconds.
+  path: Assets/Sprites/NPC Assets/Eyes/Bloody Eyes/bloody eye 2.anim
+  artifactKey: Guid(6bbef39c1f20d714f9d14e2a45818d5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/NPC Assets/Eyes/Bloody Eyes/bloody eye 2.anim using Guid(6bbef39c1f20d714f9d14e2a45818d5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8fab71796ddd8d4a65f23c1d6df6d4b') in 0.010814 seconds 

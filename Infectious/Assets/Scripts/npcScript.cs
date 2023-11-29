@@ -91,10 +91,10 @@ public class npcScript : MonoBehaviour
 
     public void RandomizerNPCAppearance(){
         gender = Random.Range(0,2);
-        //for (int i = 0; i < hair.Length; i++)
-        //{
-        //    hair[i].SetActive(false);
-        //}
+        for (int i = 0; i < hair.Length; i++)
+        {
+            hair[i].SetActive(false);
+        }
         for (int i=0; i<head.Length; i++){
             head[i].SetActive(false);
         }
@@ -111,14 +111,14 @@ public class npcScript : MonoBehaviour
             body[i].SetActive(false);
         }
 
-        //if (gender == 0)
-        //{
-        //    hair[Random.Range(0,1)].SetActive(true);
-        //}
-        //else
-        //{
-        //    hair[Random.Range(2,3)].SetActive(true);
-        //}
+        if (gender == 0)
+        {
+            hair[Random.Range(0, 1)].SetActive(true);
+        }
+        else
+        {
+            hair[Random.Range(2, 3)].SetActive(true);
+        }
 
         if (gender==0){
             head[Random.Range(0,2)].SetActive(true);
@@ -129,10 +129,10 @@ public class npcScript : MonoBehaviour
 
        
         if(patientSymptomListREADONLYPLS[6]==false){
-            eyes[Random.Range(0,5)].SetActive(true);
+            eyes[Random.Range(0,2)].SetActive(true);
         }
         else{
-            eyes[Random.Range(5,10)].SetActive(true);
+            eyes[Random.Range(3,6)].SetActive(true);
         }
 
         
@@ -148,7 +148,7 @@ public class npcScript : MonoBehaviour
             nose[Random.Range(6,7)].SetActive(true);
         }
 
-        mouth[Random.Range(0,5)].SetActive(true);
+        mouth[Random.Range(0,3)].SetActive(true);
 
 
         if(gender==0){

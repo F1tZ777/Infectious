@@ -19,7 +19,7 @@ public class DragTool : MonoBehaviour
             if (Timer < 0f)
             {
                 transform.localPosition = originalPos;
-                Timer = 0.05f;
+                Timer = 0.04f;
                 timerStart = false;
             }
         }
