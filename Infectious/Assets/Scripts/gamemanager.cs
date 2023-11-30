@@ -109,7 +109,10 @@ public class gamemanager : MonoBehaviour
         if (animator.IsAnimationPlaying(animator._anim, ENTER) || animator.IsAnimationPlaying(animator._anim, "NPCAccept")
             || animator.IsAnimationPlaying(animator._anim, "NPCDeny") || animator.IsAnimationPlaying(bossAnimator._anim, "BossEnter")
             || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "ScriptedNPCEnter") || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "ScriptedNPCApproved")
-            || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "ScriptedNPCDenied"))
+            || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "ScriptedNPCDenied") || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "RebelApproved")
+            || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "RebelDenied") || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "RebelEnter")
+            || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "PregnantLadyEnter") || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "PregnantLadyApproved")
+            || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "PregnantLadyDenied"))
         {
             toolkit.SetActive(false);
             ApprovalDocument.SetActive(false);

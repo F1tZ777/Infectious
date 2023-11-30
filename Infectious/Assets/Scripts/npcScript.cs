@@ -113,11 +113,11 @@ public class npcScript : MonoBehaviour
 
         if (gender == 0)
         {
-            hair[Random.Range(0, 1)].SetActive(true);
+            hair[Random.Range(0, 2)].SetActive(true);
         }
         else
         {
-            hair[Random.Range(2, 3)].SetActive(true);
+            hair[Random.Range(2, 4)].SetActive(true);
         }
 
         if (gender==0){
@@ -129,23 +129,23 @@ public class npcScript : MonoBehaviour
 
        
         if(patientSymptomListREADONLYPLS[6]==false){
-            eyes[Random.Range(0,2)].SetActive(true);
+            eyes[Random.Range(0,3)].SetActive(true);
         }
         else{
-            eyes[Random.Range(3,6)].SetActive(true);
+            eyes[Random.Range(3,7)].SetActive(true);
         }
 
         
         if(gender==0){
-            nose[Random.Range(0, 2)].SetActive(true);
+            nose[Random.Range(0, 3)].SetActive(true);
         }
         else if (patientSymptomListREADONLYPLS[7] == true && gender == 0)
         {
-            nose[Random.Range(3, 5)].SetActive(true);
+            nose[Random.Range(3, 6)].SetActive(true);
         }
         else
         {
-            nose[Random.Range(6,7)].SetActive(true);
+            nose[Random.Range(6,8)].SetActive(true);
         }
 
         mouth[Random.Range(0,3)].SetActive(true);
