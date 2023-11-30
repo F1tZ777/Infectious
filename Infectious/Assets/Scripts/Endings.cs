@@ -17,7 +17,18 @@ public class Endings : MonoBehaviour
     public string firedEnd;
     [TextArea(2, 10)]
     public string arrestedEnd;
+    [TextArea(2, 10)]
+    public string badRebelEnd;
+    [TextArea(2, 10)]
+    public string goodRebelEnd;
     private string end;
+    public Sprite goodEndSprite;
+    public Sprite badEndSprite;
+    public Sprite goodRebelEndSprite;
+    public Sprite badRebelEndSprite;
+    public Sprite arrestedEndSprite;
+    public Sprite firedEndSprite;
+    public SpriteRenderer pepelaugh;
 
     int lineCount;
     // Start is called before the first frame update
@@ -33,22 +44,45 @@ public class Endings : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (endingtext.text == end)
-                sceneManager.End();
+                sceneManager.MainMenu();
         }
     }
 
     void InitializeEndArr()
     {
-        if (singleton.Instance.totalDetainPercentage == 1)
+        if (singleton.Instance.rebel)
+            if (singleton.Instance.performanceScore > 0)
+            {
+                end = goodRebelEnd;
+                pepelaugh.sprite = goodRebelEndSprite;
+            }
+            else
+            {
+                end = badRebelEnd;
+                pepelaugh.sprite = badRebelEndSprite;
+            }
+        else if (singleton.Instance.rioted)
+        {
             end = firedEnd;
-        else if (singleton.Instance.totalApprovePercentage == 1)
+            pepelaugh.sprite = firedEndSprite;
+        }
+        else if (singleton.Instance.wrongfullyApprovedPercentage >= 0.6f)
+        {
             end = arrestedEnd;
+            pepelaugh.sprite = arrestedEndSprite;
+        }
         else
         {
             if (singleton.Instance.performanceScore > 0)
+            {
                 end = goodEnd;
+                pepelaugh.sprite = goodEndSprite;
+            }
             else
+            {
                 end = badEnd;
+                pepelaugh.sprite = badEndSprite;
+            }
         }
         StartCoroutine(EndTextWrite());
     }

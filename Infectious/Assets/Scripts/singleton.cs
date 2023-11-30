@@ -17,8 +17,9 @@ public class singleton : MonoBehaviour
     public float wrongfullyDetainedPercentage;
     public float wrongfullyApprovedPercentage;
     public float[] SymptomProbabiityShiftParty = new float[10]; 
-    [HideInInspector]public bool d5rebel=false, d6rebel=false, d7rebel=false;
+    [HideInInspector]public bool rebel=true;
     public bool riot;
+    public bool rioted=false;
     private void Awake() 
     { 
     // If there is an instance, and it's not me, delete myself.

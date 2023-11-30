@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Security.Cryptography.X509Certificates;
+using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
@@ -293,7 +294,14 @@ public class Dialogue : MonoBehaviour
                 textObject.text += "\n\n";
         }
         yield return new WaitForSeconds(5);
-        SceneManager.Ending();
+        if (singleton.Instance.currentday == 3)
+        {
+            SceneManager.endDay();
+        }
+        else
+        {
+            SceneManager.Ending();
+        }
     }
 
     IEnumerator TypeBossBad()
@@ -311,7 +319,14 @@ public class Dialogue : MonoBehaviour
                 textObject.text += "\n\n";
         }
         yield return new WaitForSeconds(5);
-        SceneManager.Ending();
+        if (singleton.Instance.currentday == 3)
+        {
+            SceneManager.endDay();
+        }
+        else
+        {
+            SceneManager.Ending();
+        }
     }
 
     IEnumerator TypeBossFired()
@@ -329,7 +344,14 @@ public class Dialogue : MonoBehaviour
                 textObject.text += "\n\n";
         }
         yield return new WaitForSeconds(5);
-        SceneManager.Ending();
+        if (singleton.Instance.currentday == 3)
+        {
+            SceneManager.endDay();
+        }
+        else
+        {
+            SceneManager.Ending();
+        }
     }
 
     IEnumerator TypeBossArrested()
@@ -347,7 +369,14 @@ public class Dialogue : MonoBehaviour
                 textObject.text += "\n\n";
         }
         yield return new WaitForSeconds(5);
-        SceneManager.Ending();
+        if (singleton.Instance.currentday == 3)
+        {
+            SceneManager.endDay();
+        }
+        else
+        {
+            SceneManager.Ending();
+        }
     }
 
     IEnumerator Denied()

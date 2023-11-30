@@ -116,7 +116,7 @@ public class radiomanager : MonoBehaviour
             break;
 
         case 6:
-            if(singleton.Instance.d5rebel){
+            if(singleton.Instance.rebel){
                 for (int i = 0; i < radioD6Rebel.Length; i++)
                 {
                 radio[i] = radioD6Rebel[i];
@@ -137,7 +137,7 @@ public class radiomanager : MonoBehaviour
             break;
 
         case 7:
-            if(singleton.Instance.d6rebel){
+            if(singleton.Instance.rebel){
                 for (int i = 0; i < radioD7Rebel.Length; i++)
                 {
                 radio[i] = radioD7Rebel[i];

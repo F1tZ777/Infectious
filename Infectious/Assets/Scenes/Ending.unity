@@ -164,17 +164,17 @@ MonoBehaviour:
   wrongfullyDetainedPercentage: 0
   wrongfullyApprovedPercentage: 0
   SymptomProbabiityShiftParty:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  rebel: 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  rebel: 0
   riot: 0
   rioted: 0
 --- !u!4 &177233228
@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 884366114}
   - component: {fileID: 884366115}
   m_Layer: 0
-  m_Name: RadioManager
+  m_Name: EndingManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -543,103 +543,72 @@ MonoBehaviour:
   m_GameObject: {fileID: 884366112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f668df6978f8dfe4f814d20ab5b4b749, type: 3}
+  m_Script: {fileID: 11500000, guid: 77d9ef508fa1c154cb3666a85acf43bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   singleton: {fileID: 177233227}
   sceneManager: {fileID: 1759772127}
   audiomanager: {fileID: 669803870}
-  radiotext: {fileID: 1684676621}
-  radioD1:
-  - Gooood morning listeners! Once again you are listening to the Vanastaria entertainment
-    radio network!
-  - Today the Vanastaria border is opening to refugees from other countries, along
-    with a disease checkpoint.
-  - "The Vanastarian public has had a variety of reactions to the opening because
-    well, obviously we don\u2019t want to bring the White Death into our homes, but
-    hey, we\u2019ll just have to see how it goes."
-  - As always, stick to VERN for daily news updates!
-  radioD2:
-  - Gooood morning listeners! Once again you are listening to the Vanastaria entertainment
-    radio network!
-  - Today marks the second day that the border has been opened to refugees, however
-    the rate at which people can be let in is definitely taking a while.
-  - So some have decided to kill time with a party outside of the border which included
-    alcohol, drugs, the whole shabang!
-  - Anyways, of course guards eventually caught wind and shut everything down, As
-    always, stick to VERN for daily news updates!
-  radioD3:
-  - Gooood morning listeners! Once again you are listening to the Vanastaria Entertainment
-    radio network!
-  - Big headline today is the big scary new conspiracy group that has attempted to
-    stop refugees from entering the country by attacking them outside the border.
-  - "However, the government has said that this isn\u2019t a big issue and the authorities
-    have already begun to round up all these guys."
-  - 'As always, be sure to tune in tomorrow for more news on VERN!
+  endingtext: {fileID: 1684676621}
+  goodEnd: 'Congratulations, Inspector. Due to your exceptional performance as the
+    border inspector of Vanastaria, you have contributed to preventing the White
+    Death disease from spreading into the country. The government awards you with
+    this Medal of Honor.
 
 
-    (While listening
-    to the radio, you found new tools and a torn piece of paper. Check your reference
-    book)'
-  radioD4:
-  - Greetings glorious listeners! You are once again listening to the Vanastaria
-    national radio broadcast!
-  - As you all are aware by now, there are some unloyal citizens who voice hostility
-    to our government showing kindness towards refugees of the fallen countries.
-  - Unfortunately these dogs have learned to bark louder, and most recently they
-    have been barking about the population increase that has resulted from housing
-    refugees, as if there is no room for luxury for them.
-  - 'In other news a poorly behaved individual attempted to jump over the border
-    illegally, but thankfully he was shot down by our loyal soldiers. '
-  radioD5:
-  - Greetings glorious listeners! You are once again listening to the Vanastaria
-    national radio broadcast!
-  - Today the situation outside of our borders grows more desperate.
-  - 3 more countries have fallen to the White Death, and there is a sudden increase
-    in the amount of refugees and conflict is starting to form.
-  - ' But loyal citizens shall not need to worry, as our government and authorities
-    are working to control the conflict.'
-  radioD6:
-  - Greetings listeners! As always you are listening to the Vanastaria national radio
-    broadcast! Today the situation outside the border continues to grow more dangerous,
-    and amongst all the chaos,
-  - ' authorities caught an infected individual attempting to sneak through the border
-    carrying a variety of illegal poisons, as well as carrying forged identification
-    documents.'
-  - As for his motive it is currently unclear, however security has been increased
-    as requested by the government
-  radioD7:
-  - Greetings citizens, due to the increase in unrest and protests within the country
-    and outside of the border, the prime minister announced today that the border
-    will be temporarily closing tomorrow in order to give some time for the country
-    to recover and for authorities to clean up
-  - This is the result of a pregnant woman dying due to White Death and malnutrition
-    on the outside of the border.
-  - The woman had actually managed to give birth shortly before, however in all of
-    the chaos the baby was seemingly stomped on and died in the crowd.
-  - It was later found by a guard while he was on patrol.
-  radioD6Rebel:
-  - Greetings loyal citizens. Today there is no news worth celebrating.
-  - Early this morning, several political leaders of our glorious country have tested
-    positive for the virus, they have taken the appropriate precautions and isolated
-    themselves from the rest of society for now.
-  - Luckily our glorious prime minister has managed to avoid this same fate.
-  - The cause for this seems to be a foreign visitor, who has taken the identity
-    of the person who was originally meant to be there. The only conclusion is that
-    this is some sort of attack on our glorious country.
-  radioD7Rebel:
-  - Greetings citizens, Today the unrest outside of the border continues, and protests
-    within the city have started to become more common.
-  - As confirmed this morning, 3 of our brave political leaders that were infected
-    with White Death have passed away.
-  - And lastly a pregnant woman that has entered the country was confirmed to test
-    positive for White Death despite making it past border regulations.
-  - She died giving birth to a child that has seemingly tested negative for the disease.
-  radioRiot:
-  - Never
-  - Gonna
-  - Give
-  - You Up
+    Glory be Vanastaria'
+  badEnd: 'Due to your poor performance as the border inspector of Vanastaria, you
+    have let too many infected people into the country. The disease spread like wildfire,
+    causing infection and death rates to skyrocket.
+
+
+    The fall of Vanastaria
+    is by your hands'
+  firedEnd: "Your stubbornness to allowing anyone into the country has led to riots
+    happening outside the border. The people are upset because of your doing. Because
+    of this, you have been fired from your duties as border inspector and a replacement
+    will take your place. \r\n\r\nMay Vanastaria stay strong\r\n"
+  arrestedEnd: 'The police have arrived at your booth to arrest you. Your negligence
+    at performing your duties have risen suspicion of the government that you were
+    attempting to ruin the country by allowing everyone into the country, including
+    those who are infected.
+
+
+
+    Vanastaria will clean up the mess you have made
+    while you rot in a prison cell
+
+'
+  badRebelEnd: 'Due to the corruption of the government, Vanastaria is now in shambles.
+    Thanks to your help, the rebellion managed to evacuate a number of people to
+    the island.
+
+
+
+    Perhaps society can rebuilt there
+
+'
+  goodRebelEnd: 'Vanastaria remains despite the corrupted government; a vaccine is
+    being created and will eventually be handed to the people.
+
+
+
+    Perhaps society
+    can be better
+
+
+
+
+    Perhaps society can rebuilt there
+
+'
+  goodEndSprite: {fileID: 21300000, guid: 112cc33aee50f68449990d8c59e57d4f, type: 3}
+  badEndSprite: {fileID: 21300000, guid: 9f5142c4d38a28d4f9514e89ec25144d, type: 3}
+  goodRebelEndSprite: {fileID: 21300000, guid: 299c61cda8c5ba84f8bbf1e5019030c5, type: 3}
+  badRebelEndSprite: {fileID: 21300000, guid: 2c50c686f0c7ddf40a0bfeb5117500d6, type: 3}
+  arrestedEndSprite: {fileID: 21300000, guid: 8ffa4020077f85f4db0525ebdda9818c, type: 3}
+  firedEndSprite: {fileID: 21300000, guid: 0a58c58134d2b5b489a1f63dc86b11ee, type: 3}
+  pepelaugh: {fileID: 2084620375}
 --- !u!1 &987821378
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,8 +701,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1832009135}
-  - {fileID: 1841577279}
   - {fileID: 1684676620}
   - {fileID: 1675331503}
   m_Father: {fileID: 0}
@@ -1020,7 +987,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 987821382}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1039,7 +1006,7 @@ GameObject:
   - component: {fileID: 1684676622}
   - component: {fileID: 1684676621}
   m_Layer: 5
-  m_Name: RadioText
+  m_Name: EndingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1058,11 +1025,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 987821382}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -225}
+  m_AnchoredPosition: {x: 0, y: -285}
   m_SizeDelta: {x: 1370.98, y: 268.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1684676621
@@ -1085,7 +1052,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Radio Text Here
+  m_text: End Text Here
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -1112,8 +1079,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56
-  m_fontSizeBase: 56
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1207,7 +1174,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1832009134
+--- !u!1 &1869696216
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1215,75 +1182,83 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1832009135}
-  - component: {fileID: 1832009137}
-  - component: {fileID: 1832009136}
-  m_Layer: 5
-  m_Name: Image
+  - component: {fileID: 1869696218}
+  - component: {fileID: 1869696217}
+  m_Layer: 0
+  m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1832009135
-RectTransform:
+--- !u!212 &1869696217
+SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832009134}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 987821382}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1832009136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832009134}
+  m_GameObject: {fileID: 1869696216}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -2
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1832009137
-CanvasRenderer:
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1869696218
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832009134}
-  m_CullTransparentMesh: 1
---- !u!1 &1841577278
+  m_GameObject: {fileID: 1869696216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0584, y: -0.1879, z: 0}
+  m_LocalScale: {x: 19.336422, y: 11.672878, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2084620374
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1291,71 +1266,79 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1841577279}
-  - component: {fileID: 1841577281}
-  - component: {fileID: 1841577280}
-  m_Layer: 5
-  m_Name: Radio
+  - component: {fileID: 2084620376}
+  - component: {fileID: 2084620375}
+  m_Layer: 0
+  m_Name: ending art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1841577279
-RectTransform:
+--- !u!212 &2084620375
+SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841577278}
+  m_GameObject: {fileID: 2084620374}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 112cc33aee50f68449990d8c59e57d4f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 7.66, y: 5.36}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &2084620376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084620374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.08034873, y: 1.7147819, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 987821382}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 176}
-  m_SizeDelta: {x: 745.04, y: 332.75}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1841577280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841577278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 974d73af6f78dfa44b33ee78c7b53a2b, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1841577281
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841577278}
-  m_CullTransparentMesh: 1

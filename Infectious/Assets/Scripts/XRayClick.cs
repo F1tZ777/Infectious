@@ -6,7 +6,7 @@ using TMPro;
 public class XRayClick : MonoBehaviour
 {
     public GameObject XRay;
-    public GameObject instantiatedObj;
+    private GameObject instantiatedObj;
     public GameObject XRayIcon;
     public float time = 20.0f;
     public int uses = 2;

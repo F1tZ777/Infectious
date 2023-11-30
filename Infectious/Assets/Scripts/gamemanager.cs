@@ -93,6 +93,15 @@ public class gamemanager : MonoBehaviour
             riot();
         }
 
+        if (!singleton.Instance.rebel)
+        {
+            switch (currentday)
+            {
+                case 6: NPCqueue[2] = 0; break;
+                case 7: NPCqueue[2] = 0; break;
+            }
+        }
+
         spawnNPC();
     }
 
@@ -112,7 +121,8 @@ public class gamemanager : MonoBehaviour
             || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "ScriptedNPCDenied") || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "RebelApproved")
             || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "RebelDenied") || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "RebelEnter")
             || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "PregnantLadyEnter") || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "PregnantLadyApproved")
-            || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "PregnantLadyDenied"))
+            || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "PregnantLadyDenied") || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "AssassinDenied") 
+            || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "AssassinApproved") || animator.IsAnimationPlaying(scriptedNPCAnimator._anim, "AssassinEnter"))
         {
             toolkit.SetActive(false);
             ApprovalDocument.SetActive(false);
@@ -202,7 +212,14 @@ public class gamemanager : MonoBehaviour
             InitializeNPC(patientDiseaseList[CurrentNPC]);
             //scriptedNPCAnimator.ChangeAnimation("ScriptedNPCEnter");
             scriptedNPCdecide = true;
-            ActiveNPC.GetComponent<npcAnimation>().ChangeAnimation("ScriptedNPCEnter");
+            if (!ActiveNPC.GetComponent<npcScript>().rebel)
+            {
+                ActiveNPC.GetComponent<npcAnimation>().ChangeAnimation("ScriptedNPCEnter");
+            }
+            else
+            {
+                ActiveNPC.GetComponent<npcAnimation>().ChangeAnimation("RebelEnter");
+            }
         }
 
          if(patientSymptomList[3] == true){
@@ -242,11 +259,17 @@ public class gamemanager : MonoBehaviour
         }
         else
         {
-            if (singleton.Instance.currentday < singleton.Instance.totaldays)
+            if (singleton.Instance.currentday < singleton.Instance.totaldays && singleton.Instance.currentday != 3)
                 //singleton.Instance.currentday++;
                 sceneManager.GetComponent<SceneManager>().endDay();
-            else
+            else if ((singleton.Instance.currentday==7&&!singleton.Instance.rebel)||singleton.Instance.currentday==3)
+            {
                 spawnBoss();
+            }
+            else
+            {
+                //rebelending();
+            }
         }
     }
 
@@ -256,7 +279,14 @@ public class gamemanager : MonoBehaviour
         if (scriptedNPCdecide)
         {
             dialogueScript.NikoDeniedDialogue();
-            ActiveNPC.GetComponent<npcAnimation>().ChangeAnimation("ScriptedNPCDenied");
+            if (!ActiveNPC.GetComponent<npcScript>().rebel)
+            {
+                ActiveNPC.GetComponent<npcAnimation>().ChangeAnimation("ScriptedNPCDenied");
+            }
+            else
+            {
+                ActiveNPC.GetComponent<npcAnimation>().ChangeAnimation("RebelDenied");
+            }
             scriptedNPCdecide = false;
         }
         else
@@ -272,6 +302,10 @@ public class gamemanager : MonoBehaviour
             singleton.Instance.performanceScore -= 3;
         }
         singleton.Instance.totalDetains++;
+        if (ActiveNPC.GetComponent<npcScript>().rebel)
+        {
+            singleton.Instance.rebel = false;
+        }
         CalculatePercentage();
     }
     public void Approve()
@@ -280,7 +314,14 @@ public class gamemanager : MonoBehaviour
         if (scriptedNPCdecide)
         {
             dialogueScript.NikoAcceptedDialogue();
-            ActiveNPC.GetComponent<npcAnimation>().ChangeAnimation("ScriptedNPCApproved");
+            if (!ActiveNPC.GetComponent<npcScript>().rebel)
+            {
+                ActiveNPC.GetComponent<npcAnimation>().ChangeAnimation("ScriptedNPCApproved");
+            }
+            else
+            {
+                ActiveNPC.GetComponent<npcAnimation>().ChangeAnimation("RebelApproved");
+            }
             scriptedNPCdecide = false;
         }
         else
@@ -296,12 +337,7 @@ public class gamemanager : MonoBehaviour
             singleton.Instance.performanceScore += 1;
         }
         if(ActiveNPC.GetComponent<npcScript>().rebel){
-            switch(currentday){
-                case 5: singleton.Instance.d5rebel = true; break;
-                case 6: singleton.Instance.d6rebel = true; break;
-                case 7: singleton.Instance.d7rebel = true; break;
-                default: Debug.Log("YOU FUCKED UP REBEL CODE"); break;
-            }
+            singleton.Instance.rebel = true;
         }
         CalculatePercentage();
     }
@@ -400,6 +436,7 @@ public class gamemanager : MonoBehaviour
 
     public void riot(){
         singleton.Instance.performanceScore-=15;
+        singleton.Instance.rioted = true;
     }
 
 }

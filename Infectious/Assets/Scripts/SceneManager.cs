@@ -37,17 +37,7 @@ public class SceneManager : MonoBehaviour
 
     public void Ending()
     {
-        if(singleton.Instance.totalDetainPercentage == 1)
-            StartCoroutine(TransitionScene("FiredEnd"));
-        else if (singleton.Instance.totalApprovePercentage == 1)
-            StartCoroutine(TransitionScene("ArrestedEnd"));
-        else
-        {
-            if (singleton.Instance.performanceScore > 0)
-                StartCoroutine(TransitionScene("GoodEnd"));
-            else
-                StartCoroutine(TransitionScene("BadEnd"));
-        }
+        StartCoroutine(TransitionScene("Ending"));
     }
 
     public void End()
