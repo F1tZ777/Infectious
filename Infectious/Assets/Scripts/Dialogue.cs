@@ -183,7 +183,7 @@ public class Dialogue : MonoBehaviour
         foreach (char c in accepted[rand].ToCharArray())
         {
             textObject.text += c;
-            //yield return null;
+            yield return null;
         }
         animator.ChangeAnimation(APPROVED);
         yield return new WaitForSeconds(4.5f);
@@ -254,6 +254,7 @@ public class Dialogue : MonoBehaviour
         foreach (char c in nikoaccepted.ToCharArray())
         {
             textObject.text += c;
+            yield return null;
         }
         //animator.ChangeAnimation("ScriptedNPCApproved");
         yield return new WaitForSeconds(4.5f);
@@ -270,10 +271,10 @@ public class Dialogue : MonoBehaviour
             finishDialogue = true;
         }
         textObject.text += "\n\n";
-        finishDialogue = false;
         foreach (char c in nikodenied.ToCharArray())
         {
             textObject.text += c;
+            yield return null;
         }
         //animator.ChangeAnimation("ScriptedNPCDenied");
         yield return new WaitForSeconds(4.5f);

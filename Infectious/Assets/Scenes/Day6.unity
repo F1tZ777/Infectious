@@ -3255,6 +3255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f7bc328c2200a40ba233122719d13c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneManager: {fileID: 0}
   NPC: {fileID: 299952152}
   ActiveNPC: {fileID: 0}
   Boss: {fileID: 2050972639}
@@ -3287,7 +3288,7 @@ MonoBehaviour:
   ScriptedNPC:
   - {fileID: 1457681456}
   randomNPCs: {fileID: 299952152}
-  NPCqueue: 000000000000000001000000000000000000000000000000
+  NPCqueue: 000000000100000001000000000000000000000000000000
   patientDiseaseList: 000000000000000004000000000000000000000000000000
   sceneManager: {fileID: 622583139}
   oddsForEachDiesease: 0400000004000000040000000400000004000000
