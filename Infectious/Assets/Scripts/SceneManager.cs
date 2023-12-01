@@ -22,8 +22,8 @@ public class SceneManager : MonoBehaviour
             StartCoroutine(TransitionScene("Day"+singleton.Instance.currentday));
         }
         else
-            End();
-    }
+            Ending();
+        }
 
     public void GameQuit() {
         Application.Quit();
@@ -38,6 +38,7 @@ public class SceneManager : MonoBehaviour
     public void Ending()
     {
         StartCoroutine(TransitionScene("Ending"));
+   
     }
 
     public void End()

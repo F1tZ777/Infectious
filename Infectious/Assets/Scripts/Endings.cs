@@ -44,7 +44,7 @@ public class Endings : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (endingtext.text == end)
-                sceneManager.MainMenu();
+                sceneManager.End();
         }
     }
 
