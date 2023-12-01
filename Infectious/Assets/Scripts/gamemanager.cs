@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 
 public class gamemanager : MonoBehaviour
 {
+    public SceneManager SceneManager;
     public GameObject NPC;
     public GameObject ActiveNPC;
     public GameObject Boss;
@@ -268,7 +269,7 @@ public class gamemanager : MonoBehaviour
             }
             else
             {
-                //rebelending();
+                SceneManager.Ending();
             }
         }
     }

@@ -2850,6 +2850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f7bc328c2200a40ba233122719d13c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneManager: {fileID: 622583140}
   NPC: {fileID: 299952152}
   ActiveNPC: {fileID: 0}
   Boss: {fileID: 2050972639}
@@ -12372,6 +12373,7 @@ GameObject:
   - component: {fileID: 1233820772}
   - component: {fileID: 1233820776}
   - component: {fileID: 1233820777}
+  - component: {fileID: 1233820778}
   m_Layer: 0
   m_Name: Preggo Ladio
   m_TagString: Untagged
@@ -12601,6 +12603,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &1233820778
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233820771}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 1.1223317}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.14, y: 11.94}
+    newSize: {x: 10.14, y: 11.94}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.14, y: 9.695335}
+  m_EdgeRadius: 0
 --- !u!1 &1235838779
 GameObject:
   m_ObjectHideFlags: 0
