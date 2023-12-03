@@ -6,7 +6,7 @@ public class DragTool : MonoBehaviour
 {
     //private RectTransform rectTransform;
     public Vector2 originalPos;
-    public float Timer = 0.05f;
+    public float Timer = 0.07f;
     public Behaviour BC2D;
     Vector3 mousePositionOffset;
     private bool timerStart;
@@ -19,7 +19,7 @@ public class DragTool : MonoBehaviour
             if (Timer < 0f)
             {
                 transform.localPosition = originalPos;
-                Timer = 0.04f;
+                Timer = 0.07f;
                 timerStart = false;
             }
         }

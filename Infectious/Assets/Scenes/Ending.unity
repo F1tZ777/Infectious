@@ -567,41 +567,27 @@ MonoBehaviour:
   firedEnd: "Your stubbornness to allowing anyone into the country has led to riots
     happening outside the border. The people are upset because of your doing. Because
     of this, you have been fired from your duties as border inspector and a replacement
-    will take your place. \r\n\r\nMay Vanastaria stay strong\r\n"
+    will take your place. \r\n\r\nMay Vanastaria stay strong\r"
   arrestedEnd: 'The police have arrived at your booth to arrest you. Your negligence
     at performing your duties have risen suspicion of the government that you were
     attempting to ruin the country by allowing everyone into the country, including
     those who are infected.
 
 
-
     Vanastaria will clean up the mess you have made
-    while you rot in a prison cell
-
-'
+    while you rot in a prison cell'
   badRebelEnd: 'Due to the corruption of the government, Vanastaria is now in shambles.
     Thanks to your help, the rebellion managed to evacuate a number of people to
     the island.
 
 
-
-    Perhaps society can rebuilt there
-
-'
+    Perhaps society can rebuilt there'
   goodRebelEnd: 'Vanastaria remains despite the corrupted government; a vaccine is
     being created and will eventually be handed to the people.
 
 
-
     Perhaps society
-    can be better
-
-
-
-
-    Perhaps society can rebuilt there
-
-'
+    can be better'
   goodEndSprite: {fileID: 21300000, guid: 112cc33aee50f68449990d8c59e57d4f, type: 3}
   badEndSprite: {fileID: 21300000, guid: 9f5142c4d38a28d4f9514e89ec25144d, type: 3}
   goodRebelEndSprite: {fileID: 21300000, guid: 299c61cda8c5ba84f8bbf1e5019030c5, type: 3}

@@ -66,7 +66,7 @@ public class Endings : MonoBehaviour
             end = firedEnd;
             pepelaugh.sprite = firedEndSprite;
         }
-        else if (singleton.Instance.wrongfullyApprovedPercentage >= 0.6f)
+        else if (singleton.Instance.wrongfullyApprovedPercentage >= 1.0f)
         {
             end = arrestedEnd;
             pepelaugh.sprite = arrestedEndSprite;
